@@ -1,0 +1,4 @@
+if we define a loop inside another loop than it is called nested for loop
+
+first loop is called the outer loop and the second loop is called the inner loop
+execution is start from the outer loop if it is true it enters the inner loop to check its condition the inner loop is continued till the condition is true and once the condition is false it goes back to the outer loop this  process continues till the outer loop condition is false

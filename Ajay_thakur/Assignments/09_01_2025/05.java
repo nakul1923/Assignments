@@ -1,0 +1,9 @@
+interface Principal{
+
+
+}
+
+interface InterestRate{
+
+    
+}
