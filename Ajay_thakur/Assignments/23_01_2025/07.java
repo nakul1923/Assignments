@@ -1,3 +1,12 @@
+/*
+ * :Basic Exception Handling:
+
+Write a program to divide two numbers input by the user. Handle exceptions for the following:
+Division by zero
+Invalid input (e.g., entering non-numeric values)
+Ensure the program continues to run until the user chooses to exit. 
+ */
+
 import java.util.*;
 
 class Main{

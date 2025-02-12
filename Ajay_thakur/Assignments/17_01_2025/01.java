@@ -1,3 +1,8 @@
+/*
+ * Array in string 
+
+ */
+
 import java.util.Scanner;
 
 class Main{

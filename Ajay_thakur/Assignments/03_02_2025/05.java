@@ -1,3 +1,14 @@
+/*
+ * Search in an ArrayList
+Objective: Write a program to search for an element in an ArrayList.
+
+Tasks:
+
+Allow the user to enter multiple strings into an ArrayList.
+Prompt the user to enter a string to search for.
+Check if the string exists in the list and display its position(s).
+ */
+
 import java.util.ArrayList;
 import java.util.*;
 

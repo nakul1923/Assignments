@@ -1,3 +1,9 @@
+/*
+ * WAP to create product class with attributes pid, pname, pprice, plocation. create setter, getter and constructor in the class. create 5 objects and store them in arraylist...display all products using for each loop and ListIterator.
+after that display only those products whose price is above 500.
+
+ */
+
 import java.util.*;
 
 class Product{
@@ -40,18 +46,25 @@ class Main{
         list.add(p4);
         list.add(p5);
 
+        System.out.println("Printing all the elements with for each loop\n");
         for(Product student:list){
 
             System.out.println(student);
         }
 
+        System.out.println();
+
         ListIterator<Product> it = list.listIterator();
 
+        System.out.println("Printing all the elements with ListIterator\n");
         while(it.hasNext()){
 
             System.out.println(it.next());
         }
 
+        System.out.println();
+
+        System.out.println("Printing all the elements with price more than 500\n");
         for(Product student:list){
 
             if(student.pprice>500){

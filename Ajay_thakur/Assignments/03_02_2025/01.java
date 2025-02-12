@@ -1,3 +1,7 @@
+/*
+ * WAP to store string data in arraylist and convert all the names into upper case which starts from a
+ */
+
 import java.util.ArrayList;
 
 class Main{

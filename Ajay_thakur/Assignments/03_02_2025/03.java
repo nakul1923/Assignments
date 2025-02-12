@@ -1,3 +1,8 @@
+/*
+ * WAP to store integer values in arraylist and display only those numbers which are perfect numbers.
+
+ */
+
 import java.util.ArrayList;
 
 class Main{

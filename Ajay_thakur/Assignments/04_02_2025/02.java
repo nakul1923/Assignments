@@ -1,3 +1,14 @@
+/*
+ * ArrayList of Objects
+Objective: Use an ArrayList to manage custom objects.
+Tasks:
+
+Create a Student class with attributes like name, age, and marks.
+Add multiple Student objects to an ArrayList.
+Display the details of all students.
+
+ */
+
 import java.util.*;
 
 class Student{

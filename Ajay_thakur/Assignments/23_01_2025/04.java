@@ -1,3 +1,11 @@
+/*
+ * Write a program to remove all digits from a string and return the modified string using StringBuilder.
+
+input : "J4av1a P2rogramming"
+output: "Java Programming"
+
+ */
+
 import java.util.*;
 
 class Main{

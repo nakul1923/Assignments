@@ -1,3 +1,15 @@
+/*
+ * Sampad wants to implement a program that takes input for a student's name and grade, validates the input, and then displays the grade for the given student.
+
+1.	The grade should be an integer value.
+2.	The program should validate the grade using the validateGrade() method. The method should throw an IllegalArgumentException if the grade is less than 0 or greater than 100.
+3.	If the input is invalid due to a non-integer grade, catch the NumberFormatException and print the built-in exception message.
+4.	If the input is invalid due to an out-of-range grade, catch the IllegalArgumentException and print the built-in exception message.
+5.	Catch the exceptions using the multi-catch block.
+
+ */
+
+
 import java.util.*;
 
 

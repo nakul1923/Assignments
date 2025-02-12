@@ -1,3 +1,13 @@
+/*
+ * Shape Area Calculator
+Objective: Calculate the area of different shapes using a common interface.
+
+Define an interface Shape with a method calculateArea().
+Create classes Circle and Rectangle that implement the Shape interface.
+Input dimensions and calculate the area of each shape.
+
+ */
+
 interface Shape{
 
     void calculateArea();

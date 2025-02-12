@@ -1,3 +1,14 @@
+/*
+ *  Modify an ArrayList
+Objective: Develop a program to perform operations on an ArrayList.
+Tasks:
+Add 5 integers to an ArrayList.
+Replace the second element with a new integer.
+Remove the third element.
+Display the updated ArrayList.
+
+ */
+
 import java.util.ArrayList;
 
 class Main{

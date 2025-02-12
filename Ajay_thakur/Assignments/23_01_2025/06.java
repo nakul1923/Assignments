@@ -1,3 +1,20 @@
+/*
+ * Task:
+Create a Java program to handle the following scenarios:
+
+Division by zero using ArithmeticException.
+Accessing an invalid index in an array using ArrayIndexOutOfBoundsException.
+Parsing an invalid number format using NumberFormatException.
+Accessing a method or field of a null object using NullPointerException.
+For each case:
+
+Write code that triggers the exception.
+Handle the exception using a try-catch block.
+Print meaningful messages to the user in the catch block.
+Use a finally block to demonstrate cleanup or a closing statement.
+
+ */
+
 import java.util.*;
 
 class Main{

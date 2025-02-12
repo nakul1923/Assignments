@@ -1,0 +1,681 @@
+
+
+
+Exception Handling:-
+
+there are different types of errors
+
+1. syntax error - syntax errors are those which occur due to less knowledge of language.
+
+2. Logical errors - logical errors arrives due to wrong logic or formula.
+
+3. Runtime errors - runtime errors are those which occur if user enter invalid input to the program. because of invalid input we get some unknown message such messages are known as system generated message of error.
+
+languages like java provide mechanism to handle these types of errors
+
+in java programming runtime errors are known as exceptions and exceptions always provide system error messages
+
+if an exception occur in java than program execution is abnormally terminated with the generation of system error message 
+
+exception handling is the process of converting system error message into user friendly error message
+
+Types of exceptions :-
+
+there are two types of exceptions
+
+1. Pre define exceptions(built in exceptions) - this are those exceptions which are developed by son microsystem and supplied as a part of JDK to deal with universal problems.
+
+NumberFormatException
+ArrayInexOutOfBoundsException
+ArithmeticException
+------
+----
+etc.
+
+2. User define exceptions(custom exception) - these are those exceptions which are developed by java programmers and supplied as a part of their project to deal with their problems
+
+for example:- 
+1. trying to enter salary as a negative number for an employee.
+2. entering a human age as 500.
+
+Types of pre define exceptions 
+there are two types of pre define exceptions
+
+1. Asynchronous exception - this are those exceptions which deals with hardware problems and external problems like 
+1. Power failure
+2. motherboard failure
+3. memory problems 
+etc......
+
+this are not used because son microsystem has not released any API for asynchronous exceptions 
+They have given one base class called java.lang.Error
+
+2. Synchronous exception - Synchronous exception are those which deals with programming runtime errors.
+these are again classified into two types.
+
+1. Checked exception - this are the sub-classes of java.lang.Exception.
+this are called checked because compiler can check these exceptions at compile time only.
+
+example:- 
+1. FileNotFoundException
+2. IOException
+3. ClassNotFoundException
+
+we can say that checked exceptions are those which are predictable and hence there handling mechanism is necessary to be given
+
+2. Unchecked exception - Unchecked exceptions are those which are the subclasses of java.lang.RuntimeException 
+These are not checked by the compiler because they occur during runtime 
+
+
+
+                                    21/01/2025
+
+
+java.lang.Throwable is the super class of all the exceptions and this class is used to decide that what type of exception has occurred
+
+keywords related to exception handling
+
+there are different keywords used in exception handling
+1. try 
+2. catch 
+3. throw
+4. finally
+5. throws
+
+try - it is a block in which we write the statements which can cause runtime errors during execution.
+Whenever any exception occur in the try block than program flow is abnormally terminated and control comes out of the try block and execute appropriate catch block
+
+catch - it is one of the block in which we write the statements which provide user friendly error message 
+catch block will be executed if exception occur in try block
+At any point of time only one catch block will be executed
+
+
+*once control is transferred from try block it will never come back to try block
+
+NOTE: we cannot have any statement between try and catch block
+
+we cannot have any statement between two catch and catch and finally
+
+catch with a super class exception can handle sub-class exception also
+
+
+NOTE: if we will give single catch with parent class exception than we will not be able to give different different messages
+
+NOTE: we can have multiple catch blocks for the same try block but those multiple catch blocks should be in ascending order of their inheritance hierarchy 
+
+
+           
+                                      22/01/2025
+
+#Null pointer exception:-
+
+#checked exception
+
+#finally block :- this block always contain the block of statements which release/close the resources like files and database.
+
+it is the last executable block in exception handling.
+
+finally block will execute compulsory.
+
+writing finally block is optional.
+
+NOTE : we cannot write try block without catch and finally
+
+we can write try block without catch block if finally is there in case of unchecked exception
+
+we cannot write try block without catch if it contains checked exception
+
+if there is a catch with checked exception than there should be at least one exception rising statements in try
+
+The above rule is not applicable for unchecked exception
+
+
+
+                                23/01/2025
+
+
+
+if we have return statement in try block as well as all the catches than we cannot write any statement after that 
+
+if we have return statement in try or catch than return value will be from try or catch but statements gives the finally block will be executed before returning
+
+if we have return statement in try block as well as all the catches and in finally than always return statement of finally will be executed
+
+if we have return statement in finally block than we cannot write even a single statement after finally 
+
+if exception occurs then control jumps from try block to catch block. if we write System.exit than the code will be terminated hence this is the only case when finally block will not be executed.
+
+numbers of ways to find details about unknown exception:-
+
+1. By using an object of java.lang.Exception 
+
+2. By using printStackTrace() method - it is one of the predefined method which is present in java.lang.Throwable class and it is inherited in java.lang.Exception class. it displays the following details:-
+1. name of the unknown exception 
+2. nature of the message
+3. Line number where the exception has taken place
+
+syntax:-
+
+  void printStackTrace();
+
+
+3. By using getMessage() method - it is a predefine method which display the nature of the exception
+
+syntax :-
+
+public String getMessage(); 
+
+#class cast exception
+
+#throws keyword:- it is a keyword which gives an indication to the specific method to place the common exception method with try and catch. 
+
+
+
+
+                               24/01/2025
+
+The process of propagation of object from called to calling is called ducking 
+
+unchecked exceptions have auto-ducking
+
+for checked exceptions there is no auto-ducking. we need to perform process of ducking for this purpose we will use the keyword throws to perform ducking
+
+The advantage of this process is that rather than performing exception handling on specific place we can perform the process of ducking and we can bring the exception object from called method to calling place. it means we do not need to provide try and catch in different methods. 
+
+
+Rule :- as we go from called place to calling place the hierarchy of exception object should increase but it should not decrease.
+
+
+# throws related with overriding
+
+rule :- in method overriding both the methods from child class and base class contains throws than as we go from base class to child class than child class overriding method can throw the same exception or sub class exception but cannot throw the super class exception 
+
+
+
+                                    
+
+                                   27/01/2025
+
+
+#throw keyword - throw is a keyword used for generating or creating exception object explicitly. 
+
+throw keyword must be used as a part of method body.
+
+
+User define exception - with the help of throw keyword we can generate user define exception also. whenever we want to throw user define exception than the corresponding class must be child of runtime exception.
+
+Note : while making user define exception our class should be child of RuntimeException class.
+we are making our class as a child of RuntimeException because it is pure unchecked exception. here we need not to perform ducking because the process of auto-ducking is available in unchecked exception
+
+
+
+				     28/01/2025
+
+                                    Object Class
+
+it is a class in java.lang package.it is the supermost class for all the classes in java
+
+object class is important because of its methods. there are different methods in object class
+
+1. toString
+
+When we try to append an object to a string or if we try to print an object than toString methods will be called
+
+If toString method is not present in our class than object class toString will be called
+
+Each and every method in object class have default behaviour. if we want to change that behaviour than we need to override object class method in our class.
+
+syntax of toString method in object class:-
+
+public String toString()
+
+
+
+
+
+                                  29/01/2025
+
+#equals() method
+
+in the above example equals method of object class will be called
+
+the object class equals method have default behaviour which compares address
+
+syntax of equals method 
+
+public boolean equals(object o);
+
+# hashCode() method
+
+hashcode is a integer representation of any object
+
+for every object one unique number is generated by JVM this number is called hashcode.
+
+in hashing related data structures while saving the objects JVM uses this hash code 
+
+if we want to add any object to the hash table than first JVM will ask hash code than it will store the objects
+
+syntax :-
+
+public int hashCode();
+
+
+# clone() method :- Suppose we have some objects on which we cannot perform direct action in this case we will use the concept of cloning. the main purpose here is to maintain backup copy
+
+clone method is a protected method in class
+
+syntax:- 
+
+protected Object clone();
+
+to preserve state of object cloning is required
+
+if we want to perform cloning of our object than our class must be child of Cloneable interface
+
+# Cloneable interface - cloneable is a marker interface
+
+if interface does not contain any method than it is called marker interface
+
+cloneable is a licence mechanism which provides permission for cloning
+
+
+
+
+                                 #Wrapper class
+
+
+
+
+
+                                  31/01/2025
+
+
+# Collection framework:-  
+
+Drawbacks of array :- 
+arrays are fixed in size
+
+Student obj[] = new Student[10];
+
+array is a group of homogenous elements	
+
+obj[0] = new Student();
+obj[1] = new Employee();            //gives error
+
+arrays are not based on data structure. means they do not provide predefine methods.
+
+collection is growable in nature
+
+collection can store homogenous as well as heterogenous elements
+
+collection is based on data structure. means it provides predefine methods	
+Array is better performance wise. collection is growable but performance wise it is not good. if we know size in advance than go for array 
+
+each time when requirement of size of collection changes than new object will be created and values of previous object will be copied into the new object and old object will be garbage collected 
+
+collection is growable but internally lot of work is required hence performance will be decreased 
+
+in terms of memory collection is better.
+
+if we want to represent individual objects as a group in a single entity than we should go for collection
+
+Note:- collection will not work on primitives. means we cannot store primitives inside the collection only objects are allowed
+
+#collection framework:- is a group of classes and interfaces
+
+
+                                      #Iterable 
+
+it is an interface which contains iterator() method which allows elements traversal.
+
+#collection interface
+
+most common methods of collection framework are available inside the collection interface.
+
+#collection v/s collections
+
+collections is a utility class present in java.util package it provides methods for sorting and searching
+
+Integer myInteger = "9";
+
+Mehtods of collection interface : -
+
+1. boolean add(object o) - it is used to add single object in a collection.
+
+2. boolean addAll(collection c) - it is used to add all the objects of collection c in our collection.
+
+3. boolean remove(object c) - it is used to remove single object from the collection.
+
+4. Boolean removeAll(collection c) - it is used to remove all the objects of collection c from our collection
+
+5. void clear() - This method is used to remove all the objects present in our collection.
+
+6. Boolean retainAll(collection c) - this methods is used to retain all the objects of collection c and remove all other objects.
+
+7. Boolean contains(object o) - it is used to check whether the object is present in our collection or not.
+
+8. Boolean containsAll(collection c) - it is used to check whether all the objects of collection c are present in our collection or not.
+
+9. Boolean isEmpty() - it is used to check whether the collection is empty or not.
+
+10. int size() - it is used to find size of our collection. Means how many objects are available/present in our collection.
+
+11. object[] toArray() - it is used to convert any collection into an array.
+
+after conversion array will store objects.
+
+collection interface has three child interface :-
+
+1. List
+2. Set
+3. Queue
+
+1. List :- it is an interface, if we want to represent group of object where duplicates are allowed and insertion order must be preserved, then go for List interface.
+
+it is a child interface of collection.
+
+2. Set :- It is a child interface of collection, if you want to represent group of objects where duplicates are not allowed and insertion order is also not preserved.
+
+3. Queue :- It is a child interface of collection. if you want to represent group of objects in first-in-first-out order then go for Queue.
+
+List - The implementation of list are ArrayList, LinkedList, Vector(subclass of Vector is Stack)
+
+#Methods of List interface:-
+
+1. Boolean add(int index, object o) - It is used to add object on particular index.
+
+2. Boolean addAll(int index, collection c) - it is used to add all the objects of collection c on a particular index.
+
+3. Boolean remove(int index) - it is used to remove object from particular index.
+
+4. object get(int index) - it is used to return object from particular index.
+
+5. void set(int index, object o) - it is used to set the object on particular index.
+
+6. int indexOf(object o) - it is used to provide index of first occurrence of a object.
+
+7. lastIndexOf(object o) - it is used to provide last index of a object.
+
+#ArrayList - it is an implementation class of a list.
+
+ArrayList is based on resizeable/growable array. The underlined of ArrayList is resizeable array. in ArrayList duplicates are allowed, insertion order is preserved.
+
+
+
+                                      03/02/2025
+
+
+Constructors inside the arrayList
+
+1. Default constructor
+
+ArrayList l = new ArrayList();
+
+it creates an empty ArrayList but with default initial capacity and that capacity is 10. if 11th object comes than it will create another list and copy all the objects from previous list and re-assign the reference
+
+new capacity = (current capacity*3/2)+1
+
+the drawback of this constructor is if many objects will be added than performance will be decrease
+
+to solve this problem another constructor is used
+
+2.
+ArrayList l = new ArrayList(int initialcapacity);
+
+3. collection c
+
+ArrayList<String> l = new ArrayList<String>(Collection c);
+
+if we have another collection object like linked list and we want a parallel ArrayList of those objects than we pass that linked list as a parameter
+
+
+
+                            04/02/2025
+
+
+NOTE:- every collection class by default implements cloneable and serializable interface
+
+ArrayList also implements RandomAccess interface
+
+ArrayList is best when frequent operation is information retrieval 
+
+ArrayList is worst if insertion and deletion in the middle is frequent operation 
+
+
+
+                             #LinkedList
+
+The underline data structure of LinkedList is doubly linked list
+
+duplicates are allowed in linked list.
+
+insertion order is preserve.
+
+it is best when frequent operation is insertion and deletion in the middle
+
+LinkedList is worst when our frequent operation is information retrieval.
+
+in linkedList there are two constructors :-
+
+1. LinkedList<String> l = new LinkedList<String>();
+
+2. LinkedList<String> l = new LinkedList<String>(Collection c);
+
+the concept of capacity is not in LinkedList because it is dynamic
+
+to provide support for queue and stack LinkedList provide some methods 
+
+1. addFirst("rashmika");
+2. addLast("nakul");
+3. removeFirst();
+4. removeLast();
+5. getFirst();
+6. getLast();
+
+                                06/02/2025
+
+#cursors 
+
+if we want object from collection one by one then we use cursors 
+
+there are three types of cursors
+
+1. Iterator
+2. ListIterator
+3. Enumeration 
+
+1. Iterator - Iterator can be used everywhere 
+
+in Iterator read and remove both operations can be performed
+
+Methods
+
+1. public boolean hasNext()
+2. public Object next()
+3. public void remove()
+
+
+#ListIterator
+
+list can move in both direction. it is a bi-directional cursor.
+
+it is a child interface of Iterator
+
+Methods of ListIterator-
+
+1. public void remove()
+2. public object next()
+3. public Boolean hasNext()
+4. public int nextIndex()
+5. public Boolean hasPrevious()
+6. public int previous()
+7. public void add(object)
+8. public void set(object)
+9. public void previousIndex()
+
+NOTE - ListIterator is powerful but it is applicable for list objects
+
+
+
+#vector
+
+it is similar to arrayList its underline data structure is resizable array. it supports duplicates and insertion order is preserved.
+
+vector is a child of cloneable, Serializeable, RandomAccess.
+
+every method of vector is synchronized. means it is a thread safe collection. while arrayList is not synchronized
+
+here size growth formula is :-
+
+
+new capacity = old capacity*2;
+
+if any one extra element comes than size will be doubled. To resolve this one extra constructor is used
+
+
+there are four constructor in Vector
+
+1. Vector v = new Vector();
+2. Vector v = new Vector(10);
+3. Vector v = new Vector(collection c);
+4. Vector v = new Vector(int capacity, int increment);
+
+         example - Vector v = new Vector(50,5);
+
+
+
+                                      10_02_2025
+                                        #Stack
+
+It is similar to vector. it is a child of vector.
+Duplicates are allowed, insertion order is preserved.
+it is synchronized being a child of Vector
+
+
+                                       #Enumeration
+
+Enumeration works only for legacy class
+
+legacy class means the classes which introduce in initial version of java.
+
+
+                                          #Set
+
+It is a child interface of collection.
+duplicates are not allowed and insertion order is not preserved.
+
+#HashSet : - It is a implementation class of Set.
+
+the underline data structure is HashTable.
+here all the objects will be inserted based on the hash code of the objects. 
+
+HashSet implements Cloneable and Serializable interface.
+
+HashSet is used when frequent operation is searching.
+
+# Constructors inside the HashSet:-
+
+1. Default :- this creates an empty HashSet with default initial capacity(16) and default fill ratio(load factor 0.75). 
+
+the size of new object will be double.
+
+HashSet<String> h = new HashSet<String>();
+
+2. Initial capacity :- 
+
+
+HashSet<String> h = new HashSet<String>(int initialCapaity);
+
+3. fill ratio  
+
+
+HashSet<String> h = new HashSet<String>(int initialCapacity, float fillratio);
+
+4. 
+
+HashSet<String> h = new HashSet<String>(Collection c);
+
+
+
+
+                                  11/02/2025
+
+#LinkedHashSet
+
+if we want List and Set mixed property than go for LinkedHashSet
+
+Underline data structure is Linked LinkedHashSet
+
+in this duplicates are not allowed, and insertion order is preserved.
+
+NOTE:- LinkedHashSet is a child of HashSet.
+
+It is exactly same as HashSet including Constructors and methods.
+
+it is introduced in version 1.4
+
+
+                                #SortedSet
+
+It is an interface, it is a child interface of Set.
+
+If we want to represent group of objects where all objects should be according to some order like RollNo. wise than go for SortedSet.
+
+Here duplicates are not allowed.
+
+if sorted is there than we can find first element, Last element etc.
+
+Methods :- 
+
+1. first() - it gives first element
+
+2. last() - it gives last element
+
+3. headset(Object) - it returns SortedSet whose elements are less than given objects.
+
+example:-
+
+[100 101 104 106 110 115 120]
+
+first - 100
+last - 120
+headset - 106 ---- 100 101 104
+
+4. trailSet(object) - it will give SortedSet whose elements are greater than or equal to given object
+
+
+example : - 
+
+[100 101 104 106 110 115 120]
+
+trailSet(106) ----- 106 110 115 120
+
+5. subSet(obj1, obj2) - it will give the elements whose value is greater than or equal to obj1 and less than obj2.
+
+example : - 
+
+[100 101 104 106 110 115 120]
+
+subset(101,115) - [101 104 106 110]
+
+6. comparator() - it returns comparator object that describes sorting techniques. if default natural sorting is applied than it returns null.
+
+
+
+                          #NavigableSet (interface)
+
+
+It is a interface.
+It is a child of SortedSet.
+It is an extension of SortedSet. which provides navigation methods.
+It provides methods to find lower(), higher(), floor(), etc.
+
+
+#TreeSet()
+
+It is an implementation class of NavigableSet.
+The underline data structure is balanceTree.
+insertion order is not preserved.
+Heterogenous elements not allowed.
+Duplicates not allowed.
+ 

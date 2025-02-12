@@ -1,3 +1,17 @@
+/*
+ * Handling Book Invalid Quantity Exception in Library Software
+
+Mohan, a librarian is creating software to automate his work. As part of this, he needs to handle the exception if the purchased quantity is greater than the available quantity. 
+Create a class named "Book" with the following attributes
+1.	id - String
+2.	bookTitle - String
+3.	authorName - String
+4.	price - float
+5.	quantity - int
+Create an Exception class called InvalidQuantityException and use it in the class called “Book”. Include a method called purchase(int quantity) taking the purchased quantity as a parameter and update the quantity available appropriately. Print suitable exception if the purchased quantity is more than the available quantity. Help Mohan to complete this task. Refer to sample input and output.
+
+ */
+
 import java.util.*;
 
 class Book{

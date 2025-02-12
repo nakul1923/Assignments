@@ -1,3 +1,12 @@
+/*
+ * Replace all occurrences of a character in a string with another character.
+
+Input: Original String: "banana"
+Replace 'a' with 'o'
+Expected Output: "bonono"
+
+ */
+
 import java.util.*;
 
 class Main{

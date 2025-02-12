@@ -1,3 +1,16 @@
+/*
+ * 1. Bank Account Management
+Objective: Create a program to manage bank accounts and handle exceptions for insufficient balance and negative deposit amounts.
+
+Details:
+Create a BankAccount class with fields for accountNumber, accountHolder, and balance.
+Define two custom exceptions:
+InsufficientBalanceException for withdrawal amounts exceeding the balance.
+NegativeDepositException for deposits with negative amounts.
+Include methods for deposit(double amount) and withdraw(double amount) that throw the respective exceptions.
+In the main method, demonstrate various cases like successful transactions, insufficient balance, and invalid deposits.
+ */
+
 import java.util.*;
 
 class BankAccount{

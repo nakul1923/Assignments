@@ -1,3 +1,13 @@
+/*
+ * Payment Gateway Interface
+Objective: Create a program to simulate payment processing using different payment methods.
+1.
+Create an interface PaymentGateway with a method processPayment(double amount).
+Implement the interface in classes CreditCardPayment and UPIPayment.
+Write a driver class to test the functionality by accepting the payment method from the user and processing the payment.
+
+ */
+
 interface PaymentGateway  {
 
     void processPayment(double amount);

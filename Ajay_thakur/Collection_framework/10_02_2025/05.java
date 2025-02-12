@@ -15,6 +15,8 @@ class Employee{
 
     }
 
+    
+
     public String toString(){
 
         return "Employee [id= " + id + ", name= " + name + ", salary=" + salary;
@@ -30,6 +32,7 @@ class Employee{
         if(this == obj){
             return true;
         }
+
         if(obj == null){
 
             return false;

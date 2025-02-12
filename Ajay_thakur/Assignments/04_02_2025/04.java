@@ -1,3 +1,23 @@
+/*
+ * Create a Java program that enables users to dynamically input employee details and store them in an ArrayList.
+
+The program should include a class named "Employee" with private attributes:
+1.	employeeName - String
+2.	employeeId - int
+3.	employeeDepartment - String
+
+The Employee class should have the following methods:
+1.	Write a getter method for the above-mentioned attributes.
+2.	An overridden toString() method that returns the employee's details.
+Input format :
+The first line consists of the size of the ArrayList.
+The next consecutive line contains employeeName, employeeId, employeeDepartment.
+Output format :
+The output should display the list of employees.
+
+ */
+
+
 import java.util.*;
 
 

@@ -1,3 +1,16 @@
+/*
+ * 
+ Hospital Patient Management System
+Scenario: A hospital maintains a list of patients using an ArrayList. Each patient has a patient ID, name, disease, and age. Implement:
+
+Adding new patients
+Displaying all patient records
+Searching for patients by disease
+Removing a discharged patient by ID
+Finding the youngest patient
+
+ */
+
 import java.util.*;
 
 class Hospital{

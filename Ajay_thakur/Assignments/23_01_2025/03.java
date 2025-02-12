@@ -1,3 +1,11 @@
+/*
+ * Remove all duplicate characters from a string and return the modified string using StringBuilder.
+
+input :"programming"
+output: "progamin"
+
+ */
+
 import java.util.*;
 
 class Main{

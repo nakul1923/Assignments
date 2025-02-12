@@ -1,3 +1,12 @@
+/*
+ *  Library Management System
+Objective: Manage library operations using an interface.
+
+Define an interface LibraryOperations with methods issueBook() and returnBook().
+Implement the interface in Student and Teacher classes.
+Demonstrate how students and teachers interact with the library differently.
+ */
+
 interface LibraryOperations{
 
     void issueBook(String title,String dateOfIssue);

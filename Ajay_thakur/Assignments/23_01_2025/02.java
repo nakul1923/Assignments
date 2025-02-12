@@ -1,3 +1,12 @@
+/*
+ * Write a program to find the first non-repeated character in a string using StringBuffer or StringBuilder.
+input :"swiss"
+output :The first non-repeated character is: "w"
+
+Explanation: The program uses StringBuffer to track character counts and returns the first character that occurs only once in the string.
+
+ */
+
 import java.util.*;
 
 class Main{

@@ -1,3 +1,13 @@
+/*
+ * Age Verification for Driving License
+Objective: Validate a person’s age to check their eligibility for a driving license.
+
+Details:
+Define a custom exception UnderageException for people below 18 years.
+Create a method verifyAge(int age) in a DrivingLicense class that throws the exception if the age is less than 18.
+Simulate the verification process in the main method with test cases for eligible and ineligible candidates.
+ */
+
 import java.util.*;
 
 class UnderAgeException extends RuntimeException{

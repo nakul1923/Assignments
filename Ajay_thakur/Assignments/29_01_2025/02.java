@@ -1,3 +1,15 @@
+/*
+ * Ashok wants to determine if a given integer is an Armstrong number. He requires your help in implementing a multi-catch block to handle potential issues during user input or calculation.
+
+1.	Create a method isArmstrongNumber that takes an integer input and returns true if it is an Armstrong number, and false otherwise. Throw an IllegalArgumentException if the input is negative.
+2.	In the main method, input an integer.
+3.	Utilize a multi-catch block to handle the following scenarios:
+4.	If the input is negative, catch IllegalArgumentException and print "Error: Input number must be non-negative"
+5.	If the input is not a valid integer, catch inputMismatchException and print "Error: Input must be a valid integer."
+6.	Finally, print the result.
+
+ */
+
 import java.util.*;
 
 class Main{

@@ -1,3 +1,10 @@
+/*
+ * Write a program to find the shortest word in a sentence using String.
+
+input :"Java is fun and powerful"
+output: Shortest word: "is"
+ */
+
 import java.util.*;
 
 class Main{

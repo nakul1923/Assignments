@@ -1,3 +1,7 @@
+/*
+ * WAP to store integer values in arraylist and display only those values which are even.
+ */
+
 import java.util.ArrayList;
 
 class Main{
