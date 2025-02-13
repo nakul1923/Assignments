@@ -1,3 +1,14 @@
+/*
+ *  Ride-Sharing Platform
+Scenario:
+A ride-sharing platform needs to calculate the fare for different types of rides such as bikes, cars, and shared rides. Each ride type has its own way of calculating fares.
+
+Interface: Ride
+Method: double calculateFare(double distance)
+Scenario Task:
+Create classes BikeRide, CarRide, and SharedRide to calculate fares based on specific distance rates. Write a program to take user input for ride type and distance, and display the fare.
+ */
+
 import java.util.Scanner;
 
 interface Ride{
@@ -81,8 +92,6 @@ class Main{
 
 
         System.out.println(obj3.calculateFare(distancebus));
-
-
         
     }
 }
