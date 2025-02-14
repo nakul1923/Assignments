@@ -1,0 +1,1431 @@
+                                    17/12/2024
+
+			             2D Array 
+
+We can consider 2D array as a matrix where rows and columns will be there
+
+Total number of elements in a 2D array will be row size x Column size
+
+                           
+
+                             #OOPs
+
+                             # Class
+
+Class is a Collection of data members and methods.
+
+Class is a building block.
+
+Object is an instance of a class once a class is define we can create any number of objects to that class.
+
+
+                          # return(Keyword)
+
+By using this we can return value form called method to calling method.
+
+                          #this(keyword)
+
+It is a keyword which represents current object. If local variable and data members are same than this keyword is used to differentiate.
+
+
+                          # Encapsulation
+
+Wrapping of data and methods in a single unit is called encapsulation the data is not accessible from outside world directly only with the help of methods we can access the data.
+
+Example:
+
+class Employee{
+	
+	int id;
+	String name;
+	double salary;
+	String address;
+	long mobile;
+	boolean status;
+}
+
+
+
+
+                             20/12/2024
+
+# Types of data members in a class
+
+In java data members can be of two types
+
+1. Static data members.
+2. Non-static data members.
+
+1) Static data members are those which are class level varibles only one copy of this members will be created and all the objects will share that members.
+
+To access static data members we do not require any object.
+
+# Types of methods in java
+
+1. Static methods.
+2. Non-static methods.
+
+1) Static methods are those methods which are class level methods.
+
+To access static methods we do not need any object.
+
+We can static methods using class name.
+
+NOTE: We cannot use non-static members inside the static methods directly
+
+
+                           # Constructors
+
+Constructor is a special method which is used to initialize data members of a class.
+
+Constructor name is same as class name.
+
+Constructor are called automatically when the objects are created.
+
+# Types of Constructor
+
+There are two types of constructor.
+
+1. Default Constructor.
+2. Parameterized Constructor.
+
+1) Default constructor - If constructor does not have any parameter than it is called default constructor/Non-parameterized constructor.
+
+There are two types of default constructor.
+
+a. System define default constructor 
+b. User define default constructor.
+
+a) System define default constructor - If there is no constructor in the class than system generate one constructor called system define default constructor.
+
+b) User define default constructor - If user is creating constructor without any parameter than it is called user define default constructor.
+
+2) Parameterized constructor - Constructor with parameter is called parameterized constructor.
+
+This constructor receives value while creating the object.
+
+NOTE: constructor may or may not be private.
+
+
+
+                              23/12/2024
+
+# Object parameterized constructor
+
+The constructor which receives object as a parameter is called object parameterized constructor.
+
+This constructor is used to copy values of one object into another object.
+
+
+                             # Polymorphism
+
+Poly is many and morphism is forms defining one thing in many forms is called polymorphism.
+
+There are two types of polymorphism.
+
+1. Compile-time polymorphism - Method overloading
+2. Runtime polymorphism - Method overriding.
+
+                           1) Method overloading 
+
+Writing methods with same name by changing signature is called method overloading.
+
+Signature means numbers of parameters should be different or types of parameter should be different or order of parameter should be different.
+
+
+
+                                26/12/2024
+
+# Command line Argument
+
+Accepting the data dynamically from the command prompt known as command line arguments.
+
+The number of values passed to the java program from the command prompt is known as command line arguments.
+
+All the command line arguments are by default available in the form of array of objects of string class in main method of java.
+
+
+                             # Inheritance
+
+The mechanism of getting the data members and methods of base class in the derived class is inheritance.
+
+Example:-
+
+class A{             //Base class
+
+}
+
+class B extends {           //Child class
+
+}
+
+In java one class can extends only one other class means java will not support multiple inheritance.
+
+class A             class B               
+
+class C extends A,B       (this is not allowed in java)
+
+If we do not want to give the features of base class to the child class then the definition of the base class must be made as 'final'.
+
+If we don't want to give some of the features of base class to the child class than we make that features private.
+
+Types of Inheritance
+
+1) Single inheritance - When a class is derived from single base class then it is called single inheritance.
+
+2) Multilevel inheritance - If a class is derived from another derived class than it is called multilevel inheritance
+
+Example:-
+
+class A{}
+
+class B extends A{}
+
+class C extends B{}
+
+3) Hierarchical inheritance - When more than one classes are derived from single base class than it is called hierarchical inheritance.
+
+Example:-
+
+class A{}
+
+class B extends A{}
+
+class C extends A{}
+
+4) Hybrid inheritance - It is a combination of two or more inheritance
+
+Example:-
+
+class A{}
+
+class B extends A{}
+
+class C extends B{}
+
+class D extends B{}
+
+
+
+                               27/12/2024
+
+                            # super(Keyword)
+
+super is a keyword created by JVM and supplied to each & every java program to differentiate between base class features and derived class features.
+
+Base class features and derived class features is may same than super keyword is used.
+
+#super at variable level - 
+
+If data member of base class and derived class are same then super keyword is used to represent base class member.
+
+# super at method level - 
+
+When base class and child class methods are same then to call base class methods from the child class super keyword is used.
+
+# super at constructor level - 
+
+Whenever we create an object of child class then first the memory space for base class is created. It means the data member of base class will be initialized first then data member of child class will be initialized. It means the constructor of base class will be executed first then the constructor of child class will be executed.
+
+
+There are two types of initialization block 
+
+1. Instance
+2. Static
+
+1) instance - For every object creation instance initialization block will be called
+
+This block will be called before the constructor.
+
+We can have more than one instance initialization block in our program. In that case they will be executed from top to bottom.
+
+2) static initialization block 
+
+Whenever a class is loaded in memory than static initialization block will be executed.
+
+Whenever we call any executable block than class is loaded in memory.
+
+class will be loaded in memory only once.
+
+# Constructor chaining and initialization block
+
+Whenever we are returning back from super class for the first time then all the instance initialization block will be executed.
+
+
+
+                             03/01/2025
+
+                        # Method overriding
+
+The process of redefining the base class methods in the child class is called method overriding.
+
+In method overriding name and signature of base class method and child class methods should be same.
+
+# Dynamic binding/ Late binding/ Runtime binding
+
+Which method will be called if this decision is taken at runtime then it is called runtime binding.
+
+Rules :- 
+
+1) In method overriding super class return type and sub class return type must be same if it is primitive.
+
+If the return type is derived in overriding then the sub class overriding method can have the same class return type or it can have the sub class return type but it cannot have super class name return type.
+
+
+
+                            04/01/2025
+
+
+# Overriding rules related to access specifiers:-
+
+There are 4 access specifiers in java
+
+1) private
+2) default
+3) protected
+4) public 
+
+# Overriding rules related to static keyword:-
+
+In case of static method base class is having static keyword then it is compulsory to give static in child class also.
+
+NOTE:- If we are writing static methods then there will not be any dynamic binding. In that case only base class methods will be called.
+
+In case of attributes there is no any dynamic binding.
+
+
+
+                              06/01/2025
+
+                           # Abstract class
+
+In java programming we have two types of classes
+
+1. concrete
+2. abstract
+
+A concrete class is a class which contain fully defined methods.
+
+Defined methods of a class are also known as implemented or concrete methods.
+
+Once class is concrete we can create objects directly.
+
+2) Abstract
+
+An abstract class is a class which contain some defined methods and some undefined methods.
+
+undefined methods of java are also known as abstract methods.
+
+An abstract method is a method which contain only declaration but not body.
+
+Rules related to abstract class
+
+1. we cannot use final keyword with abstract class
+
+2. we cannot make abstract method as a final.
+
+3. we can have constructor inside the abstract class
+
+4. we cannot use abstract keyword with constructor.
+
+5. we cannot use abstract keyword with attributes.
+
+6. we cannot use abstract keyword with defined methods.
+
+Defining the abstract method in child class is called implementation.
+
+Implementation rules is similar to overriding.
+
+For implementation the name and signature should be same in both base and child.
+
+# Drawbacks of abstract class
+
+1. With the help of abstract class we cannot achieve 100% abstraction because it contains define methods and constructors.
+
+2. With the help of class concept we cannot achieve multiple inheritance.
+
+
+
+                            07/01/2025
+
+                          #final(keyword)
+
+final is a keyword it is applicable for
+
+1. classes
+2. attributes
+3. method
+
+1) final for class :-
+
+final class cannot be inherited 
+
+2) final for attributes :- final attributes does not have default value, we cannot change the value of final attribute.
+
+final attribute can be initialize at the time of declaration or constructor or instance initialization block.
+
+If we initialize final attribute in the constructor then it is compulsory to initialize in each and every constructor.
+
+
+# static final attribute
+
+We can initialize static final at the time of declaration or static initialization block.
+
+3) final for methods
+
+final methods cannot be redefine in the child class means we cannot override final methods.
+
+# Some important questions
+
+1. can we overload abstract method - yes
+
+2. can we overload final method - yes
+
+3. can we override abstract method - yes
+
+4. can we override final method - No
+
+5. can we override static method - No
+
+6. can we overload static method - yes
+
+7. can we use static keyword with class - No
+
+8. can we make abstract method as a final method - No
+
+9. can we use abstract keyword with static keyword - No
+
+10. can we use abstract keyword with private keyword - No
+
+ 
+
+
+                            08/01/2025
+
+
+                            #Interface
+
+Interface is a collection of public static final data members and public abstract methods.
+
+Interface participate in multiple inheritance.
+
+Interface contains abstract methods but after java 1.8 we can add default and static methods in the interface.
+
+After java 1.9 we can add private methods inside the interface.
+
+Data members of interface must be initialized at the time of declaration only.
+
+There is no static block, no constructor, no instance initialization block in interface.
+
+We cannot create object for interface.
+
+
+
+
+
+				10/01/2025
+
+# Default methods in interface
+
+After java 1.8 we can give body of the methods inside the interface with the help of default keyword.
+
+By default access specifier of default method in interface is public.
+
+NOTE:- Access specifier of a method in interface is public.
+
+# Static method in interface.
+
+After java 1.8 we can give static methods inside the interface.
+
+This static methods will have body we cannot use default and static keyword together.
+
+# private methods in interface
+
+After java 9 we can have private methods inside the interface.
+
+We can give body of this private method inside the interface.
+
+These methods can only be used within the interface itself.
+
+
+
+
+                             13/01/2025
+
+                              # Package
+
+The limitations of inheritance is that the features of base class gets inherited in child class but within the same file but if we want to give properties of a class present in one file into a class present in another file, then we use packages.
+
+A package is a collection of classes, interfaces and sub-packages.
+
+If we want to give any class or interface to many number of java programmers then such classes and interfaces must be placed in a package hence classes and interfaces of package will be common for many java programmers.
+
+# Types of packages
+
+There are two types of packages.
+
+1. predefine packages
+2. user define packages.
+
+Predefine packages are those which are developed by son microsystem and supplied as a java software to deal with universal requirements.
+
+Predefine packages are :-
+
+1. java.lang.* - This package is used to achieve language functionality this is one of the package which is imported to each and every program hence it is called default package.
+
+2. java.io.* - This package is used for input/output operations.
+
+3. java.util.* - This package is also known as collection package, All the collection related classes are available inside the package.
+
+# user define packages - 
+
+User define packages are those which are developed by java programmer and supplied as a part of their project to deal with common requirements.
+
+Syntax:-
+
+package packageName;
+
+Here package is a keyword use to create user define package.
+
+Rules for creating package:-
+
+1. The access specifier of the class or interface must be public.
+
+2. The specifier of the constructor of the class which is present in the package must be public.
+
+3. The specifiers of the method present in the class must be public.
+
+
+
+
+                                   16/01/2025
+
+# Number of ways to refer package
+
+1. Using import keyword
+
+2. By using fully qualified name/colonical form
+
+example: - 
+
+public class Demo{
+
+	psvm{
+
+		p1.test obj1 = new p1.Test();
+		p2.Test obj3 = new p2.Test3();
+	}
+
+}
+
+
+ 				# static import
+
+static import is a feature introduce in java version-5, which is used to allow public static members of one package into another package directly.
+
+If there is static method with same name is already present in class then if we use import then the local method executes.
+
+
+                                  # String class
+
+String class is available in java.lang package.
+
+String contains collection of characters
+
+# String creation
+
+There are different ways by which we can create String.
+
+1. We can create string just by assigning a group of characters to a string
+
+	String str = "hello";
+
+it is called String literal.
+
+2. We can create an object to a string class by allocating memory using "new" keyword
+
+	String s = new String("hello");
+
+3. Another way of creating String is by converting the character array into string.
+
+	Char str[] = {'A','B','C'}
+
+	String s = new String(str);
+
+# String class methods 
+
+1. String concat(String) :- this method is used to append one string into another String.
+
+2. int length(); - This methods is used to find length of a string.
+
+3. Char charAt(int) - This method will return character from the particular index.
+
+4. int compareTo(String) - This method will compare two String and return UNICODE different of first mismatch character.
+
+5. int compareToIgnoreCase(String s) - This method will compare two Strings where case will be ignored.
+
+6. Boolean equals(String s) - equals method is used to compare two Strings.
+
+7. Boolean equalsIgnoreCase
+
+8. Boolean startWith(String s) - This method return true if our String will start with a given String.
+
+9. Boolean endsWith(String) - This method test the ending of the String.
+
+10. int indexOf(String s) - This method provide the index of a particular String.
+
+11. int lastIndexOf(String s) - This method will provide index of a last occurrence of a character.
+
+12. String toUpperCase(); - it will convert a String into uppercase.
+
+13. String toLowerCase();
+
+NOTE: - All the Strings will be stored in some specific region, called String pull which has two partitions.
+
+1. constant pull
+2. Non-constant pull
+
+1) Constant pull - All the string literals will be stored or created in constant pull.
+
+2) In constant pull first JVM will check whether there is an existing object with some content then in that case new object will not be created. It will point to the same object.
+
+2) Non-constant pull - If String object is created dynamically then they are stored in Non-constant pull
+
+In Non-constant pull when we create object then every time new object is 
+created.
+
+NOTE:- String is a immutable object in java If we can change the content of the object then it is called mutable.
+
+
+
+
+
+                                   18/01/2025
+
+                                 # StringBuffer 
+
+To overcome the problem of String class StringBuffer class is introduced which represents String in such a way that their data can be modified, it is mutable.
+
+The methods that directly manipulate the data of the objects are not available in the String class but such methods are available in string buffer class.
+
+Methods of StringBuffer - 
+
+1. StringBuffer append(x) - This method insert the 'x' at the end of the String x may be Boolean,int etc.
+
+2. StringBuffer insert(int i, x) - Here 'i' is a index and 'x' can be anything.
+
+3. StringBuffer delete(int i, int j) - Here i and j are indexes.
+
+
+                               # StringBuilder
+
+It is similar to StringBuilder class. Its objects are also mutable.
+
+StringBuffer class is synchronized but StringBuilder class is not synchronized.
+
+
+
+ 
+                                   20/01/2025
+
+
+                             # Exception Handling:-
+
+there are different types of errors
+
+1. syntax error - syntax errors are those which occur due to less knowledge of language.
+
+2. Logical errors - logical errors arrives due to wrong logic or formula.
+
+3. Runtime errors - runtime errors are those which occur if user enter invalid input to the program. because of invalid input we get some unknown message such messages are known as system generated message of error.
+
+languages like java provide mechanism to handle these types of errors.
+
+
+in java programming runtime errors are known as exceptions and exceptions always provide system error messages.
+
+if an exception occur in java than program execution is abnormally terminated with the generation of system error message 
+
+exception handling is the process of converting system error message into user friendly error message
+
+Types of exceptions :-
+
+there are two types of exceptions
+
+1. Pre define exceptions(built in exceptions) - this are those exceptions which are developed by son microsystem and supplied as a part of JDK to deal with universal problems.
+
+NumberFormatException
+ArrayInexOutOfBoundsException
+ArithmeticException
+------
+----
+etc.
+
+2. User define exceptions(custom exception) - these are those exceptions which are developed by java programmers and supplied as a part of their project to deal with their problems
+
+for example:- 
+1. trying to enter salary as a negative number for an employee.
+2. entering a human age as 500.
+
+Types of pre define exceptions 
+there are two types of pre define exceptions
+
+1. Asynchronous exception - this are those exceptions which deals with hardware problems and external problems like 
+1. Power failure
+2. motherboard failure
+3. memory problems 
+etc......
+
+this are not used because son microsystem has not released any API for asynchronous exceptions 
+They have given one base class called java.lang.Error
+
+2. Synchronous exception - Synchronous exception are those which deals with programming runtime errors.
+these are again classified into two types.
+
+1. Checked exception - this are the sub-classes of java.lang.Exception.
+this are called checked because compiler can check these exceptions at compile time only.
+
+example:- 
+1. FileNotFoundException
+2. IOException
+3. ClassNotFoundException
+
+we can say that checked exceptions are those which are predictable and hence there handling mechanism is necessary to be given
+
+2. Unchecked exception - Unchecked exceptions are those which are the subclasses of java.lang.RuntimeException 
+These are not checked by the compiler because they occur during runtime 
+
+
+
+                                    21/01/2025
+
+
+java.lang.Throwable is the super class of all the exceptions and this class is used to decide that what type of exception has occurred
+
+keywords related to exception handling
+
+there are different keywords used in exception handling
+1. try 
+2. catch 
+3. throw
+4. finally
+5. throws
+
+try - it is a block in which we write the statements which can cause runtime errors during execution.
+Whenever any exception occur in the try block than program flow is abnormally terminated and control comes out of the try block and execute appropriate catch block
+
+catch - it is one of the block in which we write the statements which provide user friendly error message 
+catch block will be executed if exception occur in try block
+At any point of time only one catch block will be executed
+
+
+*once control is transferred from try block it will never come back to try block
+
+NOTE: we cannot have any statement between try and catch block
+
+we cannot have any statement between two catch and catch and finally
+
+catch with a super class exception can handle sub-class exception also
+
+
+NOTE: if we will give single catch with parent class exception than we will not be able to give different different messages
+
+NOTE: we can have multiple catch blocks for the same try block but those multiple catch blocks should be in ascending order of their inheritance hierarchy 
+
+
+           
+                                      22/01/2025
+
+#Null pointer exception:-
+
+#checked exception
+
+#finally block :- this block always contain the block of statements which release/close the resources like files and database.
+
+it is the last executable block in exception handling.
+
+finally block will execute compulsory.
+
+writing finally block is optional.
+
+NOTE : we cannot write try block without catch and finally
+
+we can write try block without catch block if finally is there in case of unchecked exception
+
+we cannot write try block without catch if it contains checked exception
+
+if there is a catch with checked exception than there should be at least one exception rising statements in try
+
+The above rule is not applicable for unchecked exception
+
+
+
+                                23/01/2025
+
+
+
+if we have return statement in try block as well as all the catches than we cannot write any statement after that 
+
+if we have return statement in try or catch than return value will be from try or catch but statements gives the finally block will be executed before returning
+
+if we have return statement in try block as well as all the catches and in finally than always return statement of finally will be executed
+
+if we have return statement in finally block than we cannot write even a single statement after finally 
+
+if exception occurs then control jumps from try block to catch block. if we write System.exit than the code will be terminated hence this is the only case when finally block will not be executed.
+
+numbers of ways to find details about unknown exception:-
+
+1. By using an object of java.lang.Exception 
+
+2. By using printStackTrace() method - it is one of the predefined method which is present in java.lang.Throwable class and it is inherited in java.lang.Exception class. it displays the following details:-
+1. name of the unknown exception 
+2. nature of the message
+3. Line number where the exception has taken place
+
+syntax:-
+
+  void printStackTrace();
+
+
+3. By using getMessage() method - it is a predefine method which display the nature of the exception
+
+syntax :-
+
+public String getMessage(); 
+
+#class cast exception
+
+#throws keyword:- it is a keyword which gives an indication to the specific method to place the common exception method with try and catch. 
+
+
+
+
+                               24/01/2025
+
+The process of propagation of object from called to calling is called ducking 
+
+unchecked exceptions have auto-ducking
+
+for checked exceptions there is no auto-ducking. we need to perform process of ducking for this purpose we will use the keyword throws to perform ducking
+
+The advantage of this process is that rather than performing exception handling on specific place we can perform the process of ducking and we can bring the exception object from called method to calling place. it means we do not need to provide try and catch in different methods. 
+
+
+Rule :- as we go from called place to calling place the hierarchy of exception object should increase but it should not decrease.
+
+
+# throws related with overriding
+
+rule :- in method overriding both the methods from child class and base class contains throws than as we go from base class to child class than child class overriding method can throw the same exception or sub class exception but cannot throw the super class exception 
+
+
+
+                                    
+
+                                   27/01/2025
+
+
+#throw keyword - throw is a keyword used for generating or creating exception object explicitly. 
+
+throw keyword must be used as a part of method body.
+
+
+User define exception - with the help of throw keyword we can generate user define exception also. whenever we want to throw user define exception than the corresponding class must be child of runtime exception.
+
+Note : while making user define exception our class should be child of RuntimeException class.
+we are making our class as a child of RuntimeException because it is pure unchecked exception. here we need not to perform ducking because the process of auto-ducking is available in unchecked exception
+
+
+
+				     28/01/2025
+
+                                    Object Class
+
+it is a class in java.lang package.it is the supermost class for all the classes in java
+
+object class is important because of its methods. there are different methods in object class
+
+1. toString
+
+When we try to append an object to a string or if we try to print an object than toString methods will be called
+
+If toString method is not present in our class than object class toString will be called
+
+Each and every method in object class have default behaviour. if we want to change that behaviour than we need to override object class method in our class.
+
+syntax of toString method in object class:-
+
+public String toString()
+
+
+
+
+
+                                  29/01/2025
+
+#equals() method
+
+in the above example equals method of object class will be called
+
+the object class equals method have default behaviour which compares address
+
+syntax of equals method 
+
+public boolean equals(object o);
+
+# hashCode() method
+
+hashcode is a integer representation of any object
+
+for every object one unique number is generated by JVM this number is called hashcode.
+
+in hashing related data structures while saving the objects JVM uses this hash code 
+
+if we want to add any object to the hash table than first JVM will ask hash code than it will store the objects
+
+syntax :-
+
+public int hashCode();
+
+
+# clone() method :- Suppose we have some objects on which we cannot perform direct action in this case we will use the concept of cloning. the main purpose here is to maintain backup copy
+
+clone method is a protected method in class
+
+syntax:- 
+
+protected Object clone();
+
+to preserve state of object cloning is required
+
+if we want to perform cloning of our object than our class must be child of Cloneable interface
+
+# Cloneable interface - cloneable is a marker interface
+
+if interface does not contain any method than it is called marker interface
+
+cloneable is a licence mechanism which provides permission for cloning
+
+
+
+
+                                 #Wrapper class
+
+
+
+
+
+                                         31/01/2025
+  
+
+                                  # Collection framework:- 
+
+ 
+
+Drawbacks of array :- 
+arrays are fixed in size
+
+Student obj[] = new Student[10];
+
+array is a group of homogenous elements	
+
+obj[0] = new Student();
+obj[1] = new Employee();            //gives error
+
+arrays are not based on data structure. means they do not provide predefine methods.
+
+collection is growable in nature
+
+collection can store homogenous as well as heterogenous elements
+
+collection is based on data structure. means it provides predefine methods	
+Array is better performance wise. collection is growable but performance wise it is not good. if we know size in advance than go for array 
+
+each time when requirement of size of collection changes than new object will be created and values of previous object will be copied into the new object and old object will be garbage collected 
+
+collection is growable but internally lot of work is required hence performance will be decreased 
+
+in terms of memory collection is better.
+
+if we want to represent individual objects as a group in a single entity than we should go for collection
+
+Note:- collection will not work on primitives. means we cannot store primitives inside the collection only objects are allowed
+
+#collection framework:- is a group of classes and interfaces
+
+
+                                      #Iterable 
+
+
+it is an interface which contains iterator() method which allows elements traversal.
+
+#collection interface
+
+most common methods of collection framework are available inside the collection interface.
+
+#collection v/s collections
+
+collections is a utility class present in java.util package it provides methods for sorting and searching
+
+Integer myInteger = "9";
+
+Mehtods of collection interface : -
+
+1. boolean add(object o) - it is used to add single object in a collection.
+
+2. boolean addAll(collection c) - it is used to add all the objects of collection c in our collection.
+
+3. boolean remove(object c) - it is used to remove single object from the collection.
+
+4. Boolean removeAll(collection c) - it is used to remove all the objects of collection c from our collection
+
+5. void clear() - This method is used to remove all the objects present in our collection.
+
+6. Boolean retainAll(collection c) - this methods is used to retain all the objects of collection c and remove all other objects.
+
+7. Boolean contains(object o) - it is used to check whether the object is present in our collection or not.
+
+8. Boolean containsAll(collection c) - it is used to check whether all the objects of collection c are present in our collection or not.
+
+9. Boolean isEmpty() - it is used to check whether the collection is empty or not.
+
+10. int size() - it is used to find size of our collection. Means how many objects are available/present in our collection.
+
+11. object[] toArray() - it is used to convert any collection into an array.
+
+after conversion array will store objects.
+
+collection interface has three child interface :-
+
+1. List
+2. Set
+3. Queue
+
+1. List :- it is an interface, if we want to represent group of object where duplicates are allowed and insertion order must be preserved, then go for List interface.
+
+it is a child interface of collection.
+
+2. Set :- It is a child interface of collection, if you want to represent group of objects where duplicates are not allowed and insertion order is also not preserved.
+
+3. Queue :- It is a child interface of collection. if you want to represent group of objects in first-in-first-out order then go for Queue.
+
+List - The implementation of list are ArrayList, LinkedList, Vector(subclass of Vector is Stack)
+
+#Methods of List interface:-
+
+1. Boolean add(int index, object o) - It is used to add object on particular index.
+
+2. Boolean addAll(int index, collection c) - it is used to add all the objects of collection c on a particular index.
+
+3. Boolean remove(int index) - it is used to remove object from particular index.
+
+4. object get(int index) - it is used to return object from particular index.
+
+5. void set(int index, object o) - it is used to set the object on particular index.
+
+6. int indexOf(object o) - it is used to provide index of first occurrence of a object.
+
+7. lastIndexOf(object o) - it is used to provide last index of a object.
+
+#ArrayList - it is an implementation class of a list.
+
+ArrayList is based on resizeable/growable array. The underlined of ArrayList is resizeable array. in ArrayList duplicates are allowed, insertion order is preserved.
+
+
+
+                                      03/02/2025
+
+
+Constructors inside the arrayList
+
+1. Default constructor
+
+ArrayList l = new ArrayList();
+
+it creates an empty ArrayList but with default initial capacity and that capacity is 10. if 11th object comes than it will create another list and copy all the objects from previous list and re-assign the reference
+
+new capacity = (current capacity*3/2)+1
+
+the drawback of this constructor is if many objects will be added than performance will be decrease
+
+to solve this problem another constructor is used
+
+2.
+ArrayList l = new ArrayList(int initialcapacity);
+
+3. collection c
+
+ArrayList<String> l = new ArrayList<String>(Collection c);
+
+if we have another collection object like linked list and we want a parallel ArrayList of those objects than we pass that linked list as a parameter
+
+
+
+                            04/02/2025
+
+
+NOTE:- every collection class by default implements cloneable and serializable interface
+
+ArrayList also implements RandomAccess interface
+
+ArrayList is best when frequent operation is information retrieval 
+
+ArrayList is worst if insertion and deletion in the middle is frequent operation 
+
+
+
+                             #LinkedList
+
+The underline data structure of LinkedList is doubly linked list
+
+duplicates are allowed in linked list.
+
+insertion order is preserve.
+
+it is best when frequent operation is insertion and deletion in the middle
+
+LinkedList is worst when our frequent operation is information retrieval.
+
+in linkedList there are two constructors :-
+
+1. LinkedList<String> l = new LinkedList<String>();
+
+2. LinkedList<String> l = new LinkedList<String>(Collection c);
+
+the concept of capacity is not in LinkedList because it is dynamic
+
+to provide support for queue and stack LinkedList provide some methods 
+
+1. addFirst("rashmika");
+2. addLast("nakul");
+3. removeFirst();
+4. removeLast();
+5. getFirst();
+6. getLast();
+
+
+
+                                    06/02/2025
+
+#cursors 
+
+if we want object from collection one by one then we use cursors 
+
+there are three types of cursors
+
+1. Iterator
+2. ListIterator
+3. Enumeration 
+
+1. Iterator - Iterator can be used everywhere 
+
+in Iterator read and remove both operations can be performed
+
+Methods
+
+1. public boolean hasNext()
+2. public Object next()
+3. public void remove()
+
+
+#ListIterator
+
+list can move in both direction. it is a bi-directional cursor.
+
+it is a child interface of Iterator
+
+Methods of ListIterator-
+
+1. public void remove()
+2. public object next()
+3. public Boolean hasNext()
+4. public int nextIndex()
+5. public Boolean hasPrevious()
+6. public int previous()
+7. public void add(object)
+8. public void set(object)
+9. public void previousIndex()
+
+NOTE - ListIterator is powerful but it is applicable for list objects
+
+
+
+#vector
+
+it is similar to arrayList its underline data structure is resizable array. it supports duplicates and insertion order is preserved.
+
+vector is a child of cloneable, Serializeable, RandomAccess.
+
+every method of vector is synchronized. means it is a thread safe collection. while arrayList is not synchronized
+
+here size growth formula is :-
+
+
+new capacity = old capacity*2;
+
+if any one extra element comes than size will be doubled. To resolve this one extra constructor is used
+
+
+there are four constructor in Vector
+
+1. Vector v = new Vector();
+2. Vector v = new Vector(10);
+3. Vector v = new Vector(collection c);
+4. Vector v = new Vector(int capacity, int increment);
+
+         example - Vector v = new Vector(50,5);
+
+
+
+                                      10_02_2025
+                                        #Stack
+
+It is similar to vector. it is a child of vector.
+Duplicates are allowed, insertion order is preserved.
+it is synchronized being a child of Vector
+
+
+                                       #Enumeration
+
+Enumeration works only for legacy class
+
+legacy class means the classes which introduce in initial version of java.
+
+
+                                          #Set
+
+It is a child interface of collection.
+duplicates are not allowed and insertion order is not preserved.
+
+#HashSet : - It is a implementation class of Set.
+
+the underline data structure is HashTable.
+here all the objects will be inserted based on the hash code of the objects. 
+
+HashSet implements Cloneable and Serializable interface.
+
+HashSet is used when frequent operation is searching.
+
+# Constructors inside the HashSet:-
+
+1. Default :- this creates an empty HashSet with default initial capacity(16) and default fill ratio(load factor 0.75). 
+
+the size of new object will be double.
+
+HashSet<String> h = new HashSet<String>();
+
+2. Initial capacity :- 
+
+
+HashSet<String> h = new HashSet<String>(int initialCapaity);
+
+3. fill ratio  
+
+
+HashSet<String> h = new HashSet<String>(int initialCapacity, float fillratio);
+
+4. 
+
+HashSet<String> h = new HashSet<String>(Collection c);
+
+
+
+
+                                  11/02/2025
+
+                                #LinkedHashSet
+
+if we want List and Set mixed property than go for LinkedHashSet
+
+Underline data structure is Linked LinkedHashSet
+
+in this duplicates are not allowed, and insertion order is preserved.
+
+NOTE:- LinkedHashSet is a child of HashSet.
+
+It is exactly same as HashSet including Constructors and methods.
+
+it is introduced in version 1.4
+
+
+                                #SortedSet
+
+It is an interface, it is a child interface of Set.
+
+If we want to represent group of objects where all objects should be according to some order like RollNo. wise than go for SortedSet.
+
+Here duplicates are not allowed.
+
+if sorted is there than we can find first element, Last element etc.
+
+Methods :- 
+
+1. first() - it gives first element
+
+2. last() - it gives last element
+
+3. headset(Object) - it returns SortedSet whose elements are less than given objects.
+
+example:-
+
+[100 101 104 106 110 115 120]
+
+first - 100
+last - 120
+headset - 106 ---- 100 101 104
+
+4. trailSet(object) - it will give SortedSet whose elements are greater than or equal to given object
+
+
+example : - 
+
+[100 101 104 106 110 115 120]
+
+trailSet(106) ----- 106 110 115 120
+
+5. subSet(obj1, obj2) - it will give the elements whose value is greater than or equal to obj1 and less than obj2.
+
+example : - 
+
+[100 101 104 106 110 115 120]
+
+subset(101,115) - [101 104 106 110]
+
+6. comparator() - it returns comparator object that describes sorting techniques. if default natural sorting is applied than it returns null.
+
+
+
+                          #NavigableSet (interface)
+
+
+It is a interface.
+It is a child of SortedSet.
+It is an extension of SortedSet. which provides navigation methods.
+It provides methods to find lower(), higher(), floor(), etc.
+
+
+                                    #TreeSet()
+
+It is an implementation class of NavigableSet.
+The underline data structure is balanceTree.
+insertion order is not preserved.
+Heterogenous elements not allowed.
+Duplicates not allowed.
+
+
+
+                                    12/02/2025
+# Constructors in TreeSet
+
+1. Default - here all the objects should be inserted according to natural sorting.
+
+TreeSet t = new TreeSet();
+
+2. TreeSet t = new TreeSet(Comparator c); :- this constructor is used for customized sorting given by Comparator object.
+
+3. TreeSet t = new TreeSet(Collection c);
+
+4. TreeSet t = new TreeSet(SortedSet s);
+
+
+                                  # Comparable
+
+It is an interface present in java.lang package it contains only one method that is compareTo()
+
+syntax:- 
+
+public int compareTo(Object o);
+
+NOTE:- In TreeSet while inserting object JVM will call compareTo() method 
+
+
+                                   #Comparator
+
+It is an interface present in java.util package. it contains method compare()
+
+syntax :-
+
+public int compare(Object obj1, Object obj2);
+
+If we want default sorting than go for Comparable, if we want customized sorting than go for Comparator.
+
+In the above example we are not able to add Person in the TreeSet because it is not comparable
+
+
+
+                                   14/02/2025
+
+                                     # Map
+
+It is not a child of collection it contains group of objects with key-value pair.
+
+Every key is unique and values can be duplicate.
+
+Collection methods cannot be applied here.
+
+Methods of Map:-
+
+1. Object put(Object key, Object value)
+
+2. putAll(Map m)
+
+3. Object get(key) -  it returns value of the corresponding key. If key doesn't exist then returns null.
+
+4. remove(key) - it removes value of the corresponding key. If key doesn't exist then returns null.
+
+5. boolean contains(value) - it returns true or false according to the existence of value in the Map.
+
+6. boolean isEmpty()
+
+7. size()
+
+8. Set keySet() - if we want to make a set of all keys present in the map then we use keySet()
+
+9. Collection values() - with the help of this method we can create collection  of all the values of the Map.
+
+10. entrySet() - Map is considered as a group of entries so entry is an interface which is define within the Map.
+
+Entry
+
+interface Map{
+
+	interface Entry{
+
+		Object getKey();
+		Object getValue(object o);
+		Object setValue(Object o);
+}
+}
+
+
+                                 # HashMap
+
+It is an implementation class of Map. Here underline data structure is HashTable.
+
+Insertion order is not preserved.
+
+If frequent operation is search then go for HashMap.
+
+It implements serializable and cloneable interface.
+
+Constructors in HashMap:-
+
+1. default - it creates empty HashMap with initial size 16 and fill ratio 0.75
+
+   HashMap m = new HashMap();
+
+2. HashMap m = new HashMap(int capacity);
+
+3. HashMap m = new HashMap(int capacity, float fillratio);
+
+4. HashMap m = new HashMap(Map m);
+
+
+
+
+
+
+
+
+ 
