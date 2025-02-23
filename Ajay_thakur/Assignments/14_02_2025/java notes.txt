@@ -1,0 +1,9 @@
+                                    15/02/2025
+
+Hashtable
+
+every table in Hashtable is synchronized but HashMap is not synchronized.
+
+Hashtable is thread safe.
+
+NOTE:- inside HashMap we can insert null value in a key

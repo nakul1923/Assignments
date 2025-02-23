@@ -1424,8 +1424,204 @@ Constructors in HashMap:-
 
 
 
+                                    15/02/2025
+
+Hashtable
+
+every table in Hashtable is synchronized but HashMap is not synchronized.
+
+Hashtable is thread safe.
+
+NOTE:- inside HashMap we can insert null value in a key.
+
+
+H/W
+
+1. how to synchronize HashMap?
+
+
+#LinkedHashMap
+
+It is exactly same as HashMap.
+
+It is a child of HashMap.
+
+Here underline data structure is LinkedList + Hashtable.
+
+Here insertion order is preserved.
 
 
 
 
+                                   # SortedMap
+
+
+
+Here insertion will happen according to some sorting order.
+
+Here sorting will be based on keys.
+
+Methods:-
+
+firstKey()
+lastKet()
+headMap(105)
+trailMap()
+subMap()
+
+
+                                    # TreeMap
+
+Here underline data structure is red black tree.
+
+Here insertion order will be based on keys.
+
+Here key cannot be repeat but values can be duplicate
+
+
+
+
+                                 # NavigableMap
+
+
+
+
+
+                                   18/02/2025
+
+                               # Java 8 Features
+
+Java 8 came in march 2014.
+
+After java 8 the concept of functional programming enabled in java with the help of functional programming we can write less code 
+
+
+                             # lambda expression.
+
+The purpose of lambda expression is to enable functional programming.
+
+this concept is taken from lambda calculus.
+
+The first programming language which used lambda expression is LISP.
+
+What is lambda expression?
+
+lambda is the instance of functional interface.
+
+It is an anonymous function. Means a function without name, without return type and without modifier.
+
+How to write lambda expression?
+
+public void m1(){
+
+	SOP("Hello");
+}
+
+
+()->SOP("Hello");
+
+
+
+If body contains only one line than we can remove curly brackets({}) also.
+
+
+public void rashmika(int a, int b){
+
+	SOP(a+b);
+
+}
+
+
+(int a, int b)->SOP(a+b);
+
+Here compiler automatically detect the type, So we can remove the parameters type also.
+
+(a,b)->SOP(a+b);
+
+public int square(int n){
+
+	return n*n;
+}
+
+
+(n)->return n*n;
+
+Without curly brackets if we want to return something than no need to write return keyword also.
+
+(n)->n*n;
+
+If only single parameter is there than we can remove brackets also.
+
+n->n*n;
+
+public int m1(String s){
+
+return s.length();
+
+}
+
+s->s.length();
+
+public String m1(String s){
+
+	return s.toUpperCase();
+
+}
+
+s->s.toUpperCase();
+
+
+
+
+                            # Functional interface
+
+If your interface contains only one method than it is called functional interface.
+
+If interface contains single abstract method than it is called functional interface.
+
+If we want to invoke lambda expression then compulsory functional interface required.
+
+Examples:-
+
+Runnable---- run()
+Comparable------ compareTo()
+Comparator------ compare()
+Callable------ call()
+
+interface I1{
+
+void hello();           // It is functional interface
+
+}
+
+
+interface I1{
+
+void hello();           // It is not a functional interface
+void bye();
+
+}
+
+
+can we have default methods inside the functional interface?
+
+we can have any number of default methods inside the functional interface
+
+can we have static methods inside the functional interface?
+
+we can have any number of static methods inside the functional interface.
+
+@FunctionalInterface - this annotation is used to specify that the given interface is a functional interface.
+
+It is optional annotation.
+
+can we have private methods inside the functional interface.
  
+we can have any number of private methods inside the functional interface.
+
+
+
+               # lambda expression with functional interface
+
+
+
