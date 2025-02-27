@@ -1573,7 +1573,7 @@ s->s.toUpperCase();
 
 
 
-                            # Functional interface
+                            # Functional interface           (we Will prepare these following topics when we will prepare for interview)
 
 If your interface contains only one method than it is called functional interface.
 
@@ -1624,4 +1624,159 @@ we can have any number of private methods inside the functional interface.
                # lambda expression with functional interface
 
 
+
+
+
+
+
+                                   24/02/2025
+
+
+
+                                   # Function
+
+It is a predefine functional interface which provide some result 
+it contains one method :-
+
+public R apply(T t):-
+
+
+                                  #Consumer
+
+consumer is a predefine functional interface. it will not return anything means it is going to consume the value
+
+interface Consumer<T>{
+
+public void accept(T t);
+
+}
+
+
+                                  # Supplier
+
+It is an predefine functional interface which is used to supply some result it will not take any input
+
+interface Supplier<R>{
+
+public R get();
+
+}
+
+
+
+                                # BiPredicate
+
+BiPredicate will receive two parameters and return boolean 
+
+
+                                 #BiFunction
+
+It will take two inputs and return one output.
+
+
+                                 #BiConsumer
+
+it will accept two input
+
+
+
+                                 #Stream API
+
+the Stream API in java is used for processing collections of data in a functional way.
+
+it uses functional programming techniques.
+
+It allow performing operations like filtering, maping, sorting etc.
+
+A Stream is a sequence of elements from a data source that supports various operations to process the data in a pipeline.
+
+unlike list or set, a stream does not store elements.
+
+it uses lambda expression and support functional programming.
+
+general points
+
+a java Stream provides variety of methods that can be classified into two main categories.
+
+1. intermediate operations.
+2. Terminal operations.
+
+1. Intermediate operations return a new Stream and are executed only when terminal operation is called.
+
+2. Terminal operation triggers the execution of Stream pipeline and return a known Stream result.
+
+
+l.stream() - stream is method which is used to provide object of stream 
+
+Stream s = l.stream() 
+
+here Stream is interface, l is a collection, stream() is a method and s is reference.
+
+
+filter() - the filter method is used to select elements as per the predicate passed as an argument.
+
+collect(Collerctors.toList());  -  It used to collect the final processed result into the another list. 
+
+collect() - the collect method is used to return the result of the intermediate operations performed on the stream
+
+
+map() - map method is used to return a stream consisting of the results of the given function in the elements of the stream. map method takes function as a parameter.
+
+                                          
+ 
+ 
+                                        26/02/2025
+
+                                         #count()
+
+It is a terminal operation which returns the number of elements in the stream. The return type of count method is long.
+
+
+# forEach()
+
+it is terminal method which is used to perform an action for each element.
+
+
+#anyMatch() - 
+
+it is terminal operation which is used to check if any element matches a condition.
+
+
+# allMatch()-
+
+it is terminal operation which is used to check if all element matches a condition.
+
+#noneMatch() - 
+
+it is terminal operation which is used to check if none of the element matches a condition.
+
+
+                                    #Optional class
+
+The optional class in java introduced in java 8.
+
+It is a container object that may or may not contain a non-null value.
+
+it helps to avoid NullPointerException and makes the code more readable.
+
+
+
+# Things to do in future :-
+
+all remaining methods of String.
+
+method reference.
+
+constructor reference.
+
+date time API.
+
+more types of predicate consumer, supplier etc.
+
+Optional class in detail.
+
+
+
+
+                                       # Multi threading
 

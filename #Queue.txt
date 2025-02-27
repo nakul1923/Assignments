@@ -1,0 +1,46 @@
+                                  #Queue
+
+
+before processing if we want to store group of objects then go for queue.
+
+
+methods of queue interface
+
+1. Boolean offer(Object o) - it is used to add an object into the queue.
+
+2. Object peek() - it is used to return head element of queue. if queue is empty then this method return null.
+
+3. object element() - this method provide head element of queue. if queue is empty then this method gives exception(NoSuchElementException).
+
+4. Object poll() - this method is used to remove and return head element of queue. if queue is empty then this method returns null.
+
+5. Object remove() - this method is used to remove and return head element of the queue. if queue is empty then this method give exception(NoSuchElementException).
+
+
+
+                                    # PriorityQueue
+
+It is implementation class of queue here data will be inserted based on some priority.
+
+Constructors :-
+
+1. default - it will create an empty PriorityQueue with default initial capacity 11 
+
+  PriorityQueue p = new PriorityQueue(); -
+
+2. capacity 
+
+ PriorityQueue p = new PriorityQueue(int capacity); -
+
+3.  PriorityQueue p = new PriorityQueue(int capacity, comparator); -
+
+4. PriorityQueue p = new PriorityQueue(Collection c); -
+
+
+                                     # Dequeue
+
+#ArrayDeque
+
+it is a implementation class of deque.
+
+it allow adding and removing elements from both the ends.
