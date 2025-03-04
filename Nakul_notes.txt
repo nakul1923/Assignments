@@ -1777,6 +1777,151 @@ Optional class in detail.
 
 
 
+                                          28/02/2025
 
                                        # Multi threading
 
+Java programming developing multithreading very easy because maximum work is done by API.
+
+Java provides inbuilt support for multithreading.
+
+/*
+ * program to understand Multithreading 
+ */
+
+class Mythread extends Thread{
+
+    public void run(){
+
+        for(int i=0; i<60; i++){
+
+            System.out.println("Mythread");
+        }
+    }
+}
+
+class Main{
+
+    public static void main(String[] args) {
+        
+        Mythread t = new Mythread();
+        t.start();
+
+        for(int i=0; i<60; i++){
+
+            System.out.println("Main");
+        }
+    }
+}
+
+In the above example main thread starting child thread when we write t.start() it will first check start method in our class, if not found it will check in thread class.
+
+Thread class start() method internally calls our run() method.
+
+start(){
+
+   1. register this thread with thread schedular.
+   2. perform all activities.
+   3. call run() method of our class.
+}
+
+If we are not overriding run() method in our class then thread class run() method will be called which has empty implementation. and hence will not get any result.
+
+If we create start() method in our class then there will not be any multithreading. 
+
+
+Another way of creating thread.
+
+by using Runnable interface we can achieve multithreading in java.
+
+Runnable is a interface present in java.lang package it contains only one method called run method.
+
+problem with previous technique of extending thread class is we cannot inherit the features of another class by inheriting thread class.
+
+How to stop thread execution.
+
+There are different methods which are used to stop thread execution.
+
+1. yield()
+2. join()
+3. sleep()
+
+1. yield() - it is static method in thread class.
+
+suppose there are many threads existing and the first thread is taking lot of time, but second thread wants to take less time to complete.
+
+Whenever yield() method is execute then the current thread execution will be paused to give the chance to another thread.
+
+2. join() - in case of interdependency join() method is used. if a threads wants to wait until completion of some other thread then we use join().
+
+Suppose we have two threads if one thread wants to wait until completion of another thread then the thread has to write join() method.
+
+3. sleep() - sleep method is used to pause a thread for a particular time. Means if a thread does not want to go for any operation then we apply sleep() method.
+
+
+Topics to cover in multithreading in future.
+1. Deadlock 
+2. thread Synchronization
+3. Inter thread communication
+    etc...
+
+
+                                        03/03/2025
+
+                                     # File Handling
+
+to store data in secondary memory we use files.
+
+File - file is a container which is used to store data.
+
+#PrintWriter
+
+It is the most powerful and enhance writer to write data in a file.
+
+
+# FileReader
+to read a data from a file FileReader is used.
+
+Constructors - 
+
+FileReader fr = new FileReader(String fname);
+
+FileReader fr = new FileReader(File f);
+
+
+import java.io.FileReader;
+import java.io.IOException;
+ 
+ 
+  class Main{
+  
+      public static void main(String[] args) throws IOException {
+          
+         FileReader fr = new FileReader("info.txt");
+
+         int i = fr.read();
+
+         while(i!= -1){
+
+            System.out.println((char)i);
+            i = fr.read();
+         }
+         fr.close();
+ 
+          System.out.println("done");
+      }
+  }
+
+
+
+In the above example read() is predefine method of FileReader. it reads character by character and return their UNICODE. 
+
+
+# BufferReader
+
+To read data line by line BufferedReader is used BufferdReader cannot communicate directly with file, it require another Reader.
+
+# Things to cover in future
+1. Serialization
+
+2. Deserialization
