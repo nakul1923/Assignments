@@ -1925,3 +1925,508 @@ To read data line by line BufferedReader is used BufferdReader cannot communicat
 1. Serialization
 
 2. Deserialization
+
+3. extrelization.
+
+4. transient(keyword)
+
+etc...
+
+
+
+                              # Database Management System(DBMS)
+
+Data is a facts that can be recorded. for example text, numbers, images, etc.
+
+# Database
+
+Collection of related data that represents some real world entities is called database. example university database may contain records of student, teachers, courses, etc.
+
+# DBMS 
+
+Database management system is a software for storing and retrieving users data while considering the appropriate security measures.
+
+It consist of group of programs which manipulate the database.
+
+DBMS allow user to create their own database as per their own requirement.
+
+h/w 
+
+d/b file system and DBMS
+
+
+                                      06/03/2025
+
+                                        # SQL
+
+SQL is language which is used to communicate with the database server.
+
+# MySQL 
+
+MySQL is an opensource relational database management system that uses structured query language to manage data.
+
+# DDL(data definition language)
+
+DDL commands deals with the structure of objects.
+
+they interact with database directly.
+
+DDL commands enforce an implicit commit before and after the statement.
+
+We cannot undo the changes performed by DDL commands.
+
+Example :- create, alter, truncate etc..
+
+# DML(Data manipulation language)
+
+DML commands deals with the data only.
+
+They are used to insert, update, delete and modify data in tables.
+
+DML commands interact with the buffer first and then with the database on commit.
+
+We can perform the rollback or undo the changes.
+
+If we perform rollback then buffer data will be removed from the database.
+
+# DQL(data query language)
+
+This are used to retrieve data from a database.
+
+Example - select.
+
+TCL (Transaction control language)
+
+this commands deals with transactions only.
+
+Set of DML operations with commit or rollback is a transaction.
+
+Every transaction start with DML operation and commit, rollback is a ending point to this transactions.
+
+These commit or rollback may be implicit or explicit
+
+example - commit, rollback, save point.
+
+
+# DCL(Data control language)
+
+DCL commands used to control access to data. it means the deal with privileges or permissions.
+
+They interact with the database directly.
+
+example - grant, revoke, setroll etc...
+
+
+Commands :-
+
+show databases - it is used to show all the databases.
+
+create database - it is used to create database.
+
+use - it is used to select database.
+
+drop database - it is used to delete database.
+
+show tables
+
+we can create field name same as table name.
+
+create table t(t int);
+
+create table another as select * from student;
+
+create table another1 as select * from student where 1=2; 
+
+in the following command if we write 1=1 then the data of previous table copied to new table. if we write 1=2 then it only copy the structure of table.
+
+rename table another to employee; - it is used to change the name of objects.
+
+drop table t; - it is used to delete table.
+
+
+# alter
+
+
+
+alter table student add(salary int); - it is used to add new columns in table.
+
+alter table student drop column salary; - it is used to delete a column from a table.
+
+alter table student modify name varchar(40); - it is used to modify the properties of a field.		
+
+Truncate command is used to remove all the data from the table.
+
+insert into student(id, name) values(101, "katappa"); - it is used to insert values in table and if we want to give value of any specific column then we can use it.
+
+insert into student values(102, "xyz"); - it is used to insert values in table and if we want to give value of any specific column then we cannot use it.
+
+
+insert into student values("xyz",901); 
+
+ERROR 1336(HY000): incorrect integer values
+
+insert into student(name, id) values("xyz", 901);
+
+
+NOTE: - If we insert data in same order where table created then no need to provide column list.
+
+If we are providing all the values but order not follow then we need to provide column list.
+
+If we are not providing all values then also column list required.
+
+# Inserting data in one table from another table:- 
+
+insert into student(name,id) values("bahubali", 501);
+
+insert into student1 select * from student;
+
+# update command - 
+
+update command is used to modify existing data we can change data of one column or multiple columns
+
+update student1 set name='rashmika'; - it is used to update the data of column but in these all rows gets affected. meaning the name of all the entries changes to rashmika.
+
+update student set name='rashmika' where id=102; - in this command it changes the name of id = 102;
+
+# delete - 
+
+It is used to remove data from the tables.
+
+we can delete single records, multiple records or all the records.
+
+delete from student where name='bahubali'; - it is used to delete specific entry.
+
+delete from student where name='xyz';
+
+
+delete - 1) it is a DML command.
+
+2) Here rollback is possible.
+
+3) implicit commit not available.
+
+4) in case of delete single row can be deleted.
+
+5) In delete command we can use 'where'
+
+
+truncate - 1) It is a DDL command.
+
+2) Here rollback is not possible.
+
+3) Implicit commit available
+
+4) single row cannot be truncated.
+
+5) In truncate command we cannot use 'where'
+
+# SQL clauses:
+
+where:- it will eliminate the non-matching records
+
+select * from student where name='katappa';
+
+it has highest priority. 
+
+it will be processed before all other optional clauses.
+
+it should be placed at first position.
+
+Group functions are not allowed in where clause. because group function can be processed after forming the groups.
+
+where can be used in select, update, delete.
+
+
+
+
+
+                                  10/03/2025 
+
+                              Aggregate Function
+
+Aggregate functions act on column data only.
+
+there are different aggregate functions available.
+
+Aggregate function perform calculations on set of values and return a single value.
+
+# sum :-
+
+It is used to add all values in a column and display result.
+
+mysql> select * from emp1;
++------+----------+--------+
+| id   | name     | salary |
++------+----------+--------+
+|  101 | rashmika |   9000 |
+|  102 | deepika  |  18000 |
+|  103 | mahesh   |   1000 |
++------+----------+--------+
+3 rows in set (0.00 sec)
+
+mysql> select sum(salary) from emp1;
++-------------+
+| sum(salary) |
++-------------+
+|       28000 |
++-------------+
+1 row in set (0.00 sec)
+
+we can alias of column
+
+mysql> select sum(salary) as Total from emp1;
++-------+
+| Total |
++-------+
+| 28000 |
++-------+
+1 row in set (0.00 sec)
+
+
+# Average :-
+
+
+mysql> select avg(salary) as Total from emp1;
++-----------+
+| Total     |
++-----------+
+| 9333.3333 |
++-----------+
+1 row in set (0.00 sec)
+
+
+
+# max - 
+
+find highest values from a given column.
+
+mysql> select max(salary) as LARGEST from emp1;
++---------+
+| LARGEST |
++---------+
+|   18000 |
++---------+
+
+
+# min :- 
+
+mysql> select min(salary) as LOWEST from emp1;
++--------+
+| LOWEST |
++--------+
+|   1000 |
++--------+
+1 row in set (0.00 sec)
+
+
+# count :- 
+
+It is used to count not null values from a given column.
+
+mysql> select * from emp1;
++------+----------+--------+
+| id   | name     | salary |
++------+----------+--------+
+|  101 | rashmika |   9000 |
+|  102 | deepika  |  18000 |
+|  103 | mahesh   |   1000 |
+|  104 | bahubali |   NULL |
++------+----------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select count(salary) as count from emp1;
++-------+
+| count |
++-------+
+|     3 |
++-------+
+
+mysql> select count(*) as count from emp1;
++-------+
+| count |
++-------+
+|     4 |
++-------+
+
+
+# numeric functions
+
+1. absolute
+
+mysql> select abs(-9) from dual;
++---------+
+| abs(-9) |
++---------+
+|       9 |
++---------+
+1 row in set (0.00 sec)
+
+
+2. power(5,2) 
+
+mysql> select power(5,2) from dual;
++------------+
+| power(5,2) |
++------------+
+|         25 |
++------------+
+
+
+
+                                # groupby :-
+
+It is used to form groups. it will be processed after where clause. If where clause is not there then we can place groupby directly.
+
+
+NOTE:- All the optional clauses will be processed in the buffer not in the database 
+
+
+mysql> create table emp5(id int, name varchar(20),department varchar(30), jobrole varchar(30),salary int);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc emp5;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| id         | int         | YES  |     | NULL    |       |
+| name       | varchar(20) | YES  |     | NULL    |       |
+| department | varchar(30) | YES  |     | NULL    |       |
+| jobrole    | varchar(30) | YES  |     | NULL    |       |
+| salary     | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+
+mysql> select * from emp5;
++------+----------+------------+-----------+--------+
+| id   | name     | department | jobrole   | salary |
++------+----------+------------+-----------+--------+
+|  101 | rashmika | HR         | manager   |   9000 |
+|  102 | deepika  | IT         | developer |   8000 |
+|  103 | bahubali | HR         | recruiter |   5000 |
+|  104 | katappa  | IT         | tester    |   2000 |
+|  105 | vivek    | finance    | manager   |   9000 |
++------+----------+------------+-----------+--------+
+5 rows in set (0.00 sec)
+
+
+counting the number of employees in each department
+
+
+mysql> select department,count(*) as count from emp5 group by department;
++------------+-------+
+| department | count |
++------------+-------+
+| HR         |     2 |
+| IT         |     2 |
+| finance    |     1 |
++------------+-------+
+3 rows in set (0.00 sec)
+
+
+We want to find total salary according to department wise.
+
+mysql> select department,sum(salary) as total from emp5 group by department;
++------------+-------+
+| department | total |
++------------+-------+
+| HR         | 14000 |
+| IT         | 10000 |
+| finance    |  9000 |
++------------+-------+
+3 rows in set (0.00 sec)
+
+
+# having clause:-
+
+It is used to eliminate the groups.
+
+It is similar as where clause but where clause eliminates records but having eliminates groups.
+
+where clause filter records before grouping, but having clause filter records after grouping.
+
+
+mysql> select department,sum(salary) as total from emp5 group by department having sum(salary)>9500;
++------------+-------+
+| department | total |
++------------+-------+
+| HR         | 14000 |
+| IT         | 10000 |
++------------+-------+
+2 rows in set (0.00 sec)
+
+NOTE:- first data will be copied from database to buffer 
+
+now group by applied means groups are formed.
+
+now aggregate function is applied on each group.
+
+after this with the help of having clause non-matching groups are eliminated.
+
+
+                             # order by
+
+It is used to sort results either in ascending or descending order.
+
+mysql> select * from emp5 order by salary;
++------+----------+------------+-----------+--------+
+| id   | name     | department | jobrole   | salary |
++------+----------+------------+-----------+--------+
+|  104 | katappa  | IT         | tester    |   2000 |
+|  103 | bahubali | HR         | recruiter |   5000 |
+|  102 | deepika  | IT         | developer |   8000 |
+|  101 | rashmika | HR         | manager   |   9000 |
+|  105 | vivek    | finance    | manager   |   9000 |
++------+----------+------------+-----------+--------+
+5 rows in set (0.00 sec)
+
+In descending order
+
+mysql> select * from emp5 order by salary desc;
++------+----------+------------+-----------+--------+
+| id   | name     | department | jobrole   | salary |
++------+----------+------------+-----------+--------+
+|  101 | rashmika | HR         | manager   |   9000 |
+|  105 | vivek    | finance    | manager   |   9000 |
+|  102 | deepika  | IT         | developer |   8000 |
+|  103 | bahubali | HR         | recruiter |   5000 |
+|  104 | katappa  | IT         | tester    |   2000 |
++------+----------+------------+-----------+--------+
+5 rows in set (0.00 sec)
+
+
+mysql> select * from emp5 order by id desc, salary desc;
++------+----------+------------+-----------+--------+
+| id   | name     | department | jobrole   | salary |
++------+----------+------------+-----------+--------+
+|  105 | vivek    | finance    | manager   |   9000 |
+|  104 | katappa  | IT         | tester    |   2000 |
+|  103 | bahubali | HR         | recruiter |   5000 |
+|  102 | deepika  | IT         | developer |   8000 |
+|  101 | rashmika | HR         | manager   |   9000 |
++------+----------+------------+-----------+--------+
+5 rows in set (0.00 sec)
+
+in this first it will sort on the basis of id if two employee id got same then it sort on basis of salary.
+
+
+NOTE:- order by clause has least priority 
+
+mysql> select department,sum(salary) as total from emp5 group by department having sum(salary)>9500 order by total;
++------------+-------+
+| department | total |
++------------+-------+
+| IT         | 10000 |
+| HR         | 14000 |
++------------+-------+
+2 rows in set (0.00 sec)
+
+
+mysql> select department,sum(salary) as total from emp5 where salary>6000 group by department;
++------------+-------+
+| department | total |
++------------+-------+
+| HR         |  9000 |
+| IT         |  8000 |
+| finance    |  9000 |
++------------+-------+
+3 rows in set (0.00 sec)
