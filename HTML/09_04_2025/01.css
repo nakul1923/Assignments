@@ -1,0 +1,14 @@
+input[type ="text"]:focus{
+
+ background-color: red;
+}
+
+input[type="password"]:focus{
+
+    background-color: green;
+}
+
+input[type="submit"]:hover{
+
+    background-color: blue;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= student.id ? 'Edit Student' : 'Add New Student' %></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <h2 class="mb-0"><%= student.id ? 'Edit Student' : 'Add New Student' %></h2>
+    </div>
+    <div class="card-body">
+
+      <form action="<%= action %>" method="<%= method %>">
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-control" name="name" value="<%= student.name || '' %>" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" value="<%= student.email || '' %>" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Course</label>
+          <input type="text" class="form-control" name="course" value="<%= student.course || '' %>" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Age</label>
+          <input type="number" class="form-control" name="age" value="<%= student.age || '' %>" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Gender</label>
+          <select class="form-select" name="gender" required>
+            <option value="">Select</option>
+            <option value="Male" <%= student.gender === 'Male' ? 'selected' : '' %>>Male</option>
+            <option value="Female" <%= student.gender === 'Female' ? 'selected' : '' %>>Female</option>
+            <option value="Other" <%= student.gender === 'Other' ? 'selected' : '' %>>Other</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Date of Birth</label>
+          <input type="date" class="form-control" name="dob" value="<%= student.dob %>" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Address</label>
+          <textarea class="form-control" name="address"><%= student.address || '' %></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Phone</label>
+          <input type="text" class="form-control" name="phone" value="<%= student.phone || '' %>">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Admission Date</label>
+          <input type="date" class="form-control" name="admission_date" value="<%= student.admission_date %>" required>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Status</label>
+          <select class="form-select" name="status" required>
+            <option value="">Select</option>
+            <option value="Active" <%= student.status === 'Active' ? 'selected' : '' %>>Active</option>
+            <option value="Inactive" <%= student.status === 'Inactive' ? 'selected' : '' %>>Inactive</option>
+            <option value="Passed" <%= student.status === 'Passed' ? 'selected' : '' %>>Passed</option>
+            <option value="Dropped" <%= student.status === 'Dropped' ? 'selected' : '' %>>Dropped</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-success"><%= student.id ? 'Update' : 'Add' %> Student</button>
+        <a href="/" class="btn btn-secondary ms-2">Back</a>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

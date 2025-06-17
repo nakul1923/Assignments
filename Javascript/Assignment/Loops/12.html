@@ -1,0 +1,27 @@
+<!-- WAP to read a number from user and display multiplication of all the digits using all loops. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var number = prompt("Enter a number:");
+        var product = 1;
+
+        while (number > 0) {
+            var digit = number % 10;
+            product *= digit;
+            number = Math.floor(number / 10);
+        }
+
+        console.log("Multiplication of all digits: " + product);
+
+    </script>
+</body>
+
+</html>

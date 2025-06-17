@@ -1,0 +1,64 @@
+                                            MySQL 
+
+
+                                         12/04/2025
+
+
+
+we can also change datatype of a column(we can change int to varchar but cannot change varchar to int )
+
+
+1 add new column in a table
+
+2 modify table
+
+3 change datatype of a column.
+
+
+* interface question
+
+INSERT INTO table_name VALUES(-,-,-,-) (we should never user this syntax)
+
+INSERT INTO table_name(column1, column2) VALUES(value1,value2) (we should use this syntax)
+
+we can not update a primary key if it is auto_increment.
+
+to update a data in a column
+
+UPDATE TABLE table_name SET name = "rohit";     (all names changes to rohit)
+
+always update records by Id ; (means if you want to update a record then you should use Id with WHERE CLAUSE).
+
+we can also update multiple columns with
+
+update table set name = "value", salary = 7000;
+
+we should always update on primary key.
+
+we should not update without where clause.
+
+if we want to update a record then we must check it with SELECT query.
+
+delete query deletes a tuple not a single column.
+
+truncate is used to delete data of whole table excluding structure of table and if execute TRUNCATE then we insert data again in it then it start from scratch like id start from 1(we should not use truncate).
+
+
+select * from emp;  (isme database par load jyada padta he)
+
+select id,name from emp; (we should use this if we want to see specific columns)
+
+select id as emp_id, name as emp_name from emp; (it shows the emp_id and emp_name in selected table, it is called alias).
+
+select x.id, x.name from employee_master as x
+
+select x.id emp_id, x.name emp_name from employee;
+
+
+AND (-- OR --) (bracket execute first)
+
+SELECT * FROM emp WHERE salary > 20000 AND dob <='01/01/2002'
+
+
+SELECT * FROM emp WHERE salary BETWEEN 200 AND 800;
+			       BETWEEN 01/01/2025 AND 30/05/2025

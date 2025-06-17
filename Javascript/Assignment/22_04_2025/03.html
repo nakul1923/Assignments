@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        size = prompt("Enter array size");
+        arr = [];
+        mul = 1;
+        for(i=0;i<size;i++){
+
+            arr[i] = Number(prompt("Enter element for index " + i));
+
+        }
+
+        
+        for(i=0;i<size;i++){
+
+            mul = mul * arr[i]; 
+        }
+
+        console.log("multiplication all of elements are : " + mul);
+    </script>
+</body>
+</html>

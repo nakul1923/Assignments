@@ -1,0 +1,20 @@
+#outer{
+
+    height: 500px;
+    width: 800px;
+    margin: 2px auto;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-content: flex-start;
+
+    flex-wrap: wrap;
+}
+
+#inner{
+
+    height: 80px;
+    width: 100px;
+    
+}

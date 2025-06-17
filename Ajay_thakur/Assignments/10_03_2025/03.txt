@@ -1,0 +1,109 @@
+Create a table orders with the following columns:
+order_id (INT, PRIMARY KEY, AUTO_INCREMENT)
+customer_name (VARCHAR(50))
+order_date (DATE)
+total_amount (DECIMAL(10,2))
+Insert at least 10 orders into the orders table with different dates.
+Write queries to:
+Find all orders placed between '2024-01-01' and '2024-06-30'.
+Find orders where the total amount is between 500 and 2000.
+Find orders placed in March 2024 (Hint: Use BETWEEN with date values).
+
+
+
+
+
+mysql> create table orders1(order_id int primary key auto_increment, customer_name varchar(20),order_date date,total_amount decim
+al(10,2));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc orders1;
++---------------+---------------+------+-----+---------+----------------+
+| Field         | Type          | Null | Key | Default | Extra          |
++---------------+---------------+------+-----+---------+----------------+
+| order_id      | int           | NO   | PRI | NULL    | auto_increment |
+| customer_name | varchar(20)   | YES  |     | NULL    |                |
+| order_date    | date          | YES  |     | NULL    |                |
+| total_amount  | decimal(10,2) | YES  |     | NULL    |                |
++---------------+---------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO orders1 (customer_name, order_date, total_amount) VALUES('nakul', '2024-01-15', 1500.00),('rohit', '2024-02-20', 700.00),('shrey', '2024-03-05', 1200.50),('priyal', '2024-03-25', 950.00),('shreya', '2024-04-10', 800.75),('rajat', '2024-04-15', 1050.00),('tanishka', '2024-05-05', 650.00),('pranjal', '2024-05-30', 1300.25),('radhe', '2024-06-12', 1800.00),('priya', '2024-06-25', 400.00);
+Query OK, 10 rows affected (0.02 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select * from orders1;
++----------+---------------+------------+--------------+
+| order_id | customer_name | order_date | total_amount |
++----------+---------------+------------+--------------+
+|        1 | nakul         | 2024-01-15 |      1500.00 |
+|        2 | rohit         | 2024-02-20 |       700.00 |
+|        3 | shrey         | 2024-03-05 |      1200.50 |
+|        4 | priyal        | 2024-03-25 |       950.00 |
+|        5 | shreya        | 2024-04-10 |       800.75 |
+|        6 | rajat         | 2024-04-15 |      1050.00 |
+|        7 | tanishka      | 2024-05-05 |       650.00 |
+|        8 | pranjal       | 2024-05-30 |      1300.25 |
+|        9 | radhe         | 2024-06-12 |      1800.00 |
+|       10 | priya         | 2024-06-25 |       400.00 |
++----------+---------------+------------+--------------+
+10 rows in set (0.00 sec)
+
+
+
+# Find all orders placed between '2024-01-01' and '2024-06-30'.
+
+
+mysql> select * from orders1 where order_date between '2024-01-01' AND '2024-06-30';
++----------+---------------+------------+--------------+
+| order_id | customer_name | order_date | total_amount |
++----------+---------------+------------+--------------+
+|        1 | nakul         | 2024-01-15 |      1500.00 |
+|        2 | rohit         | 2024-02-20 |       700.00 |
+|        3 | shrey         | 2024-03-05 |      1200.50 |
+|        4 | priyal        | 2024-03-25 |       950.00 |
+|        5 | shreya        | 2024-04-10 |       800.75 |
+|        6 | rajat         | 2024-04-15 |      1050.00 |
+|        7 | tanishka      | 2024-05-05 |       650.00 |
+|        8 | pranjal       | 2024-05-30 |      1300.25 |
+|        9 | radhe         | 2024-06-12 |      1800.00 |
+|       10 | priya         | 2024-06-25 |       400.00 |
++----------+---------------+------------+--------------+
+10 rows in set (0.00 sec)
+
+
+
+# Find orders where the total amount is between 500 and 2000.
+
+
+
+mysql> select * from orders1 where total_amount between '500' AND '2000';
++----------+---------------+------------+--------------+
+| order_id | customer_name | order_date | total_amount |
++----------+---------------+------------+--------------+
+|        1 | nakul         | 2024-01-15 |      1500.00 |
+|        2 | rohit         | 2024-02-20 |       700.00 |
+|        3 | shrey         | 2024-03-05 |      1200.50 |
+|        4 | priyal        | 2024-03-25 |       950.00 |
+|        5 | shreya        | 2024-04-10 |       800.75 |
+|        6 | rajat         | 2024-04-15 |      1050.00 |
+|        7 | tanishka      | 2024-05-05 |       650.00 |
+|        8 | pranjal       | 2024-05-30 |      1300.25 |
+|        9 | radhe         | 2024-06-12 |      1800.00 |
++----------+---------------+------------+--------------+
+9 rows in set (0.01 sec)
+
+
+
+# Find orders placed in March 2024 (Hint: Use BETWEEN with date values).
+
+
+
+mysql> select * from orders1 where order_date between '2024-03-01' AND '2024-03-31';
++----------+---------------+------------+--------------+
+| order_id | customer_name | order_date | total_amount |
++----------+---------------+------------+--------------+
+|        3 | shrey         | 2024-03-05 |      1200.50 |
+|        4 | priyal        | 2024-03-25 |       950.00 |
++----------+---------------+------------+--------------+
+2 rows in set (0.00 sec)

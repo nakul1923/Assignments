@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        marks = [85,90,78,92,88,76];
+
+        hig = marks[0];
+        low = marks[0];
+
+        for(i=1; i<marks.length;i++){
+            
+            if(hig<marks[i]){
+
+                 hig = marks[i];
+            }
+
+            if(low>marks[i]){
+
+                low = marks[i];
+            }
+        }
+
+        average = marks.reduce((sum,el)=>sum+el, 0)/marks.length;
+
+        
+        
+    </script>
+</body>
+</html>

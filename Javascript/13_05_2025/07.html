@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="parent">
+        <p id="old">Old paragraph</p>
+    </div>
+
+    <script>
+
+        let v= document.getElementById("parent");
+
+        var o=document.getElementById("old");
+
+        var newpara = document.createElement("p");
+
+        newpara.textContent="new paragraph is there";
+
+        v.replaceChild(newpara,o);
+    </script>
+</body>
+</html>

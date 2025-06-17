@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Form Validation</h1>
+
+    <form onsubmit="return validate()" action="message.html">
+
+        <label for="">Enter Name</label>
+        <input type="text" id="un" placeholder="Enter name here">
+        <br><br>
+        <label for="">Enter Password</label>
+        <input type="text" id="up" placeholder="Enter Password here">
+        <br><br>
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+        function validate(){
+
+            alert("form submitted");
+
+            var username = document.getElementById("un").value;
+
+            var userpassword = document.getElementById("up").value;
+
+            if(username=="" || userpassword==""){
+
+                alert("blank not allowed");
+                return false;
+            }else if(userpassword.length<=8 || userpassword.length>15){
+
+                alert("check lenght of password")
+                return false;
+            }
+             else{
+
+                return true;
+            }
+
+        }
+    </script>
+</body>
+</html>

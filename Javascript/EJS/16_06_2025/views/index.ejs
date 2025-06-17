@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>List of Users</h1>
+
+    <form action="/" method="get">
+        <input type="text" name="search" placeholder="search by name or email" value="<%=search || '' %>">
+        <button type="submit">Search</button>
+    </form>
+
+    <a href="/giveadd">Add New User</a>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+        <% result.forEach(x=>{ %>
+            <tr>
+                <td><%= x.id %></td>
+                <td><%= x.name %></td>
+                <td><%= x.email %></td>
+                <td> <a href="/giveedit/<%= x.id %>">EDIT</a>|<a href="/delete/<%= x.id %>">DELETE</a></td>
+                
+            </tr>
+            <%})%>
+    </table>
+</body>
+</html>

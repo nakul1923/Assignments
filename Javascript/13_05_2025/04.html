@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="d1">
+        <ul>
+            <li>Java</li>
+            <li>python</li>
+            <li>java script</li>
+        </ul>
+    </div>
+
+    <script>
+
+        var x=document.createElement("button");
+        x.innerText= "Click Here";
+        // document.getElementById("d1").append(x);
+        // document.getElementById("d1").prepend(x);
+        // document.getElementById("d1").before(x);
+        document.getElementById("d1").after(x);
+        var h = document.createElement("h1");
+        h.innerText="welcome";
+        document.body.prepend(h);
+        document.body.removeChild(x);
+    </script>
+</body>
+</html>

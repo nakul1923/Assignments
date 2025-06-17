@@ -56,7 +56,7 @@ In java data members can be of two types
 1. Static data members.
 2. Non-static data members.
 
-1) Static data members are those which are class level varibles only one copy of this members will be created and all the objects will share that members.
+1) Static data members are those which are class level variables only one copy of this members will be created and all the objects will share that members.
 
 To access static data members we do not require any object.
 
@@ -231,6 +231,7 @@ Whenever we create an object of child class then first the memory space for base
 There are two types of initialization block 
 
 1. Instance
+
 2. Static
 
 1) instance - For every object creation instance initialization block will be called
@@ -870,7 +871,7 @@ in the above example equals method of object class will be called
 
 the object class equals method have default behaviour which compares address
 
-syntax of equals method 
+syntax of equals method
 
 public boolean equals(object o);
 
@@ -2430,3 +2431,604 @@ mysql> select department,sum(salary) as total from emp5 where salary>6000 group 
 | finance    |  9000 |
 +------------+-------+
 3 rows in set (0.00 sec)
+
+
+
+                                       11/03/2025
+
+                                         # keys
+
+To find data from a database table we need keys.
+
+It is used to uniquely identify any record or data from table.
+
+Types of keys:-
+
+1. super key
+
+super key is an attribute set that can uniquely identify a tuple(row).
+
+it is super set of all key
+
+
+example:-  EmpId        name              aadhar           sal               contact            mail
+
+
+super key:- empId
+            aadhar
+            {empId,name}
+            etc....
+
+
+                                 # candidate key
+
+It is an attribute or set of attribute that can uniquely identify a tuple(row).
+
+Minimal set of super key is called candidate key.
+
+
+                                  # primary key
+
+Any key which is selected for our database from the candidate key is called primary key
+
+primary key cannot be null.
+
+duplicates are not allowed in primary key.
+
+
+                                 # alternate key
+
+All candidate keys except primary key will be considered as alternate key 
+
+total number of alternate key is the total number of candidate key - total number of primary key.
+
+
+                                   # unique key
+
+It is also similar to primary key but it will allow null value. 
+
+Example :- we can consider Email as an unique key.
+
+
+                                    # foreign key
+
+
+This key is used to relate one table with another table.
+
+Foreign keys are the column of one table which are used to point primary key of another table.
+
+
+                                   # composite key
+
+Whenever a primary key consist of more than one attribute then it is known as composite key.
+
+Example - {name,address}
+
+
+                                    # constraints 
+
+constraints are the rules or restrictions based on our requirement.
+
+constraints are classified in three groups
+
+1. domain integrity -
+
+A group of values in a single column is called domain.
+
+To maintain data integrity we use domain constraints.
+
+domain constraints can be defined on single column only.
+
+# not null - It does not allow null values.
+
+It can be defined on one column only.
+
+It can be defined at column level only.
+
+# default - Whenever we do not insert any value than those values will be filled by default value  
+
+examples - default, not null, check
+
+mysql> use beans;
+Database changed
+mysql> create table employee1(id int, name varchar(20) not null,salary int default 10000);
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> desc employee1
+    -> ;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int         | YES  |     | NULL    |       |
+| name   | varchar(20) | NO   |     | NULL    |       |
+| salary | int         | YES  |     | 10000   |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.04 sec)
+
+mysql> insert into employee1 values(101,'rashmika',8000);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from employee1;
++------+----------+--------+
+| id   | name     | salary |
++------+----------+--------+
+|  101 | rashmika |   8000 |
++------+----------+--------+
+1 row in set (0.00 sec)
+
+mysql> insert into employee1(id, name) values(102,'deepika');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from employee1;
++------+----------+--------+
+| id   | name     | salary |
++------+----------+--------+
+|  101 | rashmika |   8000 |
+|  102 | deepika  |  10000 |
++------+----------+--------+
+2 rows in set (0.00 sec)
+
+mysql> insert into employee1(id, salary) values(102,12000);
+ERROR 1364 (HY000): Field 'name' doesn't have a default value
+
+
+-------------------------------------------------------------------
+
+# check
+
+mysql> create table emp6(eno int,name varchar(20) not null, deptno int check(deptno in(10,20,30)));
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> select * from emp6;
+Empty set (0.00 sec)
+
+mysql> desc emp6;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| eno    | int         | YES  |     | NULL    |       |
+| name   | varchar(20) | NO   |     | NULL    |       |
+| deptno | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into emp6 values(101, 'abc',80);
+ERROR 3819 (HY000): Check constraint 'emp6_chk_1' is violated.
+mysql> insert into emp6 values(101, 'abc',10);
+Query OK, 1 row affected (0.07 sec)
+
+2. Entity integrity -
+
+Entity means object we can define constraints at object level or table level.
+
+1. unique:- it does not allow duplicate values.
+
+It allow null values.
+
+It can be define on one or more columns.
+
+
+mysql> create table emp7(id int unique, name varchar(20) not null);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> insert into emp7 values(101,'abc');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into emp7 values(101,'abc');
+ERROR 1062 (23000): Duplicate entry '101' for key 'emp7.id'
+
+
+# primary key:-
+
+In case of primary key duplicate values are not allowed and null values are also not allowed
+
+
+
+mysql> create table emp8(id int primary key, name varchar(20) not null);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc emp8;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   | PRI | NULL    |       |
+| name  | varchar(20) | NO   |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> insert into emp8 values(101,'aaa');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into emp8(name) values('aaa');
+ERROR 1364 (HY000): Field 'id' doesn't have a default value
+
+
+unique + not null!=== primary key
+
+examples - unique, primary key
+
+
+# composite key :- 
+
+mysql> create table emp20(name varchar(20), address varchar(20), mobile int, primary key(name,address));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc emp20;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| name    | varchar(20) | NO   | PRI | NULL    |       |
+| address | varchar(20) | NO   | PRI | NULL    |       |
+| mobile  | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> insert into emp20 values('nakul','indore',454545);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into emp20 values('nakul','indore',267854565);
+ERROR 1062 (23000): Duplicate entry 'nakul-indore' for key 'emp20.PRIMARY'
+mysql>
+
+3. referential integrity - examples - foreign key.
+
+foreign key :-
+
+It is used for joining the table.
+
+In foreign key duplicates values are allowed.
+
+Any number of Null values are allow.
+
+
+
+Practical example :-  
+
+
+mysql> create table department(did int primary key, name varchar(20) not null);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> create table student5(sid int primary key,name varchar(20) not null, deptid int,foreign key(deptid) references department(did));
+Query OK, 0 rows affected (0.15 sec)
+
+mysql> desc student5;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| sid    | int         | NO   | PRI | NULL    |       |
+| name   | varchar(20) | NO   |     | NULL    |       |
+| deptid | int         | YES  | MUL | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into department values(10,'CS'),(20,'EC');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from department;
++-----+------+
+| did | name |
++-----+------+
+|  10 | CS   |
+|  20 | EC   |
++-----+------+
+2 rows in set (0.00 sec)
+
+
+# here error occurs bcoz student5 is refers to department and we have to enter matching values.
+
+mysql> insert into student5 values(101,'rashmika',50);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`beans`.`student5`, CONSTRAINT `student5_ibfk_1` FOREIGN KEY (`deptid`) REFERENCES `department` (`did`))
+
+# here we did not allot any department to rashmika
+
+
+mysql> insert into student5(sid,name) values(101,'rashmika');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from student5;
++-----+----------+--------+
+| sid | name     | deptid |
++-----+----------+--------+
+| 101 | rashmika |   NULL |
++-----+----------+--------+
+1 row in set (0.00 sec)
+
+
+# duplicates are allowed in foreign key
+
+
+mysql> insert into student5 values(102,'deepika',10),(103,'katappa',10);
+Query OK, 2 rows affected (0.06 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from student5;
++-----+----------+--------+
+| sid | name     | deptid |
++-----+----------+--------+
+| 101 | rashmika |   NULL |
+| 102 | deepika  |     10 |
+| 103 | katappa  |     10 |
++-----+----------+--------+
+3 rows in set (0.00 sec)
+
+# here error occurs bcoz we cannot delete column if the connection is done in two tables here id 10 is refers two students and id 20 is not refers any student.
+
+mysql> delete from department where did = 20;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> delete from department where did = 10;
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`beans`.`student5`, CONSTRAINT `student5_ibfk_1` FOREIGN KEY (`deptid`) REFERENCES `department` (`did`))
+mysql>
+
+
+
+
+By default if you create a foreign key in MySQL without specifying on delete or on update options then MySQL enforces restrict behaviour.
+
+We cannot delete or update a parent row if there are child rows referring to it
+
+
+                                       13/03/2025
+
+
+we want to change the foreign key so first we need to drop the existing foreign key then we need to add new foreign key.
+
+alter table emp20 drop foreign key emp20_ibfk_1; (this query is droping the existing foreign key)
+
+
+alter table emp20 add foreign key(deptid) reference dept6(did) on delete cascade on update cascade;               (this query is used to add new foreign key with no restrictions).
+
+
+update dept6 set did = 90 where did = 10; (now we can update the constraints but it can change the child elements also, like if we update the department id then it automatically update the foreign keys in employees table)
+
+
+code---------------
+
+
+if we use on update cascade then all the child records updated automatically if the parent record is updated
+
+
+code ----------------
+
+delete from dept6 where did=20;
+
+
+if we use on delete cascade then all the child records deleted automatically if the parent record is deleted.
+
+
+# joins
+
+joins are used to combine two or more tables 
+
+
+
+practical example:- 
+
+
+mysql> create table emp30(eid int,ename varchar(20),deptid int);
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> create table dept30(did int,dname varchar(20));
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> insert into dept30 values(101,'HR'),(102,'IT'),(103,'Sales'),(104,'marketing');
+Query OK, 4 rows affected (0.07 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from dept30;
++------+-----------+
+| did  | dname     |
++------+-----------+
+|  101 | HR        |
+|  102 | IT        |
+|  103 | Sales     |
+|  104 | marketing |
++------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> insert into emp30 values(1,'rashmika',101),(2,'deepika',102);
+Query OK, 2 rows affected (0.07 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> insert into emp30(eid,ename) values(3,'katappa');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into emp30 values(4,'bahubali',103),(5,'shivgami',110);
+Query OK, 2 rows affected (0.07 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from emp30;
++------+----------+--------+
+| eid  | ename    | deptid |
++------+----------+--------+
+|    1 | rashmika |    101 |
+|    2 | deepika  |    102 |
+|    3 | katappa  |   NULL |
+|    4 | bahubali |    103 |
+|    5 | shivgami |    110 |
++------+----------+--------+
+5 rows in set (0.00 sec)
+
+
+1. inner join :-
+
+an inner join is used to retrieve records that have matching values both tables being join
+
+
+mysql> select emp30.ename,dept30.dname from emp30 inner join dept30 on emp30.deptid=dept30.did;
++----------+-------+
+| ename    | dname |
++----------+-------+
+| rashmika | HR    |
+| deepika  | IT    |
+| bahubali | Sales |
++----------+-------+
+3 rows in set (0.00 sec)
+
+
+2. left join/ left outer join :-
+
+It returns all the records from the left table with matching records from the right table, if no match is found then Null is returned.
+
+mysql> select emp30.ename,dept30.dname from emp30 left join dept30 on emp30.deptid=dept30.did;
++----------+-------+
+| ename    | dname |
++----------+-------+
+| rashmika | HR    |
+| deepika  | IT    |
+| katappa  | NULL  |
+| bahubali | Sales |
+| shivgami | NULL  |
++----------+-------+
+5 rows in set (0.00 sec)
+
+
+topic that are imp but not covered in MySQL
+
+1. Dcl commands
+2. tcl commands
+3. sub query/nested query
+4. normalization
+5. association and its types
+6. stored procedure
+7. views 
+8. triggers
+
+
+
+
+
+
+
+
+
+                                        17/03/2025
+
+execute update - it is applicable for non-select queries.
+
+All DMM commands are non-select commands.
+
+here return type is number of rows updated, deleted or inserted.
+
+syntax :-
+
+public int executeUpdate(query);
+
+3. execute :- 
+
+We can use execute method for both select and non-select operations.
+
+At run time end user may provide select or non-select query. means at the beginning we do not know what type of query will arise.
+
+Syntax :-
+
+public boolean execute(query);
+
+Boolean b = st.execute(query);
+
+if(b==true){
+
+ResultSet = st.getResultSet();
+
+-------------
+--------
+
+}
+
+else{
+
+int rowCount = st.getUpdateCount();
+
+}
+
+
+
+methods that are used for navigate:--
+
+Boolean next():- it moves to the next row. It returns false if no more rows exist.
+
+Boolean first();  - It moves to the first row.
+
+Boolean last(); - it moves to the last row.
+
+etc....
+
+
+Data retrieval methods:-
+
+int getInt(String) - it retrieves an int value.
+
+String getString(String);  -  It retrieves an String value.
+
+
+
+
+                                           18/03/2025
+
+                             # life cycle of a sql query execution
+
+Statement st = ------------;
+ResultSet rs = st.executeQuery(query)--------;
+
+In the above line sql query will go to the database.
+
+the database site database engine is responsible to receive our sql query.
+
+database engine will perform two activities.
+
+1. compile that query means compilation.
+
+2. if no error then execute that query that is execution.
+
+In compilation process many activities are perform like -
+
+1. tokenization
+2. parsing
+3. query optimization.
+
+
+Drawback of Statement :-
+
+In case of statement every time query will be compile so performance will decrease.
+
+The problem of Sql injection is also available in case of statement
+
+
+
+                               # PreparedStatement
+
+A preparedStatement is a precompiled SQL statement that allow you to execute parameterized queries efficiently.
+
+In case of prepareStatement we pass query.
+
+Database engine will compile that query and store that query in the form of preparedStatement.
+
+The problem of SQL injection is not available in case of prepared statement.
+
+
+# Limitations of preparedStatement :-
+
+In case of normal statement object we can work with multiple queries like insert, delete, update etc.
+
+But in case of preparedStatement we can work only with one query.
+
+Same preparedStatement object cannot work with insert and delete.
+
+# H/W - 
+
+1 statement vs preparedStatement
+
+2. jdbc till now
+
+3. all crud operations
+
+4. dynamic queries
+
+
+# topic to be covered in future
+
+1. callableStatement
+2. SqlInjection
+3. rowSet
+etc....

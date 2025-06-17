@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .h{
+
+            background-color: red;
+        }
+        .a{
+
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <p id="m">hello guyss... how the life is going on</p>
+    <button onclick=add()> Add class</button>
+    <button onclick=remove()> Remove class</button>
+    <button onclick=change()>Change</button>
+    <script>
+        var p1 = document.getElementById("m")
+        function add(){
+
+            m.classList.add("h");
+
+        }
+
+        function remove(){
+
+            m.classList.remove("h");
+        }
+
+        function change(){
+
+            m.classList.toggle("a");
+            m.classList.toggle("h");
+        }
+    </script>
+</body>
+</html>

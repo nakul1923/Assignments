@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 class="my">hello guyss</h1>
+    <h1 class="my">java world</h1>
+    <h1 class="my">java script world</h1>
+    <button onclick="display()">click</button>
+
+    <script>
+
+        function display(){
+
+            let x = document.getElementsByClassName("my");
+            console.log(x);
+            console.log(x[0].innerText);
+            console.log(x[1].innerText)
+            for(let i of x){
+
+                i.style.color = "red";
+                i.style.fontSize = "100px";
+                i.style.background = "blue";
+                i.style.border = "5px solid yellow";
+            }
+        }
+    </script>
+</body>
+</html>

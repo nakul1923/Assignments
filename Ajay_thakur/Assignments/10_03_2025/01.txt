@@ -1,0 +1,156 @@
+Objective: Retrieve records from a table based on partial string matching.
+Task:
+Create a table employees with the following columns:
+id (INT, PRIMARY KEY, AUTO_INCREMENT)
+name (VARCHAR(50))
+department (VARCHAR(50))
+email (VARCHAR(100))
+phone (VARCHAR(15))
+ Insert at least 10 records into the employees table.
+Write queries to:
+ Find all employees whose name starts with 'A'.
+ Find employees whose email contains 'gmail'.
+ Find employees whose phone number ends with '123'.
+ Find employees whose department name contains 'tech' anywhere in the word.
+ Find employees whose name has exactly five letters.
+ Find employees whose name has 'n' as the second letter.
+ Find employees whose email starts with any character but ends with 'com'.
+ Find employees whose phone number has '7' as the third digit.
+
+
+
+
+
+mysql> create table employees1(id int primary key auto_increment,name varchar(50),department varchar(50),email varchar(1
+00),phone varchar(15));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> INSERT INTO employees1 (name, department, email, phone) VALUES
+    -> ('Alice Johnson', 'Tech Support', 'alice@gmail.com', '1234567890'),
+    -> ('Bob Smith', 'HR', 'bob@yahoo.com', '0987654321'),
+    -> ('Carol Brown', 'Marketing', 'carol@gmail.com', '9876543210'),
+    -> ('David Wilson', 'Tech Development', 'david@hotmail.com', '8765432109'),
+    -> ('Eve Adams', 'Finance', 'eve@gmail.com', '7654321098'),
+    -> ('Frank Green', 'Tech Support', 'frank@gmail.com', '6543210987'),
+    -> ('Grace Hall', 'Sales', 'grace@gmail.com', '5432109876'),
+    -> ('Hank Miller', 'Tech Development', 'hank@gmail.com', '4321098765'),
+    -> ('Ivy Nelson', 'Tech Research', 'ivy@gmail.com', '3210987654'),
+    -> ('John Doe', 'Admin', 'john@outlook.com', '2109876543');
+Query OK, 10 rows affected (0.07 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select * from employees1;
++----+---------------+------------------+-------------------+------------+
+| id | name          | department       | email             | phone      |
++----+---------------+------------------+-------------------+------------+
+|  1 | Alice Johnson | Tech Support     | alice@gmail.com   | 1234567890 |
+|  2 | Bob Smith     | HR               | bob@yahoo.com     | 0987654321 |
+|  3 | Carol Brown   | Marketing        | carol@gmail.com   | 9876543210 |
+|  4 | David Wilson  | Tech Development | david@hotmail.com | 8765432109 |
+|  5 | Eve Adams     | Finance          | eve@gmail.com     | 7654321098 |
+|  6 | Frank Green   | Tech Support     | frank@gmail.com   | 6543210987 |
+|  7 | Grace Hall    | Sales            | grace@gmail.com   | 5432109876 |
+|  8 | Hank Miller   | Tech Development | hank@gmail.com    | 4321098765 |
+|  9 | Ivy Nelson    | Tech Research    | ivy@gmail.com     | 3210987654 |
+| 10 | John Doe      | Admin            | john@outlook.com  | 2109876543 |
++----+---------------+------------------+-------------------+------------+
+10 rows in set (0.00 sec)
+
+
+ # Find all employees whose name starts with 'A'.
+
+mysql> select * from employees1 where name like 'a%';
++----+---------------+--------------+-----------------+------------+
+| id | name          | department   | email           | phone      |
++----+---------------+--------------+-----------------+------------+
+|  1 | Alice Johnson | Tech Support | alice@gmail.com | 1234567890 |
++----+---------------+--------------+-----------------+------------+
+1 row in set (0.00 sec)
+
+
+#  Find employees whose email contains 'gmail'.
+
+mysql> select * from employees1 where email like '%gmail%';
++----+---------------+------------------+-----------------+------------+
+| id | name          | department       | email           | phone      |
++----+---------------+------------------+-----------------+------------+
+|  1 | Alice Johnson | Tech Support     | alice@gmail.com | 1234567890 |
+|  3 | Carol Brown   | Marketing        | carol@gmail.com | 9876543210 |
+|  5 | Eve Adams     | Finance          | eve@gmail.com   | 7654321098 |
+|  6 | Frank Green   | Tech Support     | frank@gmail.com | 6543210987 |
+|  7 | Grace Hall    | Sales            | grace@gmail.com | 5432109876 |
+|  8 | Hank Miller   | Tech Development | hank@gmail.com  | 4321098765 |
+|  9 | Ivy Nelson    | Tech Research    | ivy@gmail.com   | 3210987654 |
++----+---------------+------------------+-----------------+------------+
+7 rows in set (0.00 sec)
+
+
+#   Find employees whose phone number ends with '123'.
+
+
+mysql> select * from employees1 where phone like '%123';
+Empty set (0.00 sec)
+
+
+#  Find employees whose department name contains 'tech' anywhere in the word.
+
+
+mysql> select * from employees1 where department like '%tech%';
++----+---------------+------------------+-------------------+------------+
+| id | name          | department       | email             | phone      |
++----+---------------+------------------+-------------------+------------+
+|  1 | Alice Johnson | Tech Support     | alice@gmail.com   | 1234567890 |
+|  4 | David Wilson  | Tech Development | david@hotmail.com | 8765432109 |
+|  6 | Frank Green   | Tech Support     | frank@gmail.com   | 6543210987 |
+|  8 | Hank Miller   | Tech Development | hank@gmail.com    | 4321098765 |
+|  9 | Ivy Nelson    | Tech Research    | ivy@gmail.com     | 3210987654 |
++----+---------------+------------------+-------------------+------------+
+5 rows in set (0.00 sec)
+
+
+# Find employees whose name has exactly five letters.
+
+
+mysql> select * from employees1 where name like '_____';
+Empty set (0.00 sec)
+
+
+#  Find employees whose name has 'n' as the second letter.
+
+mysql> select * from employees1 where name like '_n%';
+Empty set (0.00 sec)
+
+
+# Find employees whose email starts with any character but ends with 'com'.
+
+
+mysql> select * from employees1 where email like '%com';
++----+---------------+------------------+-------------------+------------+
+| id | name          | department       | email             | phone      |
++----+---------------+------------------+-------------------+------------+
+|  1 | Alice Johnson | Tech Support     | alice@gmail.com   | 1234567890 |
+|  2 | Bob Smith     | HR               | bob@yahoo.com     | 0987654321 |
+|  3 | Carol Brown   | Marketing        | carol@gmail.com   | 9876543210 |
+|  4 | David Wilson  | Tech Development | david@hotmail.com | 8765432109 |
+|  5 | Eve Adams     | Finance          | eve@gmail.com     | 7654321098 |
+|  6 | Frank Green   | Tech Support     | frank@gmail.com   | 6543210987 |
+|  7 | Grace Hall    | Sales            | grace@gmail.com   | 5432109876 |
+|  8 | Hank Miller   | Tech Development | hank@gmail.com    | 4321098765 |
+|  9 | Ivy Nelson    | Tech Research    | ivy@gmail.com     | 3210987654 |
+| 10 | John Doe      | Admin            | john@outlook.com  | 2109876543 |
++----+---------------+------------------+-------------------+------------+
+10 rows in set (0.00 sec)
+
+
+# Find employees whose phone number has '7' as the third digit
+
+
+mysql> select * from employees1 where phone like '__7%';
++----+-------------+------------+-----------------+------------+
+| id | name        | department | email           | phone      |
++----+-------------+------------+-----------------+------------+
+|  3 | Carol Brown | Marketing  | carol@gmail.com | 9876543210 |
++----+-------------+------------+-----------------+------------+
+1 row in set (0.00 sec)
+
+

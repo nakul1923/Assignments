@@ -1,0 +1,26 @@
+body{
+
+    margin: 0;
+    background-color: white;
+    color: black;
+
+}
+
+#main{
+
+    height: 100vh;
+    display: flex;
+}
+
+#banner{
+
+    height: 670px;
+    width: 100%;
+    background-color: red;
+    background-image: url(ipl-2025-landing-banner-desktop-bg.webp);
+    background-size: cover;
+    display: flex;
+    display: inline-block;
+    flex-wrap: wrap;
+}
+

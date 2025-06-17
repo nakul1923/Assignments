@@ -9,3 +9,8 @@ Design principal
 4. visibility of system status
 
 5. match with real world.
+
+
+
+
+Use of white space

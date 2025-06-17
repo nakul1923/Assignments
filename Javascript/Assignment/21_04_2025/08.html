@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        num = 23456789;
+
+        dig = 0;
+
+        console.log("Odd digits are : ")
+        while(num>=1){
+
+            dig = num%10;
+
+            if(dig%2!=0){
+
+                console.log(dig + ", ");
+            }
+
+            num=Math.floor(num/10);
+        }
+    </script>
+</body>
+</html>

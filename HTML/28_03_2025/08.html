@@ -1,0 +1,60 @@
+<!-- program to implement form -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form action="register.js" method="get">
+
+    <div>    
+        <label for="n1">Enter your name:</label>
+        <input type="text" name="username" id="n1" placeholder="Enter name here">
+    </div>
+    <div>
+        <label for="n2">Enter your email:</label>
+        <input type="text" name="username" id="n2" placeholder="Enter email here">
+    </div>
+    <div>
+        <label for="n3">Enter your DOB</label>
+        <input type="date" name="dob" id="n3">
+    </div>
+    <div>
+        <label>Gender:</label>
+        Male <input type="radio" name="mygender" checked>
+        Female <input type="radio" name="mygender">
+        other <input type="radio" name="mygender">
+    </div>
+    <div>
+        <label for="">Hobbies</label>
+        <input type="checkbox" name="h1">Dancing
+        <input type="checkbox" name="h1">Music
+        <input type="checkbox" name="h1" checked>Coding
+    </div>
+    <div>
+        <label for="">Select course</label>
+        <select name="mycourse" id="">
+            <option value="">Btech</option>
+            <option value="">MBA</option>
+            <option value="">MS</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="">
+            Enter you Experience:
+        </label>
+        <textarea name="t1" id="" cols="10" rows="5"></textarea>
+    </div>
+
+    <div>
+        <input type="submit" value="register">
+        <input type="reset" value="reset">
+    </div>
+    </form>
+</body>
+</html>

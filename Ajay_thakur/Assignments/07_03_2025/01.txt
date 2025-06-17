@@ -1,0 +1,60 @@
+Employee Payroll System
+Create a table employees with columns: emp_id, name, department, salary, and hire_date.
+Insert 5 employees into the table with different departments and salaries.
+Increase the salary by 10% for employees hired before 2021.
+Change the department of the employee named "Michael Scott" to HR.
+
+
+
+
+mysql> create table employees(emp_id int,name varchar(20), department varchar(20), salary int, hire_date date);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> desc employees;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| emp_id     | int         | YES  |     | NULL    |       |
+| name       | varchar(20) | YES  |     | NULL    |       |
+| department | varchar(20) | YES  |     | NULL    |       |
+| salary     | int         | YES  |     | NULL    |       |
+| hire_date  | date        | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> insert into employees values(101,'nakul','IT',80000,'2025-06-26'),(102, 'shrey', 'marketing', 60000, '2022-03-20'),(103, 'rohi
+t', 'sales', 55000, '2018-09-10'),(104, 'yashika', 'finance', 70000, '2020-11-05'),(5, 'shreya', 'HR', 45000, '2021-01-25');
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from employees;
++--------+---------+------------+--------+------------+
+| emp_id | name    | department | salary | hire_date  |
++--------+---------+------------+--------+------------+
+|    101 | nakul   | IT         |  80000 | 2025-06-26 |
+|    102 | shrey   | marketing  |  60000 | 2022-03-20 |
+|    103 | rohit   | sales      |  55000 | 2018-09-10 |
+|    104 | yashika | finance    |  70000 | 2020-11-05 |
+|      5 | shreya  | HR         |  45000 | 2021-01-25 |
++--------+---------+------------+--------+------------+
+5 rows in set (0.00 sec)
+
+mysql> update employees set salary = salary * 1.10 where hire_date < '2021-01-01';
+Query OK, 2 rows affected (0.02 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update employees set department = 'HR' where name = 'rohit';
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employees;
++--------+---------+------------+--------+------------+
+| emp_id | name    | department | salary | hire_date  |
++--------+---------+------------+--------+------------+
+|    101 | nakul   | IT         |  80000 | 2025-06-26 |
+|    102 | shrey   | marketing  |  60000 | 2022-03-20 |
+|    103 | rohit   | HR         |  60500 | 2018-09-10 |
+|    104 | yashika | finance    |  77000 | 2020-11-05 |
+|      5 | shreya  | HR         |  45000 | 2021-01-25 |
++--------+---------+------------+--------+------------+
+5 rows in set (0.00 sec)

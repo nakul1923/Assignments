@@ -1,0 +1,19 @@
+                                 CSS
+
+                              04/04/2025
+
+CSS stands for cascading style sheet. It is used to describe the presentation and layout of a webpage written in html.
+
+It is used to control the color, font and size of a text.
+
+It is used to set backgrounds, border and spacing.
+
+# Number of ways to add css to an html document.
+
+1. inline css - In inline css we add css to an html element directly using style attribute.
+
+Drawbacks of inline css :- khudse likhna he
+
+2. Internal CSS - here css is written inside a style tag within the head section of the html file.
+
+write advantages and disadvantage of inline and internal

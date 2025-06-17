@@ -1,0 +1,49 @@
+<!-- 1.
+manish is setting up some math questions in the factors of a number. He is in need of many prime numbers between any two range of numbers.
+Write a program to display such numbers between any two numbers.
+Input format :
+Input consists of two integers in which the second integer is always greater than the first input integer.
+Output format :
+Output is the series of prime numbers between the two input numbers arranged in ascending order.
+Sample test cases :
+Input 1 :
+1
+10
+Output 1 :
+2
+3
+5
+7 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var start = prompt("Enter the first number:");
+        var end = prompt("Enter the second number:");
+
+        for (var num = start; num <= end; num++) {
+            var c = 0;
+
+            for (var i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    c++;
+                    break;
+                }
+            }
+
+            if (c === 0 && num > 1) {
+                console.log(num);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

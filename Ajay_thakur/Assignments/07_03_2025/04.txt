@@ -1,0 +1,62 @@
+Student Management System
+Create a table students with columns: student_id, name, department, marks, and admission_year.
+Insert 5 students into the table with different departments and marks.
+Increase the marks by 5 for all students in the "Computer Science" department.
+Update the admission year of the student named "Bob" to 2023.
+
+
+
+
+
+
+
+mysql> create table students(student_id int,name varchar(20),department varchar(50),marks int,admission_year int);
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc students;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| student_id     | int         | YES  |     | NULL    |       |
+| name           | varchar(20) | YES  |     | NULL    |       |
+| department     | varchar(50) | YES  |     | NULL    |       |
+| marks          | int         | YES  |     | NULL    |       |
+| admission_year | int         | YES  |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> insert into students values(101, 'nakul', 'Computer Science', 85, 2022),(102, 'shrey', 'Electrical Engineering', 78, 2021),(103, 'rohit', 'Mechanical Engineering', 90, 2020),(104, 'yashika', 'Computer Science', 88, 2023),(105, 'radhe', 'Civil Engineering', 95, 2022);
+Query OK, 5 rows affected (0.02 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from students;
++------------+---------+------------------------+-------+----------------+
+| student_id | name    | department             | marks | admission_year |
++------------+---------+------------------------+-------+----------------+
+|        101 | nakul   | Computer Science       |    85 |           2022 |
+|        102 | shrey   | Electrical Engineering |    78 |           2021 |
+|        103 | rohit   | Mechanical Engineering |    90 |           2020 |
+|        104 | yashika | Computer Science       |    88 |           2023 |
+|        105 | radhe   | Civil Engineering      |    95 |           2022 |
++------------+---------+------------------------+-------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> update students set marks = marks + 5 where department = 'Computer Science';
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update students set admission_year = 2023 where name = 'shrey';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from students;
++------------+---------+------------------------+-------+----------------+
+| student_id | name    | department             | marks | admission_year |
++------------+---------+------------------------+-------+----------------+
+|        101 | nakul   | Computer Science       |    90 |           2022 |
+|        102 | shrey   | Electrical Engineering |    78 |           2023 |
+|        103 | rohit   | Mechanical Engineering |    90 |           2020 |
+|        104 | yashika | Computer Science       |    93 |           2023 |
+|        105 | radhe   | Civil Engineering      |    95 |           2022 |
++------------+---------+------------------------+-------+----------------+
+5 rows in set (0.00 sec)

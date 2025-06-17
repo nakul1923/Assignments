@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .clock{
+
+            font-size: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <span class="clock">5:15 AM</span>
+    </div>
+
+    <script>
+
+        function giveTime(){
+
+            var d=new date();
+
+            let hours = d.getHours();
+            let m = d.getMinutes();
+            let s = d.getSeconds();
+
+            return `${hours}:${m}:${s}`;
+        }
+
+        setInterval(()=>{
+            var v = document.querySelector(".clock");
+            v.innerHTML = giveTime();
+        },1000);
+    </script>
+    
+</body>
+</html>

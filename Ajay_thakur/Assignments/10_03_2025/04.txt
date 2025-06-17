@@ -1,0 +1,167 @@
+Create a table employees with the following columns:
+
+id (INT, PRIMARY KEY, AUTO_INCREMENT)
+name (VARCHAR(50))
+age (INT)
+salary (DECIMAL(10,2))
+department (VARCHAR(50))
+Insert at least 10 records into the employees table.
+Write queries to:
+Find employees whose age is between 25 and 40.
+Find employees whose salary is between 30,000 and 80,000.
+Find employees who are between 30 and 50 years old and work in the "IT" department.
+Find employees whose salary is between 40,000 and 90,000 AND age is between 30 and 50.
+Find employees who do NOT have a salary between 25,000 and 60,000.
+Find employees whose age is between 22 and 35 OR salary is between 50,000 and 1,00,000.
+
+
+
+
+
+mysql> create table employees2(id int primary key auto_increment,name varchar(20),age int,salary int,department varchar(30));
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> desc employees2;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | int         | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(20) | YES  |     | NULL    |                |
+| age        | int         | YES  |     | NULL    |                |
+| salary     | int         | YES  |     | NULL    |                |
+| department | varchar(30) | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> INSERT INTO employees2 (name, age, salary, department) VALUES('Rohan', 28, 45000, 'IT'),('Priya Sharma', 35, 75000, 'HR'),('Amit', 40, 55000, 'Finance'),('Sanya', 30, 65000, 'IT'),('Ravi', 45, 80000, 'Marketing'),('Anjali', 32, 70000, 'Sales'),('Vikram', 29, 50000, 'IT'),('Nina', 50, 60000, 'HR'),('Karan', 33, 85000, 'IT'),('Suresh', 27, 30000, 'Finance');
+Query OK, 10 rows affected (0.01 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select * from employees2;
++----+--------------+------+--------+------------+
+| id | name         | age  | salary | department |
++----+--------------+------+--------+------------+
+|  1 | Rohan        |   28 |  45000 | IT         |
+|  2 | Priya Sharma |   35 |  75000 | HR         |
+|  3 | Amit         |   40 |  55000 | Finance    |
+|  4 | Sanya        |   30 |  65000 | IT         |
+|  5 | Ravi         |   45 |  80000 | Marketing  |
+|  6 | Anjali       |   32 |  70000 | Sales      |
+|  7 | Vikram       |   29 |  50000 | IT         |
+|  8 | Nina         |   50 |  60000 | HR         |
+|  9 | Karan        |   33 |  85000 | IT         |
+| 10 | Suresh       |   27 |  30000 | Finance    |
++----+--------------+------+--------+------------+
+10 rows in set (0.00 sec)
+
+
+
+# Find employees whose age is between 25 and 40.
+
+
+mysql> select * from employees2 where age between '25' AND '40';
++----+--------------+------+--------+------------+
+| id | name         | age  | salary | department |
++----+--------------+------+--------+------------+
+|  1 | Rohan        |   28 |  45000 | IT         |
+|  2 | Priya Sharma |   35 |  75000 | HR         |
+|  3 | Amit         |   40 |  55000 | Finance    |
+|  4 | Sanya        |   30 |  65000 | IT         |
+|  6 | Anjali       |   32 |  70000 | Sales      |
+|  7 | Vikram       |   29 |  50000 | IT         |
+|  9 | Karan        |   33 |  85000 | IT         |
+| 10 | Suresh       |   27 |  30000 | Finance    |
++----+--------------+------+--------+------------+
+8 rows in set (0.00 sec)
+
+
+
+
+
+# Find employees whose salary is between 30,000 and 80,000.
+
+
+mysql> select * from employees2 where salary between '30000' AND '80000';
++----+--------------+------+--------+------------+
+| id | name         | age  | salary | department |
++----+--------------+------+--------+------------+
+|  1 | Rohan        |   28 |  45000 | IT         |
+|  2 | Priya Sharma |   35 |  75000 | HR         |
+|  3 | Amit         |   40 |  55000 | Finance    |
+|  4 | Sanya        |   30 |  65000 | IT         |
+|  5 | Ravi         |   45 |  80000 | Marketing  |
+|  6 | Anjali       |   32 |  70000 | Sales      |
+|  7 | Vikram       |   29 |  50000 | IT         |
+|  8 | Nina         |   50 |  60000 | HR         |
+| 10 | Suresh       |   27 |  30000 | Finance    |
++----+--------------+------+--------+------------+
+9 rows in set (0.00 sec)
+
+
+
+# Find employees who are between 30 and 50 years old and work in the "IT" department.
+
+
+mysql> select * from employees2 where age between '30' AND '50' AND department = 'IT';
++----+-------+------+--------+------------+
+| id | name  | age  | salary | department |
++----+-------+------+--------+------------+
+|  4 | Sanya |   30 |  65000 | IT         |
+|  9 | Karan |   33 |  85000 | IT         |
++----+-------+------+--------+------------+
+2 rows in set (0.00 sec)
+
+
+
+
+# Find employees whose salary is between 40,000 and 90,000 AND age is between 30 and 50.
+
+
+mysql> select * from employees2 where age between '30' AND '50' AND salary between '40000' AND '90000';
++----+--------------+------+--------+------------+
+| id | name         | age  | salary | department |
++----+--------------+------+--------+------------+
+|  2 | Priya Sharma |   35 |  75000 | HR         |
+|  3 | Amit         |   40 |  55000 | Finance    |
+|  4 | Sanya        |   30 |  65000 | IT         |
+|  5 | Ravi         |   45 |  80000 | Marketing  |
+|  6 | Anjali       |   32 |  70000 | Sales      |
+|  8 | Nina         |   50 |  60000 | HR         |
+|  9 | Karan        |   33 |  85000 | IT         |
++----+--------------+------+--------+------------+
+7 rows in set (0.00 sec)
+
+
+
+# Find employees who do NOT have a salary between 25,000 and 60,000.
+
+
+mysql> select * from employees2 where salary NOT BETWEEN '25000' AND '60000';
++----+--------------+------+--------+------------+
+| id | name         | age  | salary | department |
++----+--------------+------+--------+------------+
+|  2 | Priya Sharma |   35 |  75000 | HR         |
+|  4 | Sanya        |   30 |  65000 | IT         |
+|  5 | Ravi         |   45 |  80000 | Marketing  |
+|  6 | Anjali       |   32 |  70000 | Sales      |
+|  9 | Karan        |   33 |  85000 | IT         |
++----+--------------+------+--------+------------+
+5 rows in set (0.00 sec)
+
+
+
+#  Find employees whose age is between 22 and 35 OR salary is between 50,000 and 1,00,000.
+
+
+
+mysql> select * from employees2 where salary between '50000' AND '100000' AND age between '22' AND '35';
++----+--------------+------+--------+------------+
+| id | name         | age  | salary | department |
++----+--------------+------+--------+------------+
+|  2 | Priya Sharma |   35 |  75000 | HR         |
+|  4 | Sanya        |   30 |  65000 | IT         |
+|  6 | Anjali       |   32 |  70000 | Sales      |
+|  7 | Vikram       |   29 |  50000 | IT         |
+|  9 | Karan        |   33 |  85000 | IT         |
++----+--------------+------+--------+------------+
+5 rows in set (0.00 sec)

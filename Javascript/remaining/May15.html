@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form onsubmit=" return validate()" action="SubmitForm.html">
+        <label>Enter Name:</label>
+        <input type="text" id="uname" placeholder="Enter Name"/>
+        <br>
+        <label>Enter Password:</label>
+        <input type="password" id="pwd" placeholder="Enter Password"/>
+        <br>
+        <label>Enter Password Again:</label>
+        <input type="password" id="repwd" placeholder="Enter Password"/>
+        <br>
+        <label>Enter Date Of Birth:</label>
+        <input type="date" id="dob" placeholder="Enter Date Of Birth"/>
+        <br>
+        <label>Gender:</label>
+        <input type="radio" id="male" name="Gender">Male
+        <input type="radio" id="female" name="Gender">Female
+        <br>
+        <input type="checkbox" name="" id="c1">
+        <label>Check for Terms & Condition.</label>
+        <br>
+        <button type="submit" >submit</button>
+
+    </form>
+    <script>
+        function validate()
+        {
+            console.log("working")
+            var un = document.getElementById("uname");
+            var pw = document.getElementById("pwd");
+            var repw = document.getElementById("repwd");
+            var dofb = document.getElementById("dob")
+            var m = document.getElementById("male");
+            var f = document.getElementById("female");
+            var tc = document.getElementById("c1");
+
+            if(un.value.trim()==""||pw.value.trim()=="")
+            {
+                alert("UserName and Password are empty.")
+                return false;
+            }
+            if(pw.value.length<=5||pw.value.length>=15)
+            {
+                alert("Set password between 5 to 15 length")
+                return false;
+            }
+            if(pw.value != repw.value)
+            {
+                alert("Password Mismatch.")
+                return false;
+            }
+            if(dofb.value=="")
+            {
+                alert("select the date.")
+                return false;
+            }
+            var db = new Date(dofb.value)
+            var cd = new Date()
+            // console.log(cd.getFullYear())
+
+            var age = cd.getFullYear()-db.getFullYear();
+            // console.log(age)
+            if(age<=18||age>=100)
+            {
+                alert("Select the age between 18 to 100")
+                return false;
+            }
+            if(!(m.checked) && !(f.checked))
+            {
+                alert("Select the gender.")
+                return false;
+            }
+            if(!tc.checked)
+            {
+                alert("tick the terms and condition")
+                return false;
+            }
+            
+            
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+
+
+
+
+mysql> select * from employees1;
++----+---------------+------------------+-------------------+------------+
+| id | name          | department       | email             | phone      |
++----+---------------+------------------+-------------------+------------+
+|  1 | Alice Johnson | Tech Support     | alice@gmail.com   | 1234567890 |
+|  2 | Bob Smith     | HR               | bob@yahoo.com     | 0987654321 |
+|  3 | Carol Brown   | Marketing        | carol@gmail.com   | 9876543210 |
+|  4 | David Wilson  | Tech Development | david@hotmail.com | 8765432109 |
+|  5 | Eve Adams     | Finance          | eve@gmail.com     | 7654321098 |
+|  6 | Frank Green   | Tech Support     | frank@gmail.com   | 6543210987 |
+|  7 | Grace Hall    | Sales            | grace@gmail.com   | 5432109876 |
+|  8 | Hank Miller   | Tech Development | hank@gmail.com    | 4321098765 |
+|  9 | Ivy Nelson    | Tech Research    | ivy@gmail.com     | 3210987654 |
+| 10 | John Doe      | Admin            | john@outlook.com  | 2109876543 |
++----+---------------+------------------+-------------------+------------+
+10 rows in set (0.00 sec)
+
+
+#  Find employees whose name is NOT starting with 'J'.
+
+
+mysql> select * from employees1 where name NOT LIKE 'J%';
++----+---------------+------------------+-------------------+------------+
+| id | name          | department       | email             | phone      |
++----+---------------+------------------+-------------------+------------+
+|  1 | Alice Johnson | Tech Support     | alice@gmail.com   | 1234567890 |
+|  2 | Bob Smith     | HR               | bob@yahoo.com     | 0987654321 |
+|  3 | Carol Brown   | Marketing        | carol@gmail.com   | 9876543210 |
+|  4 | David Wilson  | Tech Development | david@hotmail.com | 8765432109 |
+|  5 | Eve Adams     | Finance          | eve@gmail.com     | 7654321098 |
+|  6 | Frank Green   | Tech Support     | frank@gmail.com   | 6543210987 |
+|  7 | Grace Hall    | Sales            | grace@gmail.com   | 5432109876 |
+|  8 | Hank Miller   | Tech Development | hank@gmail.com    | 4321098765 |
+|  9 | Ivy Nelson    | Tech Research    | ivy@gmail.com     | 3210987654 |
++----+---------------+------------------+-------------------+------------+
+9 rows in set (0.00 sec)
+
+
+#  Find employees who do not work in the 'HR' department.
+
+
+mysql> select * from employees1 where department NOT LIKE 'HR';
++----+---------------+------------------+-------------------+------------+
+| id | name          | department       | email             | phone      |
++----+---------------+------------------+-------------------+------------+
+|  1 | Alice Johnson | Tech Support     | alice@gmail.com   | 1234567890 |
+|  3 | Carol Brown   | Marketing        | carol@gmail.com   | 9876543210 |
+|  4 | David Wilson  | Tech Development | david@hotmail.com | 8765432109 |
+|  5 | Eve Adams     | Finance          | eve@gmail.com     | 7654321098 |
+|  6 | Frank Green   | Tech Support     | frank@gmail.com   | 6543210987 |
+|  7 | Grace Hall    | Sales            | grace@gmail.com   | 5432109876 |
+|  8 | Hank Miller   | Tech Development | hank@gmail.com    | 4321098765 |
+|  9 | Ivy Nelson    | Tech Research    | ivy@gmail.com     | 3210987654 |
+| 10 | John Doe      | Admin            | john@outlook.com  | 2109876543 |
++----+---------------+------------------+-------------------+------------+
+9 rows in set (0.00 sec)
+
+
+#  Find employees whose email does not contain 'yahoo'.
+
+
+mysql> select * from employees1 where email NOT LIKE '%yahoo%';
++----+---------------+------------------+-------------------+------------+
+| id | name          | department       | email             | phone      |
++----+---------------+------------------+-------------------+------------+
+|  1 | Alice Johnson | Tech Support     | alice@gmail.com   | 1234567890 |
+|  3 | Carol Brown   | Marketing        | carol@gmail.com   | 9876543210 |
+|  4 | David Wilson  | Tech Development | david@hotmail.com | 8765432109 |
+|  5 | Eve Adams     | Finance          | eve@gmail.com     | 7654321098 |
+|  6 | Frank Green   | Tech Support     | frank@gmail.com   | 6543210987 |
+|  7 | Grace Hall    | Sales            | grace@gmail.com   | 5432109876 |
+|  8 | Hank Miller   | Tech Development | hank@gmail.com    | 4321098765 |
+|  9 | Ivy Nelson    | Tech Research    | ivy@gmail.com     | 3210987654 |
+| 10 | John Doe      | Admin            | john@outlook.com  | 2109876543 |
++----+---------------+------------------+-------------------+------------+
+9 rows in set (0.00 sec)
+
+
+#  Find employees whose phone does not start with '9'.
+
+
+
+mysql> select * from employees1 where phone NOT LIKE '9%';
++----+---------------+------------------+-------------------+------------+
+| id | name          | department       | email             | phone      |
++----+---------------+------------------+-------------------+------------+
+|  1 | Alice Johnson | Tech Support     | alice@gmail.com   | 1234567890 |
+|  2 | Bob Smith     | HR               | bob@yahoo.com     | 0987654321 |
+|  4 | David Wilson  | Tech Development | david@hotmail.com | 8765432109 |
+|  5 | Eve Adams     | Finance          | eve@gmail.com     | 7654321098 |
+|  6 | Frank Green   | Tech Support     | frank@gmail.com   | 6543210987 |
+|  7 | Grace Hall    | Sales            | grace@gmail.com   | 5432109876 |
+|  8 | Hank Miller   | Tech Development | hank@gmail.com    | 4321098765 |
+|  9 | Ivy Nelson    | Tech Research    | ivy@gmail.com     | 3210987654 |
+| 10 | John Doe      | Admin            | john@outlook.com  | 2109876543 |
++----+---------------+------------------+-------------------+------------+
+9 rows in set (0.00 sec)
+
+
+#  Find employees whose name starts with 'S' and email contains 'outlook'.
+
+
+mysql> select * from employees1 where name LIKE 's%' AND email LIKE '%yahoo%';
+Empty set (0.00 sec)
+
+
+#  Find employees who work in 'Sales' OR 'Marketing' and their phone number ends with '789'.
+
+mysql> select * from employees1 where (department LIKE 'sales' OR department LIKE 'marketing') AND phone LIKE '%789';
+Empty set (0.00 sec)
+
+
+# Find employees whose name contains 'an' and email does not contain 'hotmail'.
+
+
+mysql> select * from employees1 where name LIKE '%an%' AND email NOT LIKE '%outlook%';
++----+-------------+------------------+-----------------+------------+
+| id | name        | department       | email           | phone      |
++----+-------------+------------------+-----------------+------------+
+|  6 | Frank Green | Tech Support     | frank@gmail.com | 6543210987 |
+|  8 | Hank Miller | Tech Development | hank@gmail.com  | 4321098765 |
++----+-------------+------------------+-----------------+------------+
+2 rows in set (0.00 sec)
+
+
+# Find employees whose phone starts with '98' OR contains '55'.
+
+
+mysql> select * from employees1 where phone LIKE '98%' OR phone LIKE '%55%';
++----+-------------+------------+-----------------+------------+
+| id | name        | department | email           | phone      |
++----+-------------+------------+-----------------+------------+
+|  3 | Carol Brown | Marketing  | carol@gmail.com | 9876543210 |
++----+-------------+------------+-----------------+------------+
+1 row in set (0.00 sec)
+

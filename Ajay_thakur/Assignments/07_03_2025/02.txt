@@ -1,0 +1,34 @@
+mysql> create table products(product_id int,name varchar(20), price int, category varchar(20),stock decimal(10,2));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc products;
++------------+---------------+------+-----+---------+-------+
+| Field      | Type          | Null | Key | Default | Extra |
++------------+---------------+------+-----+---------+-------+
+| product_id | int           | YES  |     | NULL    |       |
+| name       | varchar(20)   | YES  |     | NULL    |       |
+| price      | int           | YES  |     | NULL    |       |
+| category   | varchar(20)   | YES  |     | NULL    |       |
+| stock      | decimal(10,2) | YES  |     | NULL    |       |
++------------+---------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> update products set stock = stock - 10 where category = 'Electronics';
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update products set price = price * 1.05 where category = 'Fashion';
+Query OK, 2 rows affected (0.07 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from products;
++------------+------------+-------+-------------+--------+
+| product_id | name       | price | category    | stock  |
++------------+------------+-------+-------------+--------+
+|        101 | Smartphone | 30000 | Electronics |  40.00 |
+|        102 | Laptop     | 60000 | Electronics |  20.00 |
+|        103 | T-shirt    |  1050 | Fashion     | 100.00 |
+|        104 | Jeans      |  2100 | Fashion     |  75.00 |
+|        105 | Book       |   500 | Books       | 200.00 |
++------------+------------+-------+-------------+--------+
+5 rows in set (0.00 sec)

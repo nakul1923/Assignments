@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        num = 1234;
+        mul = 1;
+        rem = 0;
+
+        while(num>=1){
+
+            rem = num%10;
+            mul = mul * rem;
+            num=Math.floor(num/10);
+        }
+
+        console.log("Multiplication of all digits of given no is " + mul);
+        
+    </script>
+</body>
+</html>

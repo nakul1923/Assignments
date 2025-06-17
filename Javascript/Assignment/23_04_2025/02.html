@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        nums = [2,5,4,7,9,2,4,8];
+
+        function sum(arr){
+
+            i = 0;
+
+            while(arr[i]!=undefined){
+
+                flag = 0;
+                for(j=i+1;j<arr.length;j++){
+
+                    if(arr[i]==arr[j]){
+
+                        flag = 1;
+                        arr.splice(j,1);
+                    }
+                }
+
+                if(flag==1){
+
+                    arr.splice(i,1);
+                }
+
+                i++;
+            }
+
+            sum1 = arr.reduce((add,el)=>add+el,0);
+
+            return sum1;
+
+        }
+
+        console.log(sum(nums));
+
+        
+    </script>
+</body>
+</html>

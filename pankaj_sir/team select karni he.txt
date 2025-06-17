@@ -1,0 +1,76 @@
+team select karni he 
+
+getList of players by team
+
+Hey Nakul! This is actually a very solid foundation for a console-based Fantasy Cricket (Dream11-style) application. You've covered a lot of important parts. Let me break it down for you with a quick review:
+
+✅ What’s Good:
+Clear Structure & Service Layer Use:
+
+Separation between model, service, and main logic is a big plus.
+
+Using Service classes makes the code modular and maintainable.
+
+Admin & User Functionality:
+
+You’ve implemented both admin and user login/signup, which is essential in such apps.
+
+Admin tasks like adding/deleting players/contests are well handled.
+
+Basic Contest & Player Management:
+
+Storing players and contests in a database and displaying them dynamically is great.
+
+You've even added prize pool breakdown, which shows you're thinking ahead.
+
+Interactive Console UI:
+
+Simple but effective user prompts make it easy to test and navigate.
+
+Good use of ResultSet:
+
+You're fetching and using data properly from the database.
+
+❌ What Could Be Improved or Added:
+1. Validation & Error Handling:
+Add more input validation (like not allowing negative money or duplicate IDs).
+
+Handle SQLException or any DB error more gracefully with try-catch blocks.
+
+2. Code Repetition:
+You’re creating a new Scanner object in every method. It’s better to create it once and pass it around or make it static final.
+
+java
+Copy
+Edit
+private static final Scanner sc = new Scanner(System.in);
+3. User Team Creation Logic Missing:
+The createTeam() method just shows players. You should allow users to select players, check credit limits, save their team, etc.
+
+This is a core part of Fantasy apps — the most fun part for users.
+
+4. Wallet Deduction on Joining Contest:
+You're showing wallet balance but not deducting the contest entry fee when a user joins — that should be added.
+
+5. Contest Join Logic:
+Need to store which user joined which contest, and ensure max participants aren’t exceeded.
+
+6. Result Calculation (Optional but Cool):
+Let users earn points based on player performance (you can randomly assign or simulate scores for now).
+
+💡 Suggestions for Extra Coolness:
+Add a leaderboard.
+
+Simulate a match and update wallet balance based on winnings.
+
+Make a proper team object where user selects 11 players and stores it.
+
+Assign fixed credit to each player and enforce the total team credit rule (like max 100).
+
+Add logging for debugging.
+
+📊 Overall Rating: 8/10 🌟
+This is a really good college project and shows you understand object-oriented design and real-world systems. With a few enhancements — especially around team creation, wallet handling, and contest logic — you’ll take it from good to great.
+
+
+

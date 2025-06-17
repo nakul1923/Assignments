@@ -1,0 +1,110 @@
+Using IN with Text Values
+Objective: Retrieve records based on a list of specific text values.
+Task:
+Create a table customers with the following columns:
+customer_id (INT, PRIMARY KEY, AUTO_INCREMENT)
+customer_name (VARCHAR(50))
+city (VARCHAR(50))
+membership_type (VARCHAR(20))
+Insert at least 10 customer records into the customers table.
+Write queries to:
+Find customers who are from cities IN ('New York', 'Los Angeles', 'Chicago').
+Find customers whose membership_type is IN ('Gold', 'Platinum', 'Silver').
+Find customers whose name is IN ('Alice', 'John', 'Michael').
+
+
+
+
+mysql> create table customers1(id int primary key auto_increment, name varchar(20),city varchar(20), membership_type varchar(20))
+;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> desc customers1;
++-----------------+-------------+------+-----+---------+----------------+
+| Field           | Type        | Null | Key | Default | Extra          |
++-----------------+-------------+------+-----+---------+----------------+
+| id              | int         | NO   | PRI | NULL    | auto_increment |
+| name            | varchar(20) | YES  |     | NULL    |                |
+| city            | varchar(20) | YES  |     | NULL    |                |
+| membership_type | varchar(20) | YES  |     | NULL    |                |
++-----------------+-------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO customers1 (name, city, membership_type) VALUES('Alice Johnson', 'New York', 'Gold'),('John Doe', 'Los Angeles', 'Platinum'),('Michael Smith', 'Chicago', 'Silver'),('Jessica Brown', 'Houston', 'Gold'),('Emily Davis', 'Phoenix', 'Platinum'),('Daniel Wilson', 'Philadelphia', 'Silver'),('Sophia Martinez', 'San Antonio', 'Gold'),('William Anderson', 'San Diego', 'Platinum'),('Oliver Jackson', 'Dallas', 'Silver'),('Lucas Harris', 'San Jose', 'Gold');
+Query OK, 10 rows affected (0.07 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select * from customers1;
++----+------------------+--------------+-----------------+
+| id | name             | city         | membership_type |
++----+------------------+--------------+-----------------+
+|  1 | Alice Johnson    | New York     | Gold            |
+|  2 | John Doe         | Los Angeles  | Platinum        |
+|  3 | Michael Smith    | Chicago      | Silver          |
+|  4 | Jessica Brown    | Houston      | Gold            |
+|  5 | Emily Davis      | Phoenix      | Platinum        |
+|  6 | Daniel Wilson    | Philadelphia | Silver          |
+|  7 | Sophia Martinez  | San Antonio  | Gold            |
+|  8 | William Anderson | San Diego    | Platinum        |
+|  9 | Oliver Jackson   | Dallas       | Silver          |
+| 10 | Lucas Harris     | San Jose     | Gold            |
++----+------------------+--------------+-----------------+
+10 rows in set (0.00 sec)
+
+
+
+
+
+# Find customers who are from cities IN ('New York', 'Los Angeles', 'Chicago').
+
+
+
+mysql> select * from customers1 where city IN ('New York', 'Los Angeles', 'Chicago');
++----+---------------+-------------+-----------------+
+| id | name          | city        | membership_type |
++----+---------------+-------------+-----------------+
+|  1 | Alice Johnson | New York    | Gold            |
+|  2 | John Doe      | Los Angeles | Platinum        |
+|  3 | Michael Smith | Chicago     | Silver          |
++----+---------------+-------------+-----------------+
+3 rows in set (0.00 sec)
+
+
+
+
+# Find customers whose membership_type is IN ('Gold', 'Platinum', 'Silver').
+
+
+mysql> select * from customers1 where membership_type IN ('Gold', 'Platinum', 'Silver');
++----+------------------+--------------+-----------------+
+| id | name             | city         | membership_type |
++----+------------------+--------------+-----------------+
+|  1 | Alice Johnson    | New York     | Gold            |
+|  2 | John Doe         | Los Angeles  | Platinum        |
+|  3 | Michael Smith    | Chicago      | Silver          |
+|  4 | Jessica Brown    | Houston      | Gold            |
+|  5 | Emily Davis      | Phoenix      | Platinum        |
+|  6 | Daniel Wilson    | Philadelphia | Silver          |
+|  7 | Sophia Martinez  | San Antonio  | Gold            |
+|  8 | William Anderson | San Diego    | Platinum        |
+|  9 | Oliver Jackson   | Dallas       | Silver          |
+| 10 | Lucas Harris     | San Jose     | Gold            |
++----+------------------+--------------+-----------------+
+10 rows in set (0.00 sec)
+
+
+
+
+# Find customers whose name is IN ('Alice', 'John', 'Michael');
+
+
+
+mysql> select * from customers1 where name IN ('Alice johnson', 'John Doe', 'Michael smith');
++----+---------------+-------------+-----------------+
+| id | name          | city        | membership_type |
++----+---------------+-------------+-----------------+
+|  1 | Alice Johnson | New York    | Gold            |
+|  2 | John Doe      | Los Angeles | Platinum        |
+|  3 | Michael Smith | Chicago     | Silver          |
++----+---------------+-------------+-----------------+
+3 rows in set (0.00 sec)

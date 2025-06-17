@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+
+            font-family: 'Segoe UI' ;
+
+        }
+
+        table,th,td{
+
+            border: 2px solid red;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 12px;
+        }
+
+        table{
+
+            width: 100%;
+        }
+        th{
+
+            background-color: blue;
+        }
+        tr:nth-child(even){
+
+            background-color: green;
+        }
+        tr:nth-child(odd){
+
+            background-color: brown;
+        }
+        th,td{
+
+            border-radius: 50px;
+        }
+        tr:hover{
+            
+            background-color: yellow;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Salary</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Deepika</td>
+                <td>Chennai</td>
+                <td>90000</td>
+            </tr>
+            <tr>
+                <td>rashmika</td>
+                <td>mumbai</td>
+                <td>80000</td>
+            </tr>
+            <tr>
+                <td>Deepika</td>
+                <td>Chennai</td>
+                <td>90000</td>
+            </tr>
+            <tr>
+                <td>Rohit</td>
+                <td>Indore</td>
+                <td>90000</td>
+            </tr>
+            <tr>
+                <td>Deepika</td>
+                <td>Chennai</td>
+                <td>90000</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

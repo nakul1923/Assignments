@@ -1,0 +1,62 @@
+Gym Membership System
+Create a table members with columns: member_id, name, membership_type, fees_paid, and joining_date.
+Insert 5 members into the table with different membership types and fees paid.
+Increase the fees paid by $50 for all "Gold" membership holders.
+Update the joining_date of the member named "Sophia Martinez" to 2024-04-01.
+
+
+
+
+
+
+mysql> create table members(member_id int,name varchar(20),membership_type varchar(30),fees_paid int,joining_date date);
+
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> desc members;
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| member_id       | int         | YES  |     | NULL    |       |
+| name            | varchar(20) | YES  |     | NULL    |       |
+| membership_type | varchar(30) | YES  |     | NULL    |       |
+| fees_paid       | int         | YES  |     | NULL    |       |
+| joining_date    | date        | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> insert into members values(101, 'nakul', 'gold', 500, '2023-05-15'),(102, 'rohit', 'silver', 300, '2023-06-20'),(103, 'vikas', 'Gold', 450, '2023-07-10'),(104, 'shrey', 'Bronze', 200, '2023-08-05'),(105, 'prakash', 'Gold', 550, '2023-09-25');
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from members;
++-----------+---------+-----------------+-----------+--------------+
+| member_id | name    | membership_type | fees_paid | joining_date |
++-----------+---------+-----------------+-----------+--------------+
+|       101 | nakul   | gold            |       500 | 2023-05-15   |
+|       102 | rohit   | silver          |       300 | 2023-06-20   |
+|       103 | vikas   | Gold            |       450 | 2023-07-10   |
+|       104 | shrey   | Bronze          |       200 | 2023-08-05   |
+|       105 | prakash | Gold            |       550 | 2023-09-25   |
++-----------+---------+-----------------+-----------+--------------+
+5 rows in set (0.00 sec)
+
+mysql> update members set fees_paid = fees_paid + 50 where membership_type = 'gold';
+Query OK, 3 rows affected (0.01 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql> update members set joining_date = '2024-04-01' where name = 'prakash';
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from members;
++-----------+---------+-----------------+-----------+--------------+
+| member_id | name    | membership_type | fees_paid | joining_date |
++-----------+---------+-----------------+-----------+--------------+
+|       101 | nakul   | gold            |       550 | 2023-05-15   |
+|       102 | rohit   | silver          |       300 | 2023-06-20   |
+|       103 | vikas   | Gold            |       500 | 2023-07-10   |
+|       104 | shrey   | Bronze          |       200 | 2023-08-05   |
+|       105 | prakash | Gold            |       600 | 2024-04-01   |
++-----------+---------+-----------------+-----------+--------------+
+5 rows in set (0.00 sec)

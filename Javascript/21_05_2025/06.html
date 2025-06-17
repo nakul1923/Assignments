@@ -1,0 +1,46 @@
+<!-- in this program we saw that if promise rejected then what happens  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        function getApp(){
+
+            return new Promise((resolve,reject)=>{
+
+                setTimeout(()=>{
+
+                    console.log("getting app data");
+                    reject("rejected");
+                },2000)
+            })
+        }
+
+        async function getDetails(){
+            
+            try{
+
+                await getApp();
+                await getApp();
+                await getApp();
+                console.log("completed");
+
+            }catch(error){
+
+                console.log("erroe he", error);
+            }
+            
+        }
+
+        getDetails();
+    </script>
+</body>
+</html>

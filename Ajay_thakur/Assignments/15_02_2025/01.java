@@ -74,7 +74,7 @@ class Main{
 
         for(int i = 0; i<num; i++){
 
-            System.out.println("Enter Details of " + (i+1 )+ " Player");
+            System.out.println("Enter Details of " + (i+1)+ " Player");
 
             System.out.println("Enter Id : ");
             int id = sc.nextInt();

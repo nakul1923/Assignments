@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        item = [299, 499, 150, 250, 100];
+        total = 0;
+
+        for(i=0; i<item.length; i++){
+
+            if(item[i]>200){
+
+                total = total + item[i] + item[i]*0.10;
+            } else{
+
+                total = total + item[i];
+            }
+        }
+
+        console.log("total: " + total);
+
+    </script>
+</body>
+</html>

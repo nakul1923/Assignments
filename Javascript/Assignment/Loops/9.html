@@ -1,0 +1,42 @@
+<!-- Check if All Digits Are Even
+Write a program to check if all digits of a number are even.
+Input: 2468
+Output: All Even
+Input: 2456
+Output: Not All Even -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var number = prompt("Enter a number:");
+        var c = 0;
+
+        while (number > 0) {
+            var digit = number % 10;
+
+            if (digit % 2 != 0) {
+                c++;
+            }
+
+            number = Math.floor(number / 10);
+        }
+
+
+        if (c > 0) {
+            console.log("Not All Even");
+        } else {
+            console.log("All Even");
+        }
+
+    </script>
+</body>
+
+</html>

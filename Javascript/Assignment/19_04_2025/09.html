@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // Using nested if else
+
+
+        var a = prompt("enter fist number");
+        var b = prompt("enter second number");
+        var c = prompt("enter third number");
+        var d = prompt("enter fourth number");
+
+        if(a>b){
+
+            if(a>c){
+
+                if(a>d){
+
+                    console.log("a is greatest")
+                } else{
+
+                    console.log("d is greatest");
+                }
+            }else{
+
+                if(c>d){
+
+                    console.log("c is greatest");
+                }else{
+
+                    console.log("d is greatest");
+                }
+            }
+        } else{
+
+            if(b>c){
+
+                if(b>d){
+
+                    console.log("b is greatest");
+                } else{
+
+                    console.log("d is greatest");
+                }
+            } else{
+
+                if(c>d){
+
+                    console.log("c is greatest");
+                }else{
+
+                    console.log("d is greatest");
+                }
+            }
+        }
+
+
+        // Using else if ladder
+
+        var a = prompt("enter fist number");
+        var b = prompt("enter second number");
+        var c = prompt("enter third number");
+        var d = prompt("enter fourth number");
+
+        if(a>b && a>c && a>d){
+
+            console.log("a is greatest");
+        } else if(b>a && b>c && b>d){
+
+            console.log("b is greatest");
+        } else if(c>a && c>b && c>d){
+
+            console.log("c is greatest");
+        } else{
+
+            console.log("d is greatest");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+Online Food Delivery System
+Create a table orders with columns: order_id, customer_name, food_item, price, and order_status.
+Insert 5 orders into the table with different food items and prices.
+Increase the price by 10% for all "Pizza" orders.
+Change the order_status of the order placed by "David Wilson" to "Delivered".
+
+
+
+
+
+mysql> create table orders(order_id int,customer_name varchar(20),food_item varchar(40),price int,order_status varchar(20));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc orders;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| order_id      | int         | YES  |     | NULL    |       |
+| customer_name | varchar(20) | YES  |     | NULL    |       |
+| food_item     | varchar(40) | YES  |     | NULL    |       |
+| price         | int         | YES  |     | NULL    |       |
+| order_status  | varchar(20) | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> insert into orders values(101, 'nakul', 'pizza', 12.99, 'pending'),(102, 'shrey', 'burger', 8.99, 'pending'),(103, 'mohit', 'pizza', 15.99, 'pending'),(104, 'dharmendra', 'pasta', 13.99, 'pending'),(105, 'etisha', 'salad', 7.99, 'pending');
+Query OK, 5 rows affected (0.07 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from orders;
++----------+---------------+-----------+-------+--------------+
+| order_id | customer_name | food_item | price | order_status |
++----------+---------------+-----------+-------+--------------+
+|      101 | nakul         | pizza     |    13 | pending      |
+|      102 | shrey         | burger    |     9 | pending      |
+|      103 | mohit         | pizza     |    16 | pending      |
+|      104 | dharmendra    | pasta     |    14 | pending      |
+|      105 | etisha        | salad     |     8 | pending      |
++----------+---------------+-----------+-------+--------------+
+5 rows in set (0.00 sec)
+
+mysql> update orders set price = price * 1.10 where food_item = 'pizza';
+Query OK, 2 rows affected (0.07 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update orders set order_status = 'delivered' where customer_name = 'nakul';
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from orders;
++----------+---------------+-----------+-------+--------------+
+| order_id | customer_name | food_item | price | order_status |
++----------+---------------+-----------+-------+--------------+
+|      101 | nakul         | pizza     |    14 | delivered    |
+|      102 | shrey         | burger    |     9 | pending      |
+|      103 | mohit         | pizza     |    18 | pending      |
+|      104 | dharmendra    | pasta     |    14 | pending      |
+|      105 | etisha        | salad     |     8 | pending      |
++----------+---------------+-----------+-------+--------------+
+5 rows in set (0.00 sec)

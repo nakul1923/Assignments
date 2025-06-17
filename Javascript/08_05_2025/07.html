@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    enter first number: <input type="text" id="n1">
+    enter second number: <input type="text" id="n2">
+    <button onclick="display()">calculate</button>
+
+    Result is : <div id="d1"></div>
+
+    <script>
+
+        function display(){
+
+            let obj1 = Number(document.getElementById("n1").value);
+            let obj2 = Number(document.getElementById("n2").value);
+
+            let x= obj1+obj2;
+
+            document.getElementById("d1").innerText=x;
+            console.log(obj1+obj2);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        nums = [52,66,64,36,45,24,32];
+
+        function sumOfLearder(arr){
+            
+            sum = arr[arr.length-1];
+
+            for(i=0;i<arr.length-1;i++){
+
+                flag = 0;
+                for(j=i+1;j<arr.length;j++){
+
+                    if(arr[i]<arr[j]){
+
+                        flag = 1;
+
+                    }
+                }
+
+                if(flag==0){
+
+                    sum = sum + arr[i];
+                }
+            }
+
+            return sum;
+        }
+
+        console.log(sumOfLearder(nums));
+
+    </script>
+    
+</body>
+</html>

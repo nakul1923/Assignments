@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> HII</h1>
+    <form action="">
+        <label for="">name</label>
+        <input type="text" id="name"><br>
+        <label for="">email</label>
+        <input type="email" id="email"><br>
+         <label for="">phone</label>
+        <input type="text" id="phone"><br>
+        <label for="">password</label>
+        <input type="password" id="pass"><br>
+        <input type="submit" onclick="fun1()">
+
+    </form>
+
+    <form action="">
+        enter email to getitem
+        <input type="text" name="" id="get">
+        <input onclick="fun2()" type="submit" name="" id="">
+    </form>
+
+    <h1 id="h1">your data here</h1>
+    <script>
+      function fun1(){
+          let name= document.getElementById("name").value
+         let email= document.getElementById("email").value
+          let phone= document.getElementById("phone").value
+           let pass= document.getElementById("pass").value
+
+           let userDataOBJ ={
+            userName:name,
+            email:email,
+            phone:phone,
+            pass:pass
+           }
+           let userDataString = JSON.stringify(userDataOBJ)
+           
+            localStorage.setItem(email,userDataString)
+
+
+           }
+
+           function fun2(){
+
+            let get = document.getElementById("get").value;
+
+             let data = localStorage.getItem(get);
+             let data1 = JSON.parse(data);
+
+            document.getElementById("h1").innerText = data1;
+            console.log(data1);
+            
+           }
+        //    alert(userDataOBJ)
+        //    alert(userDataString)
+
+
+
+
+
+
+    // localStorage.setItem("key","valuess");
+    // let a= localStorage.getItem("key")
+    // alert(a)
+    </script>
+</body>
+</html>

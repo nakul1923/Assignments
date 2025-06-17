@@ -1,0 +1,48 @@
+<!-- You're programming a new LED display game. The game level unlocks when a neon number is entered.
+
+A neon number is a number where the sum of the digits of its square is equal to the number itself. Example: 9 → 9² = 81 → 8 + 1 = 9
+
+Your task:
+
+Accept a number from the player.
+
+Check if it's a neon number.
+
+Display:
+
+ "Glowing Success! You've found the Neon Number!"
+
+ "Try again! Not quite glowing yet." -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var number = prompt("Enter a number:");
+        var square = number * number;
+
+
+        var sumOfDigits = 0;
+        while (square > 0) {
+            var digit = square % 10;
+            sumOfDigits += digit;
+            square = Math.floor(square / 10);
+        }
+
+
+        if (sumOfDigits == number) {
+            console.log("Glowing Success! You've found the Neon Number!");
+        } else {
+            console.log("Try again! Not quite glowing yet.");
+        }
+
+    </script>
+</body>
+
+</html>

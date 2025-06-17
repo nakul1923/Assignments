@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" name="m1">
+        <input type="password" id="i1" value="" name="userpass" onkeyup="validate()">
+        strength: <span id="location">No strength</span>
+    </form>
+
+    <script>
+        function validate(){
+
+            var msg;
+
+            if(document.m1.userpass.value.length>5){
+
+                msg = "good";
+            } else{
+
+
+                msg = "poor";
+            }
+
+               
+        }
+    </script>
+</body>
+</html>

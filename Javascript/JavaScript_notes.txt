@@ -1,0 +1,1365 @@
+                           JavaScript
+
+                           17/04/2025
+
+JavaScript is high level dynamic interpreted programming language.
+
+It allow to create dynamic websites.
+
+JavaScript was initially design for making pages alive.
+
+JavaScript can be executed in the browser as well as on the server with the help of NodeJs.
+
+javascript add html to the page change the existing the content, modify styles, react to user actions, run on mouse click, pointer movements, key presses etc..
+
+In 1995 netScape programmer named Brandan eich developed new script originally it was called mocha but after some time they called it live script and then changed to javascript 
+ 
+# Features:-
+
+1. javascript is lightweight because it has minimal and low resource requirement.
+
+2. Dynamic typing - javascript is dynamic typing language which means variable types are specified on the basis of stored values.
+
+3. Object oriented programming
+
+4. Prototype based - javaScript is prototype based language which means it utilize prototypes in place of classes. we can specify an object prototype and after that we can construct more objects with the help of specified object prototype.
+
+5. Interpreted language - javaScript executes the code line by line.
+
+A javascript interpreter is a built-in feature that is provided by each browser and utilize to interpret the code.
+
+# different frameworks and libraries of javascript are :-
+
+1. AngularJs
+2. ReactJs
+3. viewJs
+4. ExpressJs
+
+
+# javascript basic primitive datatypes: - 
+
+1. number
+
+example: - 
+
+var a=10;
+
+>typeof(a)
+<- number
+
+
+var a=10.54;
+
+>typeof(a)
+<- number
+
+2. String
+
+example 
+
+var a = 'abc'
+
+>typeof(a)
+<- 'string'
+
+var x = "abc"
+
+>typeof(x)
+<- 'string'
+
+
+
+
+
+
+                                   18/04/2025
+
+hello[0]
+
+'h'
+
+'hello'[-10]
+undefined
+
+
+# Boolean - in Boolean true and false values are allowed.
+
+Naming convention :- 
+JavaScript variable naming convention will be camelCase.
+
+# undefined - if variables are declared but not initialized or the value is not available then we call it undefined.
+
+example:-
+
+> var w;
+
+> typeof(w)
+<- 'undefined'
+
+# null - the value of variable is null means it is not pointing to any value.
+
+> var y=null
+> typeof(null)
+<- 'object'
+
+
+
+# The most commonly used methods of javascript:-
+
+1. alert - it is used to alert to the end user.
+
+2. console.log - it is used to print message to the developers 
+
+3. prompt - It is used to get input from end user.
+
+# note - we can add the script in head part and body part but we should add it in body part.
+
+
+
+
+                                    # Operators
+
+Arithmetic operators  - +, -, *, /, %, **
+
+
+
+
+                                       19/04/2025
+
+Comparison operator - <, >, <=, >=, ==, !=, ===, !==
+
+'==' - it is equality operator, here only content will be check.
+
+'===' - it is a strict equality operator, here both values and type will be check.
+
+
+
+
+                                # conditional statement
+
+if
+if-else
+nested if-else 
+else if ladder
+
+
+
+                                      21/04/2025
+
+loops in JavaScript:- 
+
+
+# Break keyword
+
+break is a keyword which is used to terminate the loop body of loop body.
+
+# Continue keyword
+
+
+
+                                     22/04/2025
+
+                                       Arrays
+
+It is a group of elements
+
+# methods of JavaScript arrays:- 
+
+1. push() - we can use push() method to add elements at end of the array after addition it returns the length of the array.
+
+2. pop() - it is used to remove and return last element of the array.
+
+3. unshift() - it is used to add element at beginning of the array and returns length.
+
+4. shift() - it is used to remove and return first element of the array.
+
+if we even pass a value in shift it will not affect it always return first element.
+
+5. indexof() - it is used to find index of specified element.
+
+if element present multiple times then it will return index of first occurrence. 
+
+if element is not present then we will get -1.
+
+6. slice() - it is used to get part of array. it returns array elements from began index to n-1 index.
+
+
+
+concat - it is used to merge arrays.
+
+every() - this methods returns true only if all elements satisfy the condition. It stop at the first false.
+
+some() - it is used to check if atleast one element in the array passes the test.
+
+
+
+
+                                    29/04/2025
+
+                                    # Functions 
+
+It is a self contain block of one or more statements.
+
+
+# function expression
+
+We can assign a function to a variable 
+
+advantage : - we can define functions without name 
+
+2. functions can be stored to variables which can be passed to other functions. which can be returned from another function.
+
+
+# Arrow function 
+
+function without name is called arrow function, it is used for shorter syntax.
+
+
+# default parameters 
+
+it is used to set default values for parameters.
+
+
+                                       30/04/2025
+
+
+# rest parameters - rest parameters in js allow a function to accept an indefinite number of arguments as an array. it is written using three dots(...) followed by name.
+
+
+# Rest with default parameter.
+
+
+# Callback function - 
+
+A callback is a function passed as an argument to another function which is then called back inside the outer function to complete some action.
+
+Why? javaScript is asynchronous means it does not wait for one task to finish before starting another task so callbacks are used to handle asynchronous operations.
+
+It allow custom actions after task finishes/completed.
+
+# anonymous function - These are the functions without name they are often use as an arguments to other functions 
+
+
+# setTimeout() - it is a predefine javascript function used to execute a function after a specified delay in milliseconds. 
+
+syntax - 
+
+setTimeout(function,ms);
+
+
+# callback hell
+
+when callbacks are nested the code becomes unreadable and hard to maintain.
+
+# error handling issue - error handling can get messy when we are dealing with nested callbacks.
+
+# IIFE (immidiately invoke function expression) - it is a javascript function that runs as soon as it is define
+
+
+# HOF (higher order function) - it is a function that does atleast one of the following :-
+
+1. it takes one or more function as arguments.
+2. return a function as its results. Means a function that works with another function.
+
+There are some predefine HOF in js are :- map, filter, reduce etc ...
+
+Advantage: - 
+
+1. code reuse
+2. lead to cleaner and more expressive code.
+3. enable functional programming pattern.
+
+
+# let, var, const :-
+
+JavaScript provide three ways to declare variables - var, let, const. But they differ in scopes, hoisting, and re-assignment rules.
+
+# var - it is used to declare variables with function or global scope and allow re-declaration and updates.
+
+# let - it is used to declare variable with block scope.
+
+it allow updates but not re-declaration within the same block.
+
+let keyword introduced in ES6 this variable is only accessible within the block, where it is declared.
+
+# const - const is used to declare variables that should not be re-assign after their initial assignment.
+
+other than this it is similar to 'let'.
+
+
+
+
+
+
+
+                                     01/05/2025
+
+#   hoisting behaviour of var, let and const - 
+
+hoisting - hoisting is a JavaScript behaviour where variable declaration are moved to be top of their containing scopes.
+
+console.log(x);          // not giving error and printing undefined
+var x = 5;    
+
+this program becomes internally
+
+var x;
+console.log(x);
+x=5;
+here declaration is hoisted, but initialization will not be hoisted.
+
+
+console.log(x);       // here gives error cannot access 'x'before  ini
+let x =5 ; 
+
+here it gives error because let variables are hoisted but not initialized so they remain in TDZ(temporal dead zone) until the declaration is executed.
+
+# TDZ - it refers to the time between the hoisting of a variable declared with let or const and its actual declaration in the code during which the variable cannot be accessed.
+
+NOTE:- same behaviour is applicable with const
+
+
+# redeclaring variables with var, let and const :-
+
+var name1 = 'rashmika';
+var name1 = 'deepika';
+
+console.log(name1);
+
+in case of var we can redeclare variables multiple times.
+
+
+in case of function declaration are fully hoisted. it means we can call them before declaration
+
+in case of function expression and arrow functions hoisting will not be allow.
+
+
+# Nested Functions :-
+
+a nested function in javascript is a function define another function.
+
+
+
+
+                                     # closure
+
+closure is a function that allow access to variables from its outer function even after the outer function has finished execution. this enables functions to remember there environment
+
+here outer function returns inner function and closure store the return value.
+
+Even though outer function has finished the execution inner function can still access variable of outer function because it remembers the environment where it was created.
+
+closures provide a way to encapsulate private data in create public methods to interact with.
+
+closures help in retaining references to variables that will be otherwise lost after execution of outer function.
+
+
+# function currying :-
+
+function currying is a technique to transform a function that takes multiple arguments into a series of functions that take one argument at a time.
+
+In simple words currying allow you to create specialized functions by partially applying arguments which are remembered through closures.
+
+
+advantages of closures:-
+1. closure enable data hiding and abstraction.
+2. state management - it retains variables between function polls.
+3. functional programming - it enables functions to be written and reused with remembered data.
+4. modular code - it allow you to write modular code with less global variables.
+
+
+
+
+                                        02/05/2025
+
+                                  Objects in JavaScript
+
+An object in js is a data structure used to store related data collections it stores data as a key value pair where each key is a unique identifier for the associated value.
+
+Objects are dynamic which means the properties can be added, modified or deleted at runtime.
+
+Syntax :-
+
+var objectName = {
+
+	key1: value1,
+	key2: value2,
+	key3: value3;
+	
+	--------------
+	----------
+}
+
+# how to access values from object
+
+1. object.key
+
+2. object['key']
+
+NOTE: key must be valid identifier. it should follow all the rules of identifiers.
+
+
+# Array of objects
+
+# for of loop - it is used to iterate over array 
+
+
+
+
+# object merging:-
+
+in javascript we can merge object also
+
+# object length:-
+
+we can find the number of properties in an object using object.keys()
+
+# Object:-
+
+Object is a predefine global object in javascript, that provides functions for working with objects 
+
+1. Object.keys(object) - it returns an array of keys.
+
+2. Object.values(object) - it returns an array of values. 
+
+3. Object.entries(object) - it returns an array of key value pair
+
+4. Object.assing(target, source) - it is used to merge objects
+
+5. Object.freeze(obj) - this method is used to prevent modification to an object. Once an object is frozen we cannot add new properties, we cannot remove existing properties, we cannot update any property, it means it makes our object immutable.
+
+NOTE: - but nested objects are editable 
+
+6. Object.seal(obj) - this method is used to restrict adding or removing properties from an object but allow modification of existing object 
+ 
+
+# template literals
+
+
+# multiline string
+
+
+
+                                  06/05/2025
+
+                                    # JSON
+
+JSON stands for javascript object notation json is text format for storing and transporting data, it is similar to XML where we used to store data in text format.
+
+JSON is easy to write and understand.
+
+JSON is language independent.
+
+Every language give support for parse of JSON.
+
+JSON supports different types of data like array, object, string, number, Boolean, Null etc.
+
+# JSON object - it hold key value pair. where each key is represented as a string in JSON and value can be of any type. 
+
+
+{
+
+"name": "deepika",
+"phone": 6745535,
+"active": true,
+"city": "indore"
+
+}
+
+
+Array of JSON
+[
+{
+
+"name": "deepika",
+"phone": [6745535,545353],
+"active": true,
+"city": "indore",
+"laptop":{
+		"companhy":"dell",
+		"price": 90000
+
+	}
+
+},
+
+{
+
+"name": "rashmika",
+"phone": 957875776,
+"active": true,
+"city": "indore"
+
+}
+
+
+]
+
+
+# JSON with JavaScript
+
+it is an object that provides functions to convert javascript values to and from the javascript object notation format.
+
+Methods in JSON :-
+
+stringify() - this method converts javascript object to a javascript object notation format.
+
+parse() - this method is used to convert JSON notations into javascript object.
+
+users - JSON helps you to transfer data from a server. JSON format helps to transmit all types of structure data.
+
+It is lightweight text based format.
+
+easy to read write JSON
+
+{"name":"abc"}
+{"id":101}
+
+
+{
+"employee":{"name":"xyz","salary":90000}
+}
+
+
+
+
+
+
+{
+
+    "employee":{
+
+        "id":101,
+        "name":"rashmika",
+        "address":{"pin":535355,"city":"indore"},
+        "department":{"dno":10,"dname":"cs"},
+        "projects":[{"pid":1221,"pname","AI1"},{"pid":1221,"pname":"AI1"}]
+    }
+}
+
+
+
+
+
+
+                                  07/05/2025
+
+JSON vs XML
+
+
+JSON - 1. JSON is simple to read and write
+      
+2. It also support array
+
+3. JSON files are more human readable
+
+4. JSON does not use any tag.
+
+5. JSON file size is smaller
+
+6. JSON is less secure
+
+
+
+XML - 1. it is less simple as compare to JSON
+
+2. it doesn't support array
+
+3. XML files are less human readable
+
+4. XML data represented as tags.
+
+5. but XML file size is larger.
+
+6. XML is more secure.
+
+
+
+
+                                              # DOM
+
+DOM stands for document object model. it is a programming interface for html documents. 
+
+It represents the structure of a document as a tree of objects.
+
+It allow JavaScript to interact with the structure and content of webpage.
+
+By manipulating the DOM we can update, structure and styling of a page without page reload
+
+
+Why DOM?
+
+It makes our webpage interactive Example - responding to button clicks, form submission etc.
+
+Developers can add, modify or remove elements and style in real time.
+
+Browser will construct DOM and all HTML tags will be stored as JavaScript objects. If javascript required any html component then it will contact with DOM, which provides the corresponding element.
+
+
+
+
+                                     08/05/2025
+
+                                # javascript events
+
+By using javascript we have the ability to create dynamic webpages.
+
+Events are actions that can be detected by javascript.
+
+Every element on a webpage has certain events, which can trigger JavaScript for example we can use the onclick event of a button element to indicate that the function will run when user clicks on the button 
+
+# onclick - this events occurs when the user clicks on an element 
+
+# onload - this event occurs when an object has been loaded. onload is most oftenly used with the <body> tag.
+
+# ondbclick - this events occurs when the user double clicks on an element.
+
+# onerror - this event is triggerd if an error occurs while loading an external file like document or an image
+
+
+                             # onmouse events
+
+Methods of DOM:-
+ 
+getElementById() -  this function is a predefine function which allow you to select an html element using its unique id attribute.
+
+innertext - the innertext property in javascript is used to get or set the visible text contain of an html element.
+
+
+# selecting element by class name: the getElementByClassName() method is used for selecting an element through their class name value. 
+
+This method returns an array like object that consist of all the elements having the specified class name.
+
+
+
+
+
+
+
+
+
+                                       13/05/2025
+
+# dynamically create, add, remove elements in javascript :-
+
+sometimes we need to create new elements, add them in the DOM or remove existing once this concept helps us to create dynamic web pages.
+
+We can insert element at specific position also
+
+We can also replace elements using replaceChild() method.
+
+# createTextNode()  :-
+
+it is used to create text node containing plain text 
+
+It will not have any attributes.
+
+It cannot have any children 
+
+
+# addEventListener()    : - 
+
+It is a powerful way to register event listener on html elements.
+
+It provides the more flexible and modern approach compare to using inline events.
+
+Using this we can call multiple functions also
+
+
+
+                                       # Class List
+
+The class list property in javascript is a powerful way to work with the css classes of an html element. it provides convenient way add, remove, toggle and check for classes without directly manipulating the class name property.
+
+# Methods of class list
+
+1. add() - it is used to add one or more classes to the element.
+
+2. remove() - it is used to remove the class
+
+3. toggle() - it toggles a class on the element it means adding it if it doesn't exist and removing it if it exist.
+
+4. contains() - check if the element contains a specified class.
+
+5. replace() - replace existing class of an element.
+
+6. length() - return how many classes an element have.
+
+
+
+
+
+
+
+
+                                    20/05/2025
+
+
+Asynchronous programming is a programming paradigm that allow a program to perform non blocking operations such as fetching data from a server, reading a file or waiting for a timer without freezing or halting the execution of other code.
+
+In javascript asynchronous programming is crucial because javascript runs in a single threaded environment if you run long task synchronously then it blocks everything else including user interactions. 
+
+it improve performance
+it enhance user experience
+It handles real world task like API calls, input/output operations and timers effectively.
+ 
+
+                              
+                                #Promise
+
+A promise in javascript is an object that represents eventual completion or failure of an asynchronous operation and its resulting value 
+
+there are different states available in a promise:-
+
+1. resolve
+2. reject
+3. pending
+
+1. resolve - it means the operation completed successfully.
+
+2. reject - the operation failed.
+
+3. pending - it is a initial state. it means the operation has not completed yet.
+
+
+
+
+
+                                 21/05/2025
+                               #Promise chain
+
+Promise chain is a technique in javascript to perform sequence of asynchronous operations one after another where each step waits for the previous one to complete.
+
+# async & await
+
+async & await in javascript are powerful keywords that help to manage asynchronous operations more smoothly. They allow us to write code that looks synchronous but actually it perform task in the background this makes our code easier to read and maintain.
+
+It avoid the complexity of handling promises with then or catch.
+
+An async function in javascript is a function declare with the async keyword.
+
+the async function always returns promise.
+
+If the function returns value then the corresponding promise will be fulfilled with that value.
+
+If async function generates error then promise will be rejected with the error.
+
+
+# Await
+
+Await pause the execution of its surrounding async function until the promise is resolved.
+
+Await can only be used with functions declared with async.
+
+
+
+
+
+
+
+                                  22/05/2025
+                                    #NodeJs
+
+Nodejs is an opensource cross platform javascript runtime environment for executing code outside of browser. Means we can run javascript without browser.
+
+Nodejs is widely use to built backend services for client side application like creating API, building authentication systems, file handling and talking to the database.
+
+Riyan Dhal created the Nodejs framework in 2009.
+
+Nodejs is developed using C++.
+
+Nodejs is the server side scripting.
+
+Using Nodejs we can develop applications in a faster way.
+
+Using Nodejs less code is required.
+
+Why to use Nodejs?
+
+1. Superfast and highly scalable
+
+2. huge community support
+
+3. Nodejs uses an event driven non-blocking I/O model.
+
+4. This makes it highly efficient for heavy applications like real time chat apps.
+
+5. javascript everywhere - means in frontend and backend javascript will be used.
+
+nodejs runs on google's v8 engine which compile javascript code into machine code which result in fast performance.
+
+It support frameworks like ExpressJs which allow us to create rest API  
+
+nextjs framework which is used in mobile applications
+
+it is ideal for chat apps, online games etc.
+
+It provides real time data updates using web sockets and event driven architecture 
+
+Not to use when we are doing heavy CPU bound operations like image or video processing or complex calculations etc.
+
+features:-
+
+1. single threaded -  In Nodejs all the requests are single threaded and collected in an event loop.
+
+this feature prevents reloading and reduces context switching time. 
+
+2. Highly scalable - Nodejs applications are highly scalable because they run asynchronously Nodejs can efficiently handle concurrent request while balancing all active CPU cores.
+
+3. cross platform compatibility - Nodejs can be used on a wide variety of systems from windows to macOS, Linux and mobile platforms
+
+4. Fast data streaming - Nodejs is built on google chromes v8 engine which makes our code run faster.
+This allow to run javascript in a faster and asynchronous way.
+
+5. No buffering - Nodejs works with a data streams which are aggregated data means the use can get the data more quickly because there is no need to wait for the entire operation to complete 
+
+6. Asynchronous
+
+7. Event Driven - 
+
+
+package.json - 
+
+it is the configuration file for any nodejs project. it contains metadata about your project and it manages the dependencies of the project and versions. 
+
+It track all the npm packages.
+
+It defines the entry point of your application 
+
+
+
+
+
+                                    23/05/2025
+                               # package-lock.json
+
+The purpose of package-lock.json is it locks exact version of every installed package including nested dependencies. 
+
+# node-modules 
+
+The node-modules folder is used to store all the installed packages including sub dependencies. it is created automatically when you run npm install.
+
+we should not modify this file.
+
+this file is excluded from version control using .gitignore 
+
+NOTE - difference b/w package.json vs package-lock.json vs node-modules.
+
+
+
+
+                           # Modules and modularity 
+
+A module in node is a reusable block of code whose existence does not impact other code unless explicitly imported.
+
+Nodejs uses common js modules system which allow you to organize your  code into separate files and then use require and module.exports to share functionality.
+
+Types of modules:-
+
+there are three types of modules in a Nodejs
+
+1. Local modules
+2. core modules. - these are predefine modules of Nodejs 
+3. third-party modules - this modules installed via npm.
+
+1. local modules:-
+
+
+
+
+
+
+                                   26/05/2025
+
+                                    # import 
+
+import keyword is supported in Nodejs after version 12 +.
+It is ES module concept.
+/
+There are two ways by which we can use import.
+
+1. By using .mjs extension or 
+2. Using "type" : "module"
+
+
+# export default:-
+
+In javascript ES6 and modern Nodejs with ES module support export default is used to export a single value or entity from a module as the default export this makes importing easy and with the help of this we can give any name
+
+
+
+NOTE:- We can have only one default export per module. It is ideal when a file represents a single purpose   
+
+
+
+require vs import
+
+require
+1. it is from common js concept.
+2. Here .js file extension require.
+3. It is default in Nodejs.
+4. It can be used anywhere.
+5. It is synchronous(blocking).
+
+
+import
+1. it is from ES module.
+2. Here either .mjs or "type" : "module".
+3. It is not default.
+4. must be at the top of the file.
+5. It is asynchronous(non-blocking).
+
+
+
+# Different Module in Nodejs
+
+# core modules
+
+1. FS module - FS stands for file system. It is used to interact with flat files
+
+2. MySQL - this module is used to interact with MySQL database.
+
+3. HTTP - this module is used to develop the HTTP servers.
+
+4. body parser - This module is used to read the post parameters.
+
+5. URL module - this module is used to parse the URL.
+
+6. OS module - It provide operating system related functions.
+
+7. child-process - this module is used to create child processes.
+
+8. multer - this module is used to upload the multimedia images from server.
+
+9. MongoDB - This module is used to interact with MongoDB database 
+
+
+
+
+
+                                   27/05/2025
+
+# FS module :-
+
+the Fs module in Nodejs is a core module used to interact with the file system on your computer.
+
+It provides both synchronous and asynchronous methods to perform file operations such as reading, writing, updation. 
+
+1. It provides both blocking and nonblocking methods.
+2. Error handling - it improves robust error handling to manage issues such as 'file not found' or condition errors
+3. Directory management - It allow creation, deletion and listing of directories 
+
+Methods - 
+
+1. readFile() - this method is used to read the contents of file asynchronously. It reads the entire file into memory and then provides the content via callback function.
+
+
+utf8 is encoding format with the help of this the string content is return		 as a string rather than buffer.
+
+2. readFileSync() - It is a synchronous method in the Nodejs which is used to read the contents of the file 
+
+3. writeFileSync() - It is a synchronous method in the file system module which is used to write data in a file.
+
+1) if file does not exist then file will be created.
+2) if already exist then data will be override.
+3) in this error occur only if we dont have permission or storage is full.
+
+4. writeFile() - It is a asynchronous method from the fs module that writes data to a file without blocking the event loop.
+
+
+# (err)=>{
+
+    console.log("some issue",err);
+} :- It is a callback function that will be executed after the write operation is completed.
+
+It receives one argument 'err' which is null if the operation was successful. If something went wrong then error object will come 
+
+
+# Append data in a file:-
+
+Methods :-
+
+1. appendFileSync() - It is a synchronous function which is provided by Nodejs fs module It is used to append data to a file, if the file does not exist then it will be created.
+
+2. appendFile() - it is used asynchronously to append data to a file. If the file does not exist then it will be created automatically.
+
+4. cpSync() -  It is a synchronous function provided by the fs module that copies files or directories from a source path to a destination path
+
+5. cp() - it copies files asynchronously.
+
+6. unlink() - This method is used to delete a file from the file system asynchronously.
+
+
+
+
+                                  28/05/2025
+
+7. mkdirSync() - this method is used to create a new directory synchronously.
+
+{recursive:true} - this option enables the creation of nested directories. means it will create the entire directory path even if some intermediate directories do not exists.
+
+8. mkdir() - 
+
+
+
+# child-process :-
+
+it is an built in module to create and manage the processes.
+A child-process is a way to run separate program or script outside of the main Nodejs process.
+This is useful for running shell commands.
+
+Creating sub process that can run independently or communicate with the main process.
+
+Methods: - 
+
+execSync() - this method is used to execute shell commands synchronously.
+
+
+#HTTP -
+
+In Nodejs the HTTP module is a core built in module that enables developers to create and manage HTTP servers.
+
+It is used to handle server side HTTP request and response.
+
+It supports different HTTP methods.
+
+It listens for incoming HTTP request and perform actions based on the request time.
+
+It sends response back to the client which is used for dynamic content delivery.
+
+
+
+
+
+                                    30/05/2025
+# create server :- 
+
+It is a method that creates new server.
+It takes callback function as arguments.
+
+Request:-
+Request represents all the incoming request.
+
+Response:-
+It represents the outgoing response that we will send back.
+
+listen:-
+It tell the server to start listening for incoming request on port 8000.
+
+The callback function will be called once when the server will get started.
+
+
+#Nodemon
+
+It is a development tool for Nodejs applications that automatically restart your server whenever we make any changes to the code. So we need not to restart the application again and again after edit.
+
+npm install nodemon -g
+
+
+# response.write :-  It is a method used to send a chunk of the response body to the client. It allow streaming data back to the client without closing the connection immediately.
+
+
+response.end:- it is used to end the response. It should be called once per response.
+
+response.write keeps the connection open but response.end close the response 
+
+response.end is used to send final data 
+
+
+# response.writeHead() - It is used in Nodejs        to set the http status and response headers before sending response to the client.
+
+
+
+# status code :-
+
+status codes are standardized 3 digit numbers that are used in communication between client and a server to indicate the result of the client's request.
+
+Status codes are grouped by their 1st digit 
+
+1. 1XX(informational)
+
+2. 2XX(Success)
+
+3. 3XX(redirection)(further action needed to complete the request)
+
+4. 4XX(client error)(the request had an error)
+
+5. 5XX(server error)
+
+
+
+
+
+
+
+
+                                           02/06/2025
+
+
+200(ok) :- It means our request succeeded 
+
+201(created) :- a new resource successfully created.
+
+400(Bad request) :- the server couldn't understand the request.
+
+403(forbidden) :- the client is not allowed to access the resource.
+
+404(Not found) :- the requested resource doesn't exist.
+
+500(internal server error) :- when the server fails unexpectedly 
+
+
+
+
+
+                                   # URL module:-
+
+
+URL module in Nodejs provide utilities for URL resolution and parsing.
+
+It helps you to extract different parts of URL, such as hostname, port, query parameters etc.
+
+
+#request.on() :- the req is an request object which emits events to listen for this events we use request.on() 
+
+
+syntax:- req.on(event,callback)
+
+
+event may be data 
+
+data - when the chunk of data is received then this event will be called.
+
+req.on("end") :- when all data has been received then this event will be called.
+
+req.on("error") :- if there is a error while receiving a data then this event will be called.
+
+
+NOTE:- when a post request is sent to the body then in that case we use request.on method
+
+
+
+
+                                      03/06/2025
+
+
+                                    # path module
+
+the path module in Nodejs is a built in module that provides utilities for working with file and directory paths.
+
+the advantage of path module is it handles differences in path separators automatically.
+
+It ensures the code work consistently on all operating system.
+
+
+# os module:-
+
+
+
+
+                                   # Express
+
+Expressjs is a minimal and flexible Nodejs web application framework that provides a list of features for building web and mobile applications easily.
+
+It simplify the development of server side applications by offering an easy to use API for routing, middleware and http utilities.
+
+It supports building rest API and Realtime applications.
+
+
+
+# const app = express()  :- this line creates an express application by calling the express function.
+
+The return object is the core application object that is used to define routes like 'get' or 'post' and it is used to add middleware and it is used to start server etc. 
+
+
+
+                                      04/06/2025 
+
+#features of express.
+
+1. minimalist framework:-
+
+it is a lightweight framework and it focus only on the essential features needed to create web applications. It means we can start in just few lines of code without unnecessary complexity.
+
+It help us to setup router, handle request and send response with quickly.
+
+2. Powerful routing system:- 
+
+Expressjs provides powerful routing system that allow you to define routes for different http methods.
+
+3. Middleware support:-(IMP)
+
+Expressjs allow you to use different middleware functions to process request and response.
+
+Middlewares can be applied globally or to specific routes which help in organizing logic.
+
+
+
+import express from 'express';
+
+const app = express();
+
+app.use((req,res,next)=>{
+
+     console.log("request received", Date.now());
+
+     next();
+})
+
+app.get('/',(req,res)=>{
+
+    res.send("welcome in express");
+})
+
+app.listen(3000);
+
+
+
+
+In the above example app.use() is a method in express used to mount middleware functions.
+
+middleware functions are the functions that have access to the request object, response object and the next middleware function.
+
+Syntax :-  app.use(Path,(req,res,next,err))
+           app.use(path,callback)
+
+if path is not given then middleware will be applied to all the routes
+
+
+4. Templating engines :- 
+
+Express allow you to use various templating engines like Ejs, pug, handlebars.
+
+5. Asynchronous request handling :-
+
+Expressjs is built on top of the Nodejs, it supports asynchronous request handling which allow the server to handle multiple request at once without blocking which improve the performance.
+
+
+#app.use(express.json()) :- express.json() is a built in middleware function in express that parses incoming request with json payload and makes the passed data available in request.body
+
+
+
+
+                                       05/06/2025
+
+# app.use(express.urlencoded({extended:true})) :-
+
+In express it is a middleware function which is used to parse incoming request bodies that are url encoded means that is html forms
+
+what it do?
+It parses the form data and attach it to the request.body as a Javascript object.
+
+
+# extended:false :- It uses the query string library which supports simple key value data.
+
+#extended:true :- It uses qs library(third party module) which support nested objects and arrays.
+
+
+
+
+
+
+                                       06/06/2025
+
+                                   # Router / Routing
+
+In Expressjs router is a way to handle different routes in a clean and organized way it allow you to modularise our code.
+
+It is useful in large application.
+
+A router in Express is like a mini application it has its own set of routes.
+
+It has its own middleware.
+
+It has its own parameter handling.
+
+We can think of it as a sub application that we can plug into the main express app.
+
+In large applications if we have many endpoints like /users, /products, /orders. then we create separate files for each route and combine them using routers 
+
+
+
+
+                                      11/06/2025
+                                # Express with MySQL 
+
+
+
+
+
+
+
+
+                                      13/06/2025
+
+                                #Ejs(Embedded JavaScript)
+
+It is a templating engine for Nodejs that allow you to generate HTML markup with JavaScript.
+
+It helps you to build dynamic web pages by embedding JS code directly within you HTML. This is useful when we want to render server side data into the UI
+
+A template engine allow you to inject dynamic content like user data into HTML.
+
+It uses control structure like loops, if-else inside the HTML. 
+
+
+# EJS tags
+
+<%=   %>
+
+1. <%=output tag%>       - this tag is used to print a variable or expression to HTML(html escaped)
+
+
+2. <% JS logic tag  %>  - javascript logic tag - it is used to write JavaScript logic code like loop, if-else condition etc. It does
+
+
+The Ejs include               is used to reuse template parts like headers, footers etc.
+
+
+
+
+
+
+# ORM 
+
+ORM stand for object-relational mapping. It is a programming technique used to interact with a relational database like MySQL, PostgreSQL, etc. using objects in your programming language.
+
+Instead of writing raw SQL queries we can use ORM methods to perform CRUD operations.
+
+The ORM handles the SQL generation and helps you to work with the database.
+
+ORM provides the high level abstraction for database interaction, they allow you to interact with database using object oriented programming concepts.
+
+Popular ORM tools for express:-
+
+1. Sequelize 
+2. Prisma
+3. knex.js
+4. objection.js
+
+
+Advantages:- 
+
+1. No need to write raw SQL - We can perform operation like select, update, insert, delete etc using javascript methods instead of SQL queries.
+
+2. Faster development  - ORM tools speed up development by reducing boiler plate SQL code and auto generating tables.
+
+3. Cross-database support - many ORM supports multiple database system like MySQL, PostgreSQL etc.
+
+4. built-in validation and relationship - ORM allow us to define validation and model relationship like one-to-one, one-to-many, many-to-many etc.
+
+5. Prevents SQL injection - ORM use parameterized queries internally which is used to prevent SQL injection attack 
+
+6. reusable models - ORM lets you define your database schema as JavaScript classes or objects which you can use across the application
+
+7. Abstraction from database complexity - ORM abstracts complex SQL syntax, joins and constraints which allow developer to focus on business logic then database internals.
+
+
+
+Without ORM:-
+
+select * from student inner join course on student.studentid = course.courseid;
+
+ORM:-
+
+const student = await students.findOne({include:course})

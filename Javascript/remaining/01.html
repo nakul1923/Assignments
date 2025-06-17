@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap 5 JS (optional for components like modals, dropdowns, etc.) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <h1 class="text-center mb-4"> Welcome to Ashish Website </h1>
+    <h2 class="text-center mb-4">Ragister </h2>
+    <form onsubmit="return validation()" class="container mt-4">
+   
+   <div>
+     First Name   :<input type="text" id="name">
+    Middle Name  :<input type="text"id="name">
+     Last Name    :<input type="text" id="name">  
+   </div>
+
+    <br>  
+    Enter Fathers Name<input type="text" id="fname">
+    <br>
+    Enter mother's Name<input type="text" id="mname">
+    <br>
+    Enter Email ID<input type="text" id="email">    
+    <br>    
+    Enter Mobile Number<input type="text" id="mobile">
+    <br>
+    Enter Address<input type="text" id="address">
+    <br>
+    Enter City<input type="text" id="city">
+    <br>
+    Enter State<input type="text" id="state">
+    <br>
+    Enter Pincode<input type="text" id="pincode">
+    <br>
+    Enter Date of Birth<input type="text" id="dob">
+    <br>
+    <br>
+    <label id="Gender">Gender</label>
+    <input type="radio" id="male" name="gender" value="male">Male
+    <input type="radio" id="female" name="gender" value="female">Female
+    <input type="radio" id="other" name="gender"  value="other">others
+    <br>
+    <label id="marital">Marital Status</label>
+    <input type="radio" id="married" name="marital" value="married">Married
+    <input type="radio" id="unmarried" name="marital" value="unmarried">Unmarried
+    <br>
+    <select id="nationality">
+        <option value="indian">Indian</option>
+        <option value=""other>Other</option>
+    </select>
+    <br>
+      Enter category<select id="category" >
+        <option value="general">General</option>
+        <option value="obc">OBC</option>
+        <option value="sc">SC</option>
+        <Option value="st">ST</Option><br>
+        </select>
+        <label id="category"> Enter Cast Certificate Number</label>
+      <input type="text" id="category" name="category">
+    <br>
+    <label id="education"> Enter Education</label>
+    <input type="radio" id="10th" name="education" value="10th">10th
+    <input type="radio" id="12th" name="education" value="12th">12th
+    
+    <br>
+    <label id="percentage"> Enter percentage</label>    
+    <input type="text" id="percentage" name="percentage">
+    <br>
+    <label id="year"> Enter year of passing</label>
+    <input type="text" id="year" name="year">
+    <br>    
+    <label id="School"> Enter School Name</label>
+    <input type="text" id="school" name="school">
+    <br>    
+    <label  id="course"> Enter course</label>
+    <select id="course">
+        <option value="BBA">BBA</option>
+        <option value="BCA">BCA</option>
+        <option value="BSC">BSC</option>
+        <Option value="BTECH">BTECH</Option>
+        <option value="MCA">MCA</option>
+         <option value="MSC">MSC</option>
+        <option value="MBA">MBA</option>
+        <option value="MTECH">MTECH</option>
+        <option value="PHD">PHD</option>
+        
+    </select>
+    <br>
+    <label id="hobby"> Enter Hobbies</label>
+    <input type="checkbox" id="hobby" value="cricket">Cricket   
+    <input type="checkbox" id="hobby" value="football">Football 
+    <input type="checkbox" id="hobby" value="badminton">Badminton
+    <input type="checkbox" id="hobby" value="hockey">Hockey
+    <input type="checkbox" id="hobby" value="tennis">Tennis
+    <input type="checkbox" id="hobby" value="swimming">Swimming
+    <input type="checkbox" id="hobby" value="reading">Reading
+    <input type="checkbox" id="hobby" value="writing">Writing
+    <input type="checkbox" id="hobby" value="travelling">Travelling 
+    <input type="checkbox" id="hobby" value="singing">Singing
+    <input type="checkbox" id="hobby" value="dancing">Dancing
+    <input type="checkbox" id="hobby" value="cooking">Cooking
+    <br>
+    <br>
+    <label id="Parament"> Enter Parent's Occupation</label>
+    <input type="text" id="occupation" name="occupation">
+      
+    <label id="Parament"> Enter Parent's Income</label>
+    <input type="text" id="income" name="income">   
+    <br>
+    <label id="Parament"> Enter Parent's Contact Number</label>
+    <input type="text" id="pcontact" name="pcontact">
+     Parent Gmail <input type="text" id="pgmail" name="pgmail">
+    <br>
+    <labal id="address">Enter Parament Address</labal>
+    <input type="text" id="paddress" name="paddress">
+    <br>    
+    <label id="address">Enter Parament City</label>
+    <input type="text" id="pcity" name="pcity">
+    <br>
+    <label id="address">Enter Parament State</label>
+    <input type="text" id="pstate" name="pstate">   
+    <br>
+    <label id="address">Enter Parament Pincode</label>
+    <input type="text" id="ppincode" name="ppincode">
+    <br>
+    <label id="ncc" >Have you NCC certificate?</label>
+    <input type="radio" id="yes" name="ncc" value="yes">Yes
+    <input type="radio" id="no" name="ncc" value="no">No
+    <br>
+    <label id="nss" >Have you NSS certificate?</label>
+    <input type="radio" id="yes" name="nss" value="yes">Yes
+    <input type="radio" id="no" name="nss" value="no">No
+    <br>
+    <label id="sports" >Have you sports certificate?</label>
+    <input type="radio" id="yes" name="sports" value="yes">Yes
+    <input type="radio" id="no" name="sports" value="no">No
+    <br>
+    <label id="handicapped">Are you handicapped?</label>
+    <input type="radio" id="yes" name="handicapped" value="yes">Yes
+    <input type="radio" id="no" name="handicapped" value="no">No    
+    <br>    
+    <label id="blood"> Enter Blood Group</label>
+    <select id="blood">
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <Option value="B-">B-</Option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+    </select>
+    <br>
+    <label id="blood"> Enter Aadhar Number</label>
+    <input type="text" id="aadhar" name="aadhar">
+    <br>
+    <label id="blood"> Enter Pan Number</label>
+    <input type="text" id="pan" name="pan">
+    <br>
+    <label>create username</label>
+    <input type="text" id="username" name="username">
+    <br>
+    <label>create password</label>
+    <input type="password" id="password" name="password">   
+    <br>
+    <label>confirm password</label>
+    <input type="password" id="cpassword" name="cpassword">
+    <br>
+    <label>Enter your password</label>
+    <input type="password" id="password" name="password">
+    <br>
+    <label>Enter your Password again</label>
+    <input type="password" id="cpassword" name="cpassword">
+    <br>
+   <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="terms" required />
+        <label class="form-check-label" for="terms">Accept terms and conditions</label>
+      </div>
+      <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="terms" required />
+        <label class="form-check-label" for="terms">read all the instructions carefully</label>
+      </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="reset" class="btn btn-secondary">Reset</button>
+
+ </form>
+ <script>
+    function validation(){
+        var name=document.getElementById("name")
+        var fname=document.getElementById("fname")
+        var mname=document.getElementById("mname")
+        var fname=document.getElementById("fname")
+        var mname=document.getElementById("mname")
+        var email=document.getElementById("email")
+        var mobile=document.getElementById("mobile")
+        var address=document.getElementById("address")
+        var city=document.getElementById("city")
+        var state=document.getElementById("state")
+        var pincode=document.getElementById("pincode")
+        var dob=document.getElementById("dob")
+        var password=document.getElementById("password")
+        var cpassword=document.getElementById("cpassword")
+   
+        if(name.value.trim()==""||fname.value.trim()==""||mname.value.trim()==""||email.value.trim()==""||mobile.value.trim()==""||address.value.trim()==""||city.value.trim()==""||state.value.trim()==""||pincode.value.trim()=="")
+        {
+            alert("blank not allow")
+            return false;
+        }
+
+        if (mobile.value.length!=10){
+            alert("check rule")
+            return false;
+        }
+        if(!mobile.value.match(/[0-9]/)){
+            alert("check the rules for numbers")
+            return false;
+        }
+        if (pincode.value.length!=6){
+            alert("check rule")
+            return false;
+        }
+        if(pincode.value.match(/[0-9]/)){
+            alert("check the rules for numbers")
+            return false;
+        }
+        if(fname.value.trim()==""||mname.value.trim()=="")
+        {
+            alert("blank not allow")
+            return false;
+        }
+         var passingyear=document.getElementById("year")
+        var percentage=document.getElementById("percentage")
+        if (passingyear.value.length!=4){
+            alert("check rule")
+            return false;
+        }
+        if (percentage.value.trim()==""||isNaN(percentage.value)){
+            alert("blank not allow")
+            return false;
+        }
+        if(parcentage.match(/[0-9]/)){
+            alert("check the rules for numbers")
+            return false;
+        } 
+        var school=document.getElementById("school")
+        if(school.value.trim()=="")
+        {
+            alert("blank not allow")
+            return false;
+        } 
+        var course=document.getElementById("course")
+        if(course.value.trim()=="")
+        {
+            alert("blank not allow")
+            return false;
+        }
+        var course=document.getElementById("course")
+        if(course.value.trim()=="")
+        {
+            alert("blank not allow")
+            return false;
+        }   
+        var hobby=document.getElementById("hobby")
+        if(hobby.value.trim()=="")
+        {
+            alert("blank not allow")
+            return false;
+        }
+        var occupation=document.getElementById("occupation")
+        if(occupation.value.trim()=="")
+        {
+            alert("blank not allow")
+            return false;
+        }
+        var income=document.getElementById("income")
+        if(income.value.trim()==""||isNaN(income.value)){
+            alart("blank not allow")
+            return false;
+
+        }
+
+        var pcontact=document.getElementById("pcontact")
+        if(pcontact.value.trim()==""||isNaN(pcontact.value)){
+            alart("blank not allow")
+            return false;
+
+        }   
+        var pgmail=document.getElementById("pgmail")    
+        if(pgamil.value.trim()==""){
+            alert("blank not allow")
+            return false;
+        }  if(pgmail.value.match(/[a-z]/)){
+            alart("check the rules for lowercase")
+            return false;   
+        }
+        if(pgmail.match(/[0-9]/)){
+            alert ("check the rules for numbers")
+            return false;
+        }
+        if(pgmail.match(/[@]/)){
+            alert ("check the rules for @")
+            return false;
+        } 
+        var pcity=document.getElementById("pcity")
+        if(pcity.value.trim()=="")
+        {
+            alert("blank not allow")
+            return false;
+        }
+        var paddress=document.getElementById("paddress")
+        if(paddress.value.trim()=="")
+        {
+            alert("blank not allow")
+            return false;
+        } 
+        var pstate=document.getElementById("pstate")    
+        if(pstate.value.trim()=="")
+        {
+            alert("blank not allow")
+            return false;
+        }
+        var ppincode=document.getElementById("ppincode")
+        if(ppincode.value.trim()==""||isNaN(ppincode.value)){
+            alart("blank not allow")
+            return false;
+
+        }
+        var aadhar=document.getElementById("aadhar")
+        if(aadhar.value.trim()==""||isNaN(aadhar.value)){
+            alart("blank not allow")
+            return false;
+
+        }  
+        if(aadhar.value.length!=12){
+            alert("check rule")
+            return false;
+        }   
+        if(aadhar.vale.match(/[0-9]/)){
+            alert("check the rules for numbers")
+            return false;
+
+        }
+        var pan=document.getElementById("pan")
+        if(pan.value.trim()==""||isNaN(pan.value)){
+            alart("blank not allow")
+            return false;
+
+        }
+        if(pan.value.length!=10){
+            alert("check rule")
+            return false;
+        }
+        if(pan.value.match(/[0-9]/)){
+            alert("check the rules for numbers")
+            return false;
+
+        }   
+        if(pan.value.match(/[A-Z]/)){
+            alert("check the rules for uppercase")
+            return false;
+        }
+        if(pan.value.match(/[a-z]/)){
+            alert("check the rules for lowercase")
+            return false;
+        }
+        var Blood=document.getElementById("blood")  
+        if(Blood.value.trim()=="")
+        {
+            alert("blank not allow")
+            return false;
+        }   
+        var category=document.getElementById("category")
+            if(catagory.value.trim()=="")
+        {
+          alart ("blank not allow")
+          return false;  
+        }
+       var username=document.getElementById("username")
+       
+       if(username.value.trim()==""|| password.value.trim()=="")
+       {
+           alart("blank not allow")
+           return false;
+       }
+       if(username.value.match(/[0-9]/)){
+           alert("check the rules for numbers")
+           return false;
+       }
+       if(username.value.match(/[A-Z]/)){
+           alert("check the rules for uppercase")
+           return false;
+       }
+       if(username.value.match(/[a-z]/)){
+           alert("check the rules for lowercase")
+           return false;
+       }
+         if (password.value.length<8||password.value.length>15)
+         {
+              alart("check rule")
+              return false;
+         }
+         if(!password.value.match(/[A-Z]/)){
+             alert("check the rules for upercase")
+             return false;
+         }
+            if(!password.value.match(/[a-z]/)){
+                alert("check the rules for lowercase")
+                return false;
+            }
+            if(!password.value.match(/[0-9]/)){
+                alert("check the rules for numbers")
+                return false;
+            }
+            if(!password.value.match(/[@]/)){
+                alert("check the rules for @ ")
+                return false;
+            }
+            
+            if(!password.value.match(/[^A-Za-z0-9]/)){
+                alert("check the rules for special characters")
+                return false;
+            }
+            if(password.value!=cpassword.value)
+            {
+                alart("password mismatch")
+                return false;
+            }
+            var gmail=document.getElementById("gmail")  
+            if(gmail.value.trim()==""){
+                alert("blank not allow")
+                return false;
+            }
+            if(gmail.value.match(/[a-z]/)){
+                alart("check the rules for lowercase")
+                return false;   
+            }
+            if(gmail.value.match(/[0-9]/)){
+                alert ("check the rules for numbers")
+                return false;
+            }
+            if(gmail.value.match(/[@]/)){
+                alert ("check the rules for @")
+                return false;
+            }
+            if(gmail.value.match(/[^A-Za-z0-9]/)){
+                alert("check the rules for special characters")
+                return false;
+            }
+            if(gmail.value.endWith(".com")){
+                alert("check the rules for .com")
+                return false;
+            }
+           var check1=document.getElementById("c1")
+           if(!(check1.checked))    
+           {
+            alart("accept term & condition")
+            return false        
+
+           }
+           var check2=document.getElementById("c2")
+           if(!(check2.checked))
+              {
+                alart("accept all the above information is correct")
+                return false;
+              }
+            var m=document.getElementById("message")
+            m.innerHTML="Form submitted successfully"
+    }
+ </script>
+</body>
+</html>

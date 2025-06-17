@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+        
+        <label for="d1">DOB1</label>
+        <input type="date" id="d1">
+
+        <label for="d2">DOB2</label>
+        <input type="date" id="d2">
+
+        
+
+        <button onclick="diff()">submit</button>
+    
+
+    <span id="dif">difference</span>
+    
+
+    <script>
+        function diff(){
+
+            let first = new Date(document.getElementById("d1").value);
+            let second = new Date(document.getElementById("d2").value);
+
+            let diff2 = Math.abs(first.getFullYear()-second.getFullYear()) ;
+
+            document.getElementById("dif").innerText = diff2;
+        }
+
+    </script>
+</body>
+</html>

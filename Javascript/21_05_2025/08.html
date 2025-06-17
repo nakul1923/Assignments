@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function fetchUser(){
+
+            return new Promise((resolve,reject)=>{
+
+                setTimeout(()=>{
+
+                    resolve({name: "katappa",age:30});
+                },2000);
+            });
+        }
+
+        function greetUser(user){
+
+            return new Promise((resolve,reject)=>{
+
+                setTimeout(()=>{
+
+                    resolve(`Hello.${user.name}`);
+                })
+            })
+        }
+
+        async function display(){
+            
+            try{
+
+                const user = await fetchUser();
+                const greet = await greetUser(user);
+                console.log(greet);
+            } catch(error){
+
+                console.log("error occured");
+            }
+        }
+
+        display();
+    </script>
+</body>
+</html>

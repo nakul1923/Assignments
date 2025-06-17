@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        num = 1223442534;
+
+        digit=4;
+        count = 0;
+        rem = 0;
+
+        while(num>=1){
+
+            rem = num%10;
+            if(rem==digit){
+
+                count++;
+            }
+
+            num=Math.floor(num/10);
+        }
+
+        console.log("Digit " + digit + " occur in given number is " + count + " times");
+    </script>
+</body>
+</html>

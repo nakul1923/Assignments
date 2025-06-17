@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        dest = ['Paris', 'London', 'Delhi', 'New York', 'Tokyo', 'Delhi'];
+
+        uniquedest =  dest.filter((value, index, self) => self.indexOf(value) == index);
+
+        console.log(uniquedest);
+        
+        console.log(uniquedest.sort());
+
+        
+    </script>
+</body>
+</html>

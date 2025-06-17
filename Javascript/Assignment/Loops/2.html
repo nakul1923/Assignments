@@ -1,0 +1,26 @@
+<!--
+ Write a program to calculate the factorial of a given number using all loops.
+ Input: n = 5
+Output: Factorial = 120   -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n= prompt("Enter Number for Factorial")
+        var i=1
+        var multi=1;
+        while(n>=1){
+          multi=multi*i
+          i++
+          n--;
+        }
+        document.write(multi);
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .table th, .table td {
+      vertical-align: middle;
+    }
+    .btn + .btn {
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-primary">Student Management System</h2>
+    <a href="/add" class="btn btn-success">+ Add New Student</a>
+  </div>
+
+  <% if (students.length > 0) { %>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Age</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% students.forEach((s, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= s.name %></td>
+              <td><%= s.email %></td>
+              <td><%= s.course %></td>
+              <td><%= s.age %></td>
+              <td>
+                <span class="badge bg-<%= s.status === 'Active' ? 'success' : s.status === 'Passed' ? 'info' : s.status === 'Dropped' ? 'danger' : 'secondary' %>">
+                  <%= s.status %>
+                </span>
+              </td>
+              <td>
+                <a href="/view/<%= s.id %>" class="btn btn-sm btn-info text-white">View</a>
+                <a href="/edit/<%= s.id %>" class="btn btn-sm btn-warning">Edit</a>
+                <form action="/delete/<%= s.id %>" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this student?');">
+                  <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  <% } else { %>
+    <div class="alert alert-info">No student records found. Click <strong>Add New Student</strong> to create one.</div>
+  <% } %>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

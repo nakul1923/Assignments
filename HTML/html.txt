@@ -1,0 +1,265 @@
+html is a standard language used to create and design web pages
+
+In Html we use tags for heading, paragraph, table, images etc..
+
+<!DOCTYPE html> - it is used to define document type.
+
+<html> - it is the root element of the html page. 
+
+<head> - this tag contains all the metadata title and links. meta tags are used to describe any website.
+
+inside head tag we can have link tag, script tag etc..
+
+<title> - this tag is used to give title for our documents.
+
+<meta charSet= "UTF-8"> - meta tags are used in search engine optimization here UTF-8 is a character encoding standard 
+
+<meta name="description" content="this is first website"> -  this tag is used to provide short description to search engine.
+
+based on these keywords our page ranking will be decided by search engine.
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> - it is used to encourage responsive design so that on different devices our website may look same
+
+<meta name="robot" content="index,FOLLOW"> - it represent that search engine can follow our website
+
+shortcut :-
+
+p*5 - by this we can create 5 paragraphs 
+
+
+# anchor tag <a> - anchor tag is used to link multiple pages it create hyperlinks to html document it allow user to navigate on other pages.
+
+In case of anchor tag 'href' attribute will be used which specify destination url
+
+# image tag <img> - it is used to add image in the website.
+
+
+
+
+
+                                       28/03/2025
+
+                                     # List in html
+
+html list is used to group related item together.
+
+there are different types of list
+
+1. Unordered list - it displays items with bullet points 
+
+2. Ordered list - it displays items in number sequence.
+
+3. description list - it is used to list terms and their description like a dictionary. It is useful when you want to show a term and its meaning.
+
+tags used in description list
+
+1. <dl> - it defines the description list.
+
+2. <dt> - it defines the term.
+
+3. <dd> - it defines the description details.
+
+
+
+
+                                     # table tag
+
+table tag is used to create table in html which displays data in rows and column format.
+
+# colspan - colspan is used in html table to make a cell span across multiple columns 
+
+# rowspan - rowspan is used to merge multiple rows.
+
+
+                                   # forms in html
+
+Html forms are used to collect user input and send it to server for processing 
+
+# id - id is a identifier which is used to identify any element in html page, id will be unique for entire page
+
+# class - class is used to group the elements
+
+
+
+
+
+                                             31/03/2025
+
+                                              # html5
+
+
+In 1999 first version of html was developed.
+
+Html5 started in the year of 2006.
+
+html5 is a combination of html,css and javascript.
+
+It is mobile compatible or device independent. it means the site which is developed using html5 will be adjusted automatically according to the screen size.
+
+It reduces the need of javascript for form validation.
+
+New media tags are supported in html5.
+
+In html5 we should cumpolsory use document type declaration (!DOCTYPE).
+
+
+                                    #Html5 controllers
+
+different controllers are introduced in html5.
+
+# Color - if we use color then we will get color-picker. If we submit the form then this color will be submitted to the next page.
+
+# Date
+
+# Email
+
+# Number
+
+# range
+
+# url
+
+# datalist - this tag is used to create a list of url. Suppose we want some options in url then use datalist.
+
+
+
+                                          02/04/2025
+
+# auto focus
+
+auto focus controller is used to make any particular controller get focused when we open any particular form
+
+
+# file
+
+# pattern
+
+[0-9]      any digit
+[a-z]     only lower case alphabet
+[A-Z]        upper case alphabet
+[a-zA-Z]    any alphabet
+[a-zA-Z0-9]    any alphanumeric
+[^abc] except a or b or c any other character
+[^a-zA-Z0-9]   all characters except alphanumeric
+a* any number of a where a can be zero times also
+
+a+  atleast one a
+
+[abc] either a or b or c
+
+i want a value which should contain minimum 5 characters and maximum 10 characters
+
+i want a value which should contain only digits, exactly digits allow
+
+i want 10 digit number where first digit must be 6 or 7 or 8 or 9
+
+i want a password where minimum 8 characters are required first character should be uppercase and remaining character should be any alphanumeric 
+
+i want a password where first letter is uppercase remaining two letters are lowercase and last character is symbol.
+
+
+
+                                       # different tags of html5
+
+# address tag
+
+# aside tag -  it is used to store information about the related content in the webpage.
+
+# the aside tag should be indirectly related to the surrounding content.
+
+
+
+                                          03/04/2025
+
+# <article>
+ tag - it is used to store self independent articles in the webpage. Suppose in our website two paragraph and one image is used to convey one information then we keep them in one article.
+
+# <base> tag - it is used to provide default linking and default target for all hyperlinks tags in the webpage.
+
+We should provide the best tag inside the <head> tag only.
+
+
+
+                                     04/04/2025
+
+#<details> tag - 
+
+It is used to show extra information about any text.
+
+In the details we will use another tag called summary tag.
+
+
+# <figure> tag and fig caption tag
+
+By using this we can tag one image in figure tag and we can provide caption in fig caption.
+
+# hgroup tag - h group means heading tag here, we are going
+
+# <meter> tag -  
+
+# <progress> tag - 
+
+# video tag - With the help of video tag we can videos in our webpage.
+
+# <audio> tag - 
+
+# <canvas> tag - this tag is used for drawing purpose whatever we draw in canvas it will be in pixels. If we want to draw anything inside the canvas we should use javascript
+
+
+
+
+
+
+
+                                      09/04/2025
+
+# pseudo selector
+
+
+                                  # Box model in css
+
+It is a container that contains multiple properties including borders, margins, padding and the content itself.
+
+It is used to create the design and layout of the webpage.
+
+The web Browser renders every element as a rectangular box according to the CSS box model.
+
+# padding - this property is used to create space around the element inside any defined border.
+
+# margin - this property is used to create space around the element, that is around the border area.
+
+default margin of body tag is 8px.
+
+# table in CSS
+
+# list in CSS
+
+# Cursors 
+
+# filters
+
+
+
+
+                                      10/04/2025
+
+                                       Bootstrap
+
+
+It is an opensource and cross platform library for building effective, responsive UI faster.
+
+Responsive means it changes and fits according to the device like tab, laptop, mobile etc.
+
+It is faster because we just need to use it.
+
+Bootstrap provides two things
+
+1. component - components contain built-in user interface. They have readymade style, functionality, presentation etc. 
+
+for example - nav bar, alerts etc.
+
+2. utilities - They are used for changing the appearance of element.
+
+We can change color, margin, display etc.
+
+
